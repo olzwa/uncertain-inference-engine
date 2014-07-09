@@ -1,0 +1,19 @@
+def_fact osoba{2.1;4.5} [imie:greg;wiek:23;	kolor-wlosow:brazowy; babcia:mat;babcia:mem; siostry:jane]
+
+def_fact osoba{2.1;4.5} [wiek:45]
+def_fact osoba{2.1;4.5} [imie:jowisz]
+def_fact osoba{2.1;4.5} [imie:jowisz; wiek:23]
+def_fact osoba{2.1;4.5} [imie:jowisz; wiek:99] 
+
+
+def_rule add_fact{2.1;4.5} [osoba [wiek:23];
+=>printline "Nowa osoba co ma 43 lata";def_fact osoba [wiek:43];]
+
+
+def_rule add_fact2{2.1;4.5} [osoba [wiek:?];
+=>printline "Kolejna nowa osoba co ma 43 lata";def_fact osoba [wiek:43];] 
+
+def_rule add_fact3{2.1;4.5} [osoba [wiek:?zmienna]; 
+=>printline "Kolejna nowa osoba co ma ?zmienna lata";
+
+def_fact osoba [wiek:?zmienna];]
