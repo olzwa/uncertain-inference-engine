@@ -5,10 +5,16 @@
  */
 package pl.kbtest;
 
-import pl.kbtest.action.Action;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Map;
+import java.util.Scanner;
+import pl.kbtest.action.Action;
 import pl.kbtest.action.DefaultAction;
+import pl.kbtest.parser.ActionNotExistsException;
+import static pl.kbtest.parser.Main.facts;
+import static pl.kbtest.parser.Main.rules;
+import pl.kbtest.parser.Parser;
 
 /**
  *
@@ -20,15 +26,42 @@ public class UncertainRules4 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+
         Context context = new Context();
+
+        String input = "";
+        Scanner s = new Scanner(System.in);
+        System.out.println("Welcome.");
+        System.out.println("--------------------");
+
+        do {
+            input = s.nextLine();
+            if (input.equals("file")) {
+                input = s.nextLine();
+                System.out.println("Filepath:");
+                String filepath = input;//s.nextLine();
+                Parser dl = new Parser();
+                try {
+                    dl.load(filepath);
+                    facts.addAll(dl.getFacts());
+                    rules.addAll(dl.getRules());
+                    System.out.println("File loaded.");
+                } catch (IOException e) {
+                    System.out.println("File not found.");
+                } catch (ActionNotExistsException e) {
+                    System.out.println("Input is incorrect.");
+                }
+            }
+            if (input.equals("exit")) {
+                break;
+            }
+        } while (true);
 
         Fact f1 = Fact.FactFactory.getInstance("wydzial rodzimy informatyka", new GrfIrf(new BigDecimal(1.0), new BigDecimal(1.0)));
         Fact f2 = Fact.FactFactory.getInstance("kierunek elektrotechnika", new GrfIrf(new BigDecimal(0.9), new BigDecimal(0.8)));
         Fact f3 = Fact.FactFactory.getInstance("sprzet laptop", new GrfIrf(new BigDecimal(0.9), new BigDecimal(0.8)));
         Fact f4 = Fact.FactFactory.getInstance("rok 1", new GrfIrf(new BigDecimal(0.95), new BigDecimal(0.0)));
 
-        
         Rule r2 = new Rule(new GrfIrf(new BigDecimal(0.9), new BigDecimal(0.8)));
         r2.addPremise(new Premise("wydzial rodzimy informatyka"));
         r2.addConclusion(new DefaultAction("kierunek informatyka", ""));
@@ -47,7 +80,6 @@ public class UncertainRules4 {
         context.facts.add(f3);
         context.facts.add(f4);
 
-     
         context.rules.add(r2);
         context.rules.add(r4);
         context.rules.add(r1);
