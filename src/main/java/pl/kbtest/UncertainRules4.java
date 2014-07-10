@@ -12,8 +12,6 @@ import java.util.Scanner;
 import pl.kbtest.action.Action;
 import pl.kbtest.action.DefaultAction;
 import pl.kbtest.parser.ActionNotExistsException;
-import static pl.kbtest.parser.Main.facts;
-import static pl.kbtest.parser.Main.rules;
 import pl.kbtest.parser.Parser;
 
 /**
@@ -43,8 +41,8 @@ public class UncertainRules4 {
                 Parser dl = new Parser();
                 try {
                     dl.load(filepath);
-                    facts.addAll(dl.getFacts());
-                    rules.addAll(dl.getRules());
+                    context.facts.addAll(dl.getFacts());
+                    //context.rules.addAll(dl.getRules());
                     System.out.println("File loaded.");
                 } catch (IOException e) {
                     System.out.println("File not found.");

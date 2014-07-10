@@ -11,8 +11,8 @@ public class FireRuleAction extends Action{
 	
 	@Override
 	public void act() {
-		List<Rule> rules = Main.rules;
-		for(Rule r : rules) {
+		List<Rule2> rules = Main.rules;
+		for(Rule2 r : rules) {
 			if (r.name.equals(this.name)) {
 				r.act();
 				break;

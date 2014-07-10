@@ -4,23 +4,23 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-public class Fact {
+public class Fact2  {
 	
 	public String name;
 	public Map<String, String> attributes = new HashMap<String, String>();
 	public Map<String, String> variables = new HashMap<String, String>();
 	public double grf, irf;
 	
-	private Fact(){}
+	private Fact2(){}
 	
-	public static Fact factory(String name){
-		Fact f = new Fact();
+	public static Fact2 factory(String name){
+		Fact2 f = new Fact2();
 		f.name = name.trim();
 		return f;
 	}
 	
-	public static Fact build(String name, Map<String, String> attrs, double grf, double irf){
-		Fact f = Fact.factory(name);
+	public static Fact2 build(String name, Map<String, String> attrs, double grf, double irf){
+		Fact2 f = Fact2.factory(name);
 		f.attributes = attrs;
 		f.grf = grf;
 		f.irf = irf;
@@ -48,8 +48,8 @@ public class Fact {
 		return attributes.get(attr);
 	}
 	
-	public Fact clone(){
-		Fact f = new Fact();
+	public Fact2 clone(){
+		Fact2 f = new Fact2();
 		f.name = name;
 		f.attributes.putAll(this.attributes);
 		f.variables.putAll(this.variables);

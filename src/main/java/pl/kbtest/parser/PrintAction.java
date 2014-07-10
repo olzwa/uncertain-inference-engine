@@ -13,7 +13,7 @@ public class PrintAction extends Action {
 	@Override
 	public void act() {
 		String tmp = "";
-		for(Fact ff : foundFacts) {
+		for(Fact2 ff : foundFacts) {
 			for(Entry<String, String> var : ff.variables.entrySet()) {
 				tmp = s.replace(var.getKey(), var.getValue());				
 			}

@@ -5,21 +5,24 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import pl.kbtest.Fact;
+import pl.kbtest.GrfIrf;
 
 public class Parser {
 	List<Fact> facts = new ArrayList<Fact>();
-	List<Rule> rules = new ArrayList<Rule>();
+	List<Rule2> rules = new ArrayList<Rule2>();
 	
 	String filepath;
 	
 	public List<Fact> getFacts() {
 		return facts;
 	}
-	public List<Rule> getRules() {
+	public List<Rule2> getRules() {
 		return rules;
 	}
 	
@@ -56,12 +59,16 @@ public class Parser {
 				if (type.equals("def_fact")) {
 
 					Map<String, String> attrs = Parser.parseAttributes(line);
-					
-					this.facts.add(Fact.build(name, attrs, grf, irf));
+					//TODO replace with my own fact factory
+					//this.facts.add(Fact.build(name, attrs, grf, irf));
+                                        GrfIrf grfIrf = new GrfIrf(new BigDecimal(grf),new BigDecimal(irf));
+                                        Fact.FactFactory.getInstance(name, grfIrf);
 				} else if (type.equals("def_rule")) {
 					String definition = line.substring(0, line.length() - 1);
 					String tmp[] = definition.split("=>");
+                                        
 					List<Fact> factsList = new ArrayList<Fact>();
+                                        
 					List<Action> conclusionsList = new ArrayList<Action>();
 					
 					String facts = tmp[0];
@@ -69,8 +76,10 @@ public class Parser {
 					for(String s : factsArr) {
 						String factName = s.substring(0, s.indexOf('[')).trim();
 						String factAttrs = s.substring(s.indexOf('[') + 1, s.indexOf(']')).trim();
-
-						factsList.add(Fact.build(factName, Parser.parseAttributes(factAttrs), grf, irf));
+                                                
+                                                
+                                                                                                
+						//factsList.add(Fact2.build(factName, Parser.parseAttributes(factAttrs), grf, irf));
 					}
 					
 					String actions = tmp[1];
@@ -78,8 +87,8 @@ public class Parser {
 					for(String s : actionsArr){
 						conclusionsList.add(Action.build(s));
 					}
-					
-					this.rules.add(Rule.build(name, factsList, conclusionsList, grf, irf));
+					//TODO replace with my own rule factory
+					//this.rules.add(Rule.build(name, factsList, conclusionsList, grf, irf));
 				}
 				
 				statementBuilder = new StringBuilder();

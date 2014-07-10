@@ -4,13 +4,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Scanner;
 import java.util.Map.Entry;
+import java.util.Scanner;
+import pl.kbtest.Fact;
 
 public class Main {
 
 	public static List<Fact> facts = new ArrayList<Fact>();
-	public static List<Rule> rules = new ArrayList<Rule>();
+	public static List<Rule2> rules = new ArrayList<Rule2>();
 	
 	public void start(){
 		String input;
@@ -56,7 +57,7 @@ public class Main {
 					System.out.println(f.toString());
 				}
 			} else if (input.equals("rules")){
-				for(Rule r : rules) {
+				for(Rule2 r : rules) {
 					System.out.println(r.toString());
 				}
 			} else if (input.equals("clear")){
@@ -68,25 +69,25 @@ public class Main {
 				boolean found = false;
 				int num_of_found = 0;
 				for(Fact fact : facts) {
-					if (input.trim().equals(fact.name.trim())) {
-						out(fact.toString());
-						found = true;
-						num_of_found++;
-						continue;
-					}
+//					if (input.trim().equals(fact.trim())) {
+//						out(fact.toString());
+//						found = true;
+//						num_of_found++;
+//						continue;
+//					}
 					
-					if (input.contains(" ")){
-						String name = input.substring(0, input.indexOf(" "));
-						if (name.trim().equals(fact.name.trim())) {
-							String attr[] = input.substring(input.indexOf("[") + 1, input.indexOf("]")).split(":");
-							if (fact.hasAttribute(attr[0]) && fact.getAttributeValue(attr[0]).equals(attr[1].trim())) {
-								out(fact.toString());
-								found = true;
-								num_of_found++;
-								continue; 	 
-							}
-						}
-					}
+//					if (input.contains(" ")){
+//						String name = input.substring(0, input.indexOf(" "));
+//						if (name.trim().equals(fact.name.trim())) {
+//							String attr[] = input.substring(input.indexOf("[") + 1, input.indexOf("]")).split(":");
+//							if (fact.hasAttribute(attr[0]) && fact.getAttributeValue(attr[0]).equals(attr[1].trim())) {
+//								out(fact.toString());
+//								found = true;
+//								num_of_found++;
+//								continue; 	 
+//							}
+//						}
+//					}
 				}
 				if (found) {
 					out(((float)(num_of_found*100)/facts.size()) + "% of facts are match.");
@@ -94,7 +95,7 @@ public class Main {
 				}
 				
 				// rules
-				for(Rule rule : rules) {
+				for(Rule2 rule : rules) {
 					if (input.trim().equals(rule.name.trim())) {
 						rule.act();
 						found = true;
@@ -114,7 +115,7 @@ public class Main {
 		return facts;
 	}
 
-	public List<Rule> getRules() {
+	public List<Rule2> getRules() {
 		return rules;
 	}
 
@@ -131,35 +132,35 @@ public class Main {
 		System.out.println(s);
 	}
 	
-	public static List<Fact> findMatchingFacts(Map<String, String> attrs) 
-			throws NoMatchException {
-		List<Fact> matchingFacts = new ArrayList<Fact>();
-		
-		for (Fact fact : facts) {
-			boolean fact_matches = true;
-			for (Entry<String, String> attr : attrs.entrySet()) {
-				if (fact.hasAttribute(attr.getKey())) {
-					// if matches everything
-					if (attr.getValue().equals("?")) continue;
-					
-					// if matches variable
-					if (attr.getValue().startsWith("?")) {
-						fact.variables.put(attr.getValue(), fact.getAttributeValue(attr.getKey()));
-						continue;
-					}
-					
-					// if matches concrete thing
-					String value = fact.getAttributeValue(attr.getKey());
-					if (value.equals(attr.getValue())) continue;
-				}
-				
-				fact_matches = false;
-				break;
-			}
-			if (fact_matches) matchingFacts.add(fact);
-		}
-		
-		if (matchingFacts.isEmpty()) throw new NoMatchException();
-		return matchingFacts;
-	}
+//	public static List<Fact> findMatchingFacts(Map<String, String> attrs) 
+//			throws NoMatchException {
+//		List<Fact> matchingFacts = new ArrayList<Fact>();
+//		
+//		for (Fact fact : facts) {
+//			boolean fact_matches = true;
+//			for (Entry<String, String> attr : attrs.entrySet()) {
+//				if (fact.hasAttribute(attr.getKey())) {
+//					// if matches everything
+//					if (attr.getValue().equals("?")) continue;
+//					
+//					// if matches variable
+//					if (attr.getValue().startsWith("?")) {
+//						fact.variables.put(attr.getValue(), fact.getAttributeValue(attr.getKey()));
+//						continue;
+//					}
+//					
+//					// if matches concrete thing
+//					String value = fact.getAttributeValue(attr.getKey());
+//					if (value.equals(attr.getValue())) continue;
+//				}
+//				
+//				fact_matches = false;
+//				break;
+//			}
+//			if (fact_matches) matchingFacts.add(fact);
+//		}
+//		
+//		if (matchingFacts.isEmpty()) throw new NoMatchException();
+//		return matchingFacts;
+//	}
 }
