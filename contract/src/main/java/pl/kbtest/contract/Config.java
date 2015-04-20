@@ -10,7 +10,7 @@ package pl.kbtest.contract;
  *
  * @author Kamil
  */
-public class DefaultConfig {
+public class Config {
     
     public static String GLOBAL_SPLIT_REGEX = " "; 
     

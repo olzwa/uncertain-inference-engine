@@ -11,6 +11,7 @@ import java.util.Scanner;
 import pl.kbtest.action.DefaultSetAction;
 import pl.kbtest.contract.GrfIrf;
 import pl.kbtest.contract.SetFact;
+import pl.kbtest.contract.SetFactFactory;
 import pl.kbtest.contract.SetPremise;
 import pl.kbtest.contract.SetRule;
 
@@ -35,10 +36,10 @@ public class UncertainRules4 {
 //        SimpleFact f4 = SimpleFact.FactFactory.getInstance("rok 1", new GrfIrf(new BigDecimal(0.95), new BigDecimal(0.0)));
 
         
-        SetFact sf1 = SetFact.Factory.getInstance("wydzial_rodzimy", "informatyka", new GrfIrf(new BigDecimal(1.0), new BigDecimal(1.0)),false);
-        SetFact sf20 = SetFact.Factory.getInstance("rok", "1 2", new GrfIrf(new BigDecimal(0.95), new BigDecimal(0.0)),true);
-        SetFact sf21 = SetFact.Factory.getInstance("kierunek","informatyka", new GrfIrf(new BigDecimal(0.90), new BigDecimal(0.8)),true);
-        SetFact sf4 = SetFact.Factory.getInstance("sprzet", "komputer_stacjonarny laptop", new GrfIrf(new BigDecimal(1.0), new BigDecimal(1.0)), true);
+        SetFact sf1 = SetFactFactory.getInstance("wydzial_rodzimy", "informatyka", new GrfIrf(new BigDecimal(1.0), new BigDecimal(1.0)),false);
+        SetFact sf20 = SetFactFactory.getInstance("rok", "1 2", new GrfIrf(new BigDecimal(0.95), new BigDecimal(0.0)),true);
+        SetFact sf21 = SetFactFactory.getInstance("kierunek","informatyka", new GrfIrf(new BigDecimal(0.90), new BigDecimal(0.8)),true);
+        SetFact sf4 = SetFactFactory.getInstance("sprzet", "komputer_stacjonarny laptop", new GrfIrf(new BigDecimal(1.0), new BigDecimal(1.0)), true);
         
         
         

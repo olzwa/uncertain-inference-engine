@@ -15,6 +15,7 @@ import java.util.Map;
 import pl.kbtest.conclusionExecutor.SetConclusionExecutor1;
 import pl.kbtest.contract.GrfIrf;
 import pl.kbtest.contract.SetFact;
+import pl.kbtest.contract.SetFactFactory;
 import pl.kbtest.contract.SetPremise;
 import pl.kbtest.contract.SetRule;
 import pl.kbtest.premiseEvaluator.SetPremiseComparator;
@@ -217,7 +218,7 @@ public class SetUncertainRuleEngine {
             BigDecimal irf = part1.add(part2);
             BigDecimal grf = Utils.getMax(foundFact.getGrfIrf().getGrf(), toAdd.getGrfIrf().getGrf());
 
-            return SetFact.Factory.getInstance(toAdd.getHead(),toAdd.getSet(), new GrfIrf(grf, irf), w,false, toAdd.isConjunction());
+            return SetFactFactory.getInstance(toAdd.getHead(),toAdd.getSet(), new GrfIrf(grf, irf), w,false, toAdd.isConjunction());
         }
     }
 }

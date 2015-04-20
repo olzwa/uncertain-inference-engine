@@ -8,6 +8,7 @@ package pl.kbtest.action;
 import java.util.Map;
 import pl.kbtest.contract.GrfIrf;
 import pl.kbtest.contract.SetFact;
+import pl.kbtest.contract.SetFactFactory;
 
 /**
  *
@@ -32,7 +33,7 @@ public class DefaultSetAction implements SetAction {
 
     @Override
     public SetFact execute(Map<String, String> wildcardFillers, GrfIrf grfIrf, boolean conj) {
-        return SetFact.Factory.getInstance(fact, grfIrf, conj);
+        return SetFactFactory.getInstance(fact, grfIrf, conj);
     }
 
     @Override
