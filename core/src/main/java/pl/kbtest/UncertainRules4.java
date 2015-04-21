@@ -5,9 +5,12 @@
  */
 package pl.kbtest;
 
+import pl.kbtest.contract.Context;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.Deque;
 import java.util.Scanner;
+import java.util.concurrent.ConcurrentLinkedDeque;
 import pl.kbtest.action.DefaultSetAction;
 import pl.kbtest.contract.GrfIrf;
 import pl.kbtest.contract.SetFact;
@@ -26,10 +29,10 @@ public class UncertainRules4 {
      */
     public static void main(String[] args) {
 
-//        Context context = new Context();
-        Context2 context2 = new Context2();
 
-      
+        Deque<SetRule> rules = new ConcurrentLinkedDeque<>();
+        Deque<SetFact> facts = new ConcurrentLinkedDeque<>();
+     
 //        SimpleFact f1 = SimpleFact.FactFactory.getInstance("wydzial rodzimy informatyka", new GrfIrf(new BigDecimal(1.0), new BigDecimal(1.0)));
 //        SimpleFact f2 = SimpleFact.FactFactory.getInstance("kierunek elektrotechnika", new GrfIrf(new BigDecimal(0.9), new BigDecimal(0.8)));
 //        SimpleFact f3 = SimpleFact.FactFactory.getInstance("sprzet laptop", new GrfIrf(new BigDecimal(0.9), new BigDecimal(0.8)));
@@ -53,12 +56,14 @@ public class UncertainRules4 {
         sr4.addConclusion(new DefaultSetAction("sprzet komputer_stacjonarny laptop", "", false));
         
         
-        context2.facts.add(sf1);
-        context2.facts.add(sf20);
-        context2.facts.add(sf21);
-        context2.facts.add(sf4);
+        facts.add(sf1);
+        facts.add(sf20);
+        facts.add(sf21);
+        facts.add(sf4);
+        rules.add(sr4);
         
-        context2.rules.add(sr4);
+        Context context = new Context(facts,rules);
+        
         //context2.rules.add(sr1);
         
 //        SimpleRule r2 = new SimpleRule(new GrfIrf(new BigDecimal(0.9), new BigDecimal(0.8)));
@@ -84,7 +89,7 @@ public class UncertainRules4 {
         //context.rules.add(r4);
         //context.rules.add(r1);
         
-        SetUncertainRuleEngine engine2 = new SetUncertainRuleEngine(context2);
+        UncertainRuleEngine engine2 = new UncertainRuleEngine(context);
         engine2.fireRules();
         
         //SimpleUncertainRuleEngine engine = new SimpleUncertainRuleEngine(context);

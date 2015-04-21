@@ -6,6 +6,7 @@
 
 package pl.kbtest;
 
+import pl.kbtest.contract.Context;
 import java.math.BigDecimal;
 import java.util.Deque;
 import java.util.HashMap;
@@ -25,17 +26,17 @@ import pl.kbtest.premiseEvaluator.SimplePremiseEvaluator;
  *
  * @author Kamil
  */
-public class SetUncertainRuleEngine {
+public class UncertainRuleEngine {
     
-    final private Context2 context;
+    final private Context context;
 
-    public SetUncertainRuleEngine(Context2 context) {
+    public UncertainRuleEngine(Context context) {
         this.context = context;
     }
     
     private SetFact contextFactsContains(SetFact f) {
         SetFact result = null;
-        for (SetFact fact : context.facts) {
+        for (SetFact fact : context.getFacts()) {
             if (fact.equals(f)) {
                 result = fact;
             }
@@ -56,18 +57,18 @@ public class SetUncertainRuleEngine {
                     System.out.println("found but axiom");
                 } else {
                     System.out.println("found not axiom");
-                    SetFact propagated = SetUncertainRuleEngine.PropagationFunctions.propagationF3(rule, search, f);
+                    SetFact propagated = UncertainRuleEngine.PropagationFunctions.propagationF3(rule, search, f);
                     
                     count++;
                     System.out.println(propagated);
-                    context.facts.add(propagated);
-                    context.facts.remove(f);
+                    context.getFacts().add(propagated);
+                    context.getFacts().remove(f);
                 }
             } else {
                 System.out.println("Fact added");
                 System.out.println(f);
 
-                context.facts.add(f);
+                context.getFacts().add(f);
                 count++;
             }
         }
@@ -77,18 +78,18 @@ public class SetUncertainRuleEngine {
     public void fireRules() {
 
         SetConclusionExecutor1 dce = new SetConclusionExecutor1();
-        SetUncertainRuleEngine.SetPremiseEvaluator dpe = new SetUncertainRuleEngine.SetPremiseEvaluator(context.facts);
+        UncertainRuleEngine.SetPremiseEvaluator dpe = new UncertainRuleEngine.SetPremiseEvaluator(context.getFacts());
 
         GrfIrf premisesGrfIrf;
 
-        for (SetRule rule : context.rules) {
+        for (SetRule rule : context.getRules()) {
 
             boolean correctFacts = dpe.evaluate(rule);
             if (correctFacts) {
                 if (rule.getPremises().size() == 1) {
                     premisesGrfIrf = rule.getPremises().get(0).getGrfIrf();
                 } else {
-                    premisesGrfIrf = SetUncertainRuleEngine.PropagationFunctions.propagationF1(rule);
+                    premisesGrfIrf = UncertainRuleEngine.PropagationFunctions.propagationF1(rule);
                 }
                 List<SetFact> facts = dce.executeConclusions(rule.getConclusions(), rule.getGrfIrf(), premisesGrfIrf);
                  if (facts.size() > 0) {
