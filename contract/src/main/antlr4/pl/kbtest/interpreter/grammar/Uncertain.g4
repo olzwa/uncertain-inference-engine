@@ -11,7 +11,7 @@ options {
  
 }
 
-compile: (defineRule | assertFact | EOF)*
+compile: (defineRule | assertFact)* 
 	;
 		   
 COMMENT : WS?'//' ~[\r\n]* WS? -> skip;
@@ -38,13 +38,7 @@ defineRule : '(rule' WS LITERAL WS (fact WS)+ effects WS grfirf ')';
 fact: WS? LOGIC_OR? '(' WS? LITERAL WS (value WS)+ grfirf ')' WS?; 
 value: (LITERAL|fact|STRING|NUMBER|VARIABLE);
 
- 
-
 ID : [a-z]+ ;             // match lower-case identifiers
 
 WS : [ \t\r\n]+ ; // skip spaces, tabs, newlines
-	
-
-
-
- 
+	 

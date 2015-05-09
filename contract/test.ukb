@@ -21,6 +21,3 @@
 (assert +(asd "zwierzeta halasuja" {1;1}))
 {0; 0}
 )
-
-
-
