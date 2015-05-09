@@ -1,0 +1,26 @@
+//fakty:
+(assert (pies szczeka {0; 1 }) )
+(assert  +(kot miauczy mruczy { 0.65; 1}) )
+(assert   (ptak cwierka    {0.5 ;1}))
+(assert (pies ma lat 15.5 {0.6; 1})) 
+(assert (pies ma lat 15.5 {0.6; 1})) 
+(assert (lubie czytac {0.6; 1})) 
+
+//regula 1:
+(rule czyJestHalas 
+(pies szczeka {1; 1}) 
+=>
+(assert +(asd "zwierzeta halasuja" {1;1}))
+{0; 0}
+)
+
+//regula 2
+(rule czyJestHalas 
+(pies szczeka {1; 1}) 
+=>
+(assert +(asd "zwierzeta halasuja" {1;1}))
+{0; 0}
+)
+
+
+

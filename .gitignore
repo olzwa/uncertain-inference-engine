@@ -1,3 +1,8 @@
 /target/
 /contract/target/
 /core/target/
+/bin/
+.settings
+.classpath
+.project
+.csv
