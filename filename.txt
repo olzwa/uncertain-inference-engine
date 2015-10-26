@@ -1,0 +1,1536 @@
+=================================================================
+[ 17 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => kategoria_sportu3 : [sporty indywidualnie  ]
+=================================================================
+[ 14 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => poziom_sprawności_fizycznej : [średnia]
+=================================================================
+[ 14 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => czy_palisz_papierosy : [wcale]
+=================================================================
+[ 12 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => typ_sprzetu : [ średniej klasy, markowy]
+=================================================================
+[ 12 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => typ_odzieży : [markowa,  średniej klasy]
+=================================================================
+[ 12 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => kategoria_sportu3 : [sporty indywidualnie  ]
+=================================================================
+[ 12 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu]
+=================================================================
+[ 11 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu]
+=================================================================
+[ 10 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => wydatki_miesieczne_na_sport : [poniżej 5%]
+=================================================================
+[ 9 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => poziom_zadowolenia_z_zycia : [wysoki]
+=================================================================
+[ 9 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => poziom_sprawności_fizycznej : [średnia]
+=================================================================
+[ 9 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => typ_sprzetu : [ średniej klasy, markowy]
+=================================================================
+[ 9 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => kategoria_sportu1 : [sporty całoroczne]
+=================================================================
+[ 9 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => motywacja_do_uprawiania_sportu : [troska o wygląd]
+=================================================================
+[ 8 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => poziom_zadowolenia_z_zycia : [wysoki]
+=================================================================
+[ 8 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => czy_palisz_papierosy : [wcale]
+=================================================================
+[ 8 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => długość_snu_nocnego : [5-6 h]
+=================================================================
+[ 8 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => kategoria_sportu1 : [sporty letnie]
+=================================================================
+[ 8 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => kategoria_sportu3 : [sporty indywidualnie  ]
+=================================================================
+[ 8 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => poziom_sprawności_fizycznej : [średnia]
+=================================================================
+[ 8 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => kategoria_sportu3 : [sporty indywidualnie  ]
+=================================================================
+[ 8 | 104 ]	wiek : [21] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu3 : [sporty indywidualnie  ]
+=================================================================
+[ 8 | 104 ]	wiek : [21] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu]
+=================================================================
+[ 8 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => ocena_nauki_i_pracy : [dobre]
+=================================================================
+[ 8 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu]
+=================================================================
+[ 8 | 104 ]	wiek : [21] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => czy_palisz_papierosy : [wcale]
+=================================================================
+[ 7 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => sposób_spedzania_wakacji : [turystyka poznawcza lub wypoczynkowa]
+=================================================================
+[ 7 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => czy_palisz_papierosy : [wcale]
+=================================================================
+[ 7 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => długość_snu_nocnego : [7-8 h]
+=================================================================
+[ 7 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => kategoria_sportu3 : [ sporty zespołowe  , sporty indywidualnie  ]
+=================================================================
+[ 7 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => motywacja_do_uprawiania_sportu : [troska o zdrowie,  przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 7 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu,  sporty halowe]
+=================================================================
+[ 7 | 104 ]	wiek : [21] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu,  sporty halowe]
+=================================================================
+[ 7 | 91 ]	stan_zdrowia : [dobry] , wiek : [23] , płeć : [mężczyzna] ,  => kategoria_sportu3 : [sporty indywidualnie  ]
+=================================================================
+[ 7 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => poziom_sprawności_fizycznej : [średnia]
+=================================================================
+[ 7 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu]
+=================================================================
+[ 7 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => motywacja_do_uprawiania_sportu : [troska o zdrowie,  przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 7 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => ocena_nauki_i_pracy : [dobre]
+=================================================================
+[ 7 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => ocena_nauki_i_pracy : [bardzo dobre]
+=================================================================
+[ 7 | 104 ]	wiek : [21] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => poziom_sprawności_fizycznej : [wysoka]
+=================================================================
+[ 7 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => poziom_zadowolenia_z_zycia : [przeciętny]
+=================================================================
+[ 7 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu]
+=================================================================
+[ 7 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => kategoria_sportu3 : [sporty indywidualnie  ]
+=================================================================
+[ 7 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => typ_odzieży : [markowa,  średniej klasy]
+=================================================================
+[ 6 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => kategoria_sportu1 : [sporty letnie]
+=================================================================
+[ 6 | 91 ]	stan_zdrowia : [dobry] , wiek : [23] , płeć : [mężczyzna] ,  => typ_odzieży : [markowa,  średniej klasy]
+=================================================================
+[ 6 | 78 ]	wiek : [23] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => motywacja_do_uprawiania_sportu : [troska o zdrowie,  przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 6 | 91 ]	stan_zdrowia : [dobry] , wiek : [23] , płeć : [mężczyzna] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu]
+=================================================================
+[ 6 | 78 ]	wiek : [23] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu]
+=================================================================
+[ 6 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => kategoria_sportu1 : [sporty letnie]
+=================================================================
+[ 6 | 104 ]	wiek : [21] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => sposób_spedzania_wakacji : [ uprawianie sportu, turystyka piesza]
+=================================================================
+[ 6 | 91 ]	stan_zdrowia : [dobry] , wiek : [23] , płeć : [mężczyzna] ,  => poziom_sprawności_fizycznej : [średnia]
+=================================================================
+[ 6 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => długość_snu_nocnego : [7-8 h]
+=================================================================
+[ 6 | 78 ]	wiek : [23] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => czy_palisz_papierosy : [wcale]
+=================================================================
+[ 6 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => poziom_sprawności_fizycznej : [średnia]
+=================================================================
+[ 6 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => typ_odzieży : [markowa,  średniej klasy]
+=================================================================
+[ 6 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => wydatki_miesieczne_na_sport : [poniżej 5%]
+=================================================================
+[ 6 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => typ_sprzetu : [ średniej klasy, markowy]
+=================================================================
+[ 6 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => wydatki_miesieczne_na_sport : [5 – 20 %]
+=================================================================
+[ 6 | 78 ]	płeć : [kobieta] , wiek : [21] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu3 : [sporty indywidualnie  ]
+=================================================================
+[ 6 | 104 ]	wiek : [21] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu3 : [ sporty zespołowe  , sporty indywidualnie  ]
+=================================================================
+[ 6 | 91 ]	stan_zdrowia : [dobry] , wiek : [23] , płeć : [mężczyzna] ,  => typ_sprzetu : [ średniej klasy, markowy]
+=================================================================
+[ 6 | 78 ]	wiek : [23] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => typ_sprzetu : [ średniej klasy, markowy]
+=================================================================
+[ 6 | 104 ]	wiek : [21] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => długość_snu_nocnego : [7-8 h]
+=================================================================
+[ 6 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => czy_palisz_papierosy : [wcale]
+=================================================================
+[ 6 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => ocena_nauki_i_pracy : [dobre]
+=================================================================
+[ 6 | 78 ]	wiek : [23] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => długość_snu_nocnego : [7-8 h]
+=================================================================
+[ 6 | 91 ]	stan_zdrowia : [dobry] , wiek : [23] , płeć : [mężczyzna] ,  => ocena_nauki_i_pracy : [dobre]
+=================================================================
+[ 6 | 104 ]	wiek : [21] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu1 : [sporty letnie]
+=================================================================
+[ 6 | 78 ]	płeć : [kobieta] , wiek : [21] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu1 : [sporty całoroczne]
+=================================================================
+[ 6 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => typ_odzieży : [markowa,  średniej klasy]
+=================================================================
+[ 5 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => wydatki_miesieczne_na_sport : [poniżej 5%]
+=================================================================
+[ 5 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => typ_odzieży : [niemarkowa]
+=================================================================
+[ 5 | 104 ]	wiek : [21] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => motywacja_do_uprawiania_sportu : [troska o zdrowie,  przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 5 | 65 ]	płeć : [kobieta] , wiek : [23] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu3 : [sporty indywidualnie  ]
+=================================================================
+[ 5 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => kategoria_sportu2 : [sporty halowe]
+=================================================================
+[ 5 | 78 ]	płeć : [kobieta] , wiek : [21] , stan_zdrowia : [bardzo dobry] ,  => czy_palisz_papierosy : [wcale]
+=================================================================
+[ 5 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => wydatki_miesieczne_na_sport : [5 – 20 %]
+=================================================================
+[ 5 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => motywacja_do_uprawiania_sportu : [ troska o wygląd, troska o zdrowie]
+=================================================================
+[ 5 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => kategoria_sportu1 : [sporty letnie]
+=================================================================
+[ 5 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => kategoria_sportu1 : [sporty całoroczne]
+=================================================================
+[ 5 | 104 ]	wiek : [21] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => wydatki_miesieczne_na_sport : [5 – 20 %]
+=================================================================
+[ 5 | 65 ]	płeć : [kobieta] , wiek : [23] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu]
+=================================================================
+[ 5 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => typ_sprzetu : [niemarkowy]
+=================================================================
+[ 5 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => poziom_zadowolenia_z_zycia : [przeciętny]
+=================================================================
+[ 5 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => ocena_nauki_i_pracy : [bardzo dobre]
+=================================================================
+[ 5 | 91 ]	stan_zdrowia : [dobry] , wiek : [23] , płeć : [mężczyzna] ,  => czy_palisz_papierosy : [wcale]
+=================================================================
+[ 5 | 78 ]	wiek : [23] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu3 : [sporty indywidualnie  ]
+=================================================================
+[ 5 | 91 ]	stan_zdrowia : [dobry] , wiek : [23] , płeć : [mężczyzna] ,  => wydatki_miesieczne_na_sport : [poniżej 5%]
+=================================================================
+[ 5 | 78 ]	płeć : [kobieta] , wiek : [21] , stan_zdrowia : [bardzo dobry] ,  => poziom_sprawności_fizycznej : [średnia]
+=================================================================
+[ 5 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => motywacja_do_uprawiania_sportu : [ troska o wygląd, troska o zdrowie,  przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 5 | 91 ]	stan_zdrowia : [dobry] , wiek : [23] , płeć : [mężczyzna] ,  => kategoria_sportu1 : [sporty letnie]
+=================================================================
+[ 5 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => wydatki_miesieczne_na_sport : [poniżej 5%]
+=================================================================
+[ 5 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => motywacja_do_uprawiania_sportu : [troska o zdrowie]
+=================================================================
+[ 5 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => typ_sprzetu : [ średniej klasy, markowy]
+=================================================================
+[ 5 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu,  sporty halowe]
+=================================================================
+[ 5 | 104 ]	wiek : [21] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => ocena_nauki_i_pracy : [bardzo dobre]
+=================================================================
+[ 5 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu,  sporty halowe]
+=================================================================
+[ 5 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => długość_snu_nocnego : [7-8 h]
+=================================================================
+[ 4 | 78 ]	płeć : [kobieta] , wiek : [21] , stan_zdrowia : [bardzo dobry] ,  => poziom_zadowolenia_z_zycia : [wysoki]
+=================================================================
+[ 4 | 52 ]	płeć : [kobieta] , wiek : [22] , stan_zdrowia : [bardzo dobry] ,  => motywacja_do_uprawiania_sportu : [ troska o wygląd, troska o zdrowie,  przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 4 | 65 ]	płeć : [kobieta] , wiek : [23] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu,  sporty halowe]
+=================================================================
+[ 4 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => sposób_spedzania_wakacji : [spotkania towarzyskie]
+=================================================================
+[ 4 | 52 ]	płeć : [kobieta] , wiek : [22] , stan_zdrowia : [bardzo dobry] ,  => sposób_spedzania_wakacji : [ uprawianie sportu,  turystyka poznawcza lub wypoczynkowa, turystyka piesza]
+=================================================================
+[ 4 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => motywacja_do_uprawiania_sportu : [troska o wygląd,  przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 4 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => długość_snu_nocnego : [5-6 h]
+=================================================================
+[ 4 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => wydatki_miesieczne_na_sport : [poniżej 5%]
+=================================================================
+[ 4 | 104 ]	wiek : [21] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => typ_sprzetu : [ średniej klasy, markowy]
+=================================================================
+[ 4 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => kategoria_sportu1 : [sporty letnie,  sporty całoroczne]
+=================================================================
+[ 4 | 104 ]	wiek : [21] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => typ_odzieży : [markowa,  średniej klasy]
+=================================================================
+[ 4 | 91 ]	stan_zdrowia : [dobry] , wiek : [23] , płeć : [mężczyzna] ,  => motywacja_do_uprawiania_sportu : [przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 4 | 78 ]	płeć : [kobieta] , wiek : [21] , stan_zdrowia : [bardzo dobry] ,  => wydatki_miesieczne_na_sport : [poniżej 5%]
+=================================================================
+[ 4 | 91 ]	stan_zdrowia : [dobry] , wiek : [23] , płeć : [mężczyzna] ,  => poziom_zadowolenia_z_zycia : [przeciętny]
+=================================================================
+[ 4 | 78 ]	płeć : [kobieta] , wiek : [21] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu]
+=================================================================
+[ 4 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [21] , płeć : [mężczyzna] ,  => kategoria_sportu3 : [sporty indywidualnie  ]
+=================================================================
+[ 4 | 78 ]	wiek : [23] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => poziom_sprawności_fizycznej : [wysoka]
+=================================================================
+[ 4 | 78 ]	wiek : [23] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => poziom_zadowolenia_z_zycia : [wysoki]
+=================================================================
+[ 4 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => kategoria_sportu1 : [sporty całoroczne]
+=================================================================
+[ 4 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => sposób_spedzania_wakacji : [turystyka poznawcza lub wypoczynkowa,  spotkania towarzyskie]
+=================================================================
+[ 4 | 78 ]	wiek : [23] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu,  sporty halowe]
+=================================================================
+[ 4 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [23] , płeć : [mężczyzna] ,  => poziom_sprawności_fizycznej : [średnia]
+=================================================================
+[ 4 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => ocena_nauki_i_pracy : [dobre]
+=================================================================
+[ 4 | 104 ]	wiek : [21] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => motywacja_do_uprawiania_sportu : [ troska o wygląd, troska o zdrowie,  przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 4 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [23] , płeć : [mężczyzna] ,  => kategoria_sportu3 : [sporty indywidualnie  ]
+=================================================================
+[ 4 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => sposób_spedzania_wakacji : [ uprawianie sportu,  turystyka poznawcza lub wypoczynkowa, turystyka piesza]
+=================================================================
+[ 4 | 52 ]	płeć : [kobieta] , wiek : [22] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu3 : [sporty indywidualnie  ]
+=================================================================
+[ 4 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => motywacja_do_uprawiania_sportu : [troska o zdrowie,  przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 4 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => kategoria_sportu1 : [sporty letnie]
+=================================================================
+[ 4 | 104 ]	wiek : [21] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu1 : [sporty letnie,  sporty zimowe]
+=================================================================
+[ 4 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => długość_snu_nocnego : [powyżej 8 h]
+=================================================================
+[ 4 | 78 ]	płeć : [kobieta] , wiek : [21] , stan_zdrowia : [bardzo dobry] ,  => ocena_nauki_i_pracy : [dobre]
+=================================================================
+[ 4 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => motywacja_do_uprawiania_sportu : [ troska o wygląd, troska o zdrowie]
+=================================================================
+[ 4 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => sposób_spedzania_wakacji : [spotkania towarzyskie]
+=================================================================
+[ 4 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu,  sporty halowe]
+=================================================================
+[ 4 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => poziom_zadowolenia_z_zycia : [wysoki]
+=================================================================
+[ 4 | 104 ]	wiek : [21] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu1 : [sporty letnie,  sporty całoroczne]
+=================================================================
+[ 4 | 104 ]	wiek : [21] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => poziom_zadowolenia_z_zycia : [przeciętny]
+=================================================================
+[ 4 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => kategoria_sportu1 : [sporty letnie,  sporty całoroczne]
+=================================================================
+[ 4 | 78 ]	płeć : [kobieta] , wiek : [21] , stan_zdrowia : [bardzo dobry] ,  => typ_odzieży : [markowa,  średniej klasy]
+=================================================================
+[ 4 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => typ_odzieży : [niemarkowa]
+=================================================================
+[ 4 | 52 ]	płeć : [kobieta] , wiek : [22] , stan_zdrowia : [bardzo dobry] ,  => długość_snu_nocnego : [7-8 h]
+=================================================================
+[ 4 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => sposób_spedzania_wakacji : [ uprawianie sportu,  spotkania towarzyskie, turystyka piesza]
+=================================================================
+[ 4 | 52 ]	płeć : [kobieta] , wiek : [22] , stan_zdrowia : [bardzo dobry] ,  => poziom_zadowolenia_z_zycia : [wysoki]
+=================================================================
+[ 4 | 104 ]	wiek : [21] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => poziom_zadowolenia_z_zycia : [wysoki]
+=================================================================
+[ 4 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => motywacja_do_uprawiania_sportu : [troska o wygląd]
+=================================================================
+[ 4 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => motywacja_do_uprawiania_sportu : [troska o wygląd]
+=================================================================
+[ 4 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => ocena_nauki_i_pracy : [dobre]
+=================================================================
+[ 4 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [21] , płeć : [mężczyzna] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu]
+=================================================================
+[ 4 | 52 ]	płeć : [kobieta] , wiek : [22] , stan_zdrowia : [bardzo dobry] ,  => ocena_nauki_i_pracy : [bardzo dobre]
+=================================================================
+[ 4 | 91 ]	stan_zdrowia : [dobry] , wiek : [23] , płeć : [mężczyzna] ,  => długość_snu_nocnego : [7-8 h]
+=================================================================
+[ 4 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => sposób_spedzania_wakacji : [turystyka poznawcza lub wypoczynkowa]
+=================================================================
+[ 4 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => poziom_zadowolenia_z_zycia : [wysoki]
+=================================================================
+[ 4 | 52 ]	płeć : [kobieta] , wiek : [22] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu]
+=================================================================
+[ 4 | 78 ]	płeć : [kobieta] , wiek : [21] , stan_zdrowia : [bardzo dobry] ,  => typ_sprzetu : [niemarkowy]
+=================================================================
+[ 4 | 65 ]	płeć : [kobieta] , wiek : [23] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu1 : [sporty letnie]
+=================================================================
+[ 4 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [23] , płeć : [mężczyzna] ,  => czy_palisz_papierosy : [wcale]
+=================================================================
+[ 3 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => motywacja_do_uprawiania_sportu : [ troska o wygląd, troska o zdrowie,  przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 3 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => sposób_spedzania_wakacji : [sen i lektura]
+=================================================================
+[ 3 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => sposób_spedzania_wakacji : [turystyka poznawcza lub wypoczynkowa,  spotkania towarzyskie]
+=================================================================
+[ 3 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => motywacja_do_uprawiania_sportu : [ troska o wygląd, troska o zdrowie,  przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 3 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => kategoria_sportu1 : [sporty letnie,  sporty zimowe]
+=================================================================
+[ 3 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => sposób_spedzania_wakacji : [turystyka poznawcza lub wypoczynkowa,  spotkania towarzyskie]
+=================================================================
+[ 3 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => poziom_zadowolenia_z_zycia : [przeciętny]
+=================================================================
+[ 3 | 52 ]	płeć : [kobieta] , wiek : [22] , stan_zdrowia : [bardzo dobry] ,  => typ_odzieży : [niemarkowa]
+=================================================================
+[ 3 | 52 ]	płeć : [kobieta] , wiek : [22] , stan_zdrowia : [bardzo dobry] ,  => poziom_sprawności_fizycznej : [wysoka]
+=================================================================
+[ 3 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => ocena_nauki_i_pracy : [bardzo dobre]
+=================================================================
+[ 3 | 65 ]	płeć : [kobieta] , wiek : [23] , stan_zdrowia : [bardzo dobry] ,  => sposób_spedzania_wakacji : [turystyka poznawcza lub wypoczynkowa]
+=================================================================
+[ 3 | 78 ]	wiek : [23] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => ocena_nauki_i_pracy : [bardzo dobre]
+=================================================================
+[ 3 | 78 ]	płeć : [kobieta] , wiek : [21] , stan_zdrowia : [bardzo dobry] ,  => motywacja_do_uprawiania_sportu : [troska o wygląd]
+=================================================================
+[ 3 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => sposób_spedzania_wakacji : [turystyka poznawcza lub wypoczynkowa]
+=================================================================
+[ 3 | 65 ]	płeć : [kobieta] , wiek : [23] , stan_zdrowia : [bardzo dobry] ,  => typ_odzieży : [markowa,  średniej klasy]
+=================================================================
+[ 3 | 39 ]	płeć : [kobieta] , wiek : [24] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu3 : [sporty indywidualnie  ]
+=================================================================
+[ 3 | 78 ]	wiek : [23] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => typ_odzieży : [markowa,  średniej klasy]
+=================================================================
+[ 3 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [21] , płeć : [mężczyzna] ,  => poziom_sprawności_fizycznej : [średnia]
+=================================================================
+[ 3 | 52 ]	płeć : [kobieta] , wiek : [22] , stan_zdrowia : [bardzo dobry] ,  => czy_palisz_papierosy : [wcale]
+=================================================================
+[ 3 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => długość_snu_nocnego : [5-6 h]
+=================================================================
+[ 3 | 91 ]	stan_zdrowia : [dobry] , wiek : [23] , płeć : [mężczyzna] ,  => sposób_spedzania_wakacji : [turystyka poznawcza lub wypoczynkowa,  spotkania towarzyskie]
+=================================================================
+[ 3 | 104 ]	wiek : [21] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu1 : [sporty letnie,  sporty zimowe,  sporty całoroczne]
+=================================================================
+[ 3 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [21] , płeć : [mężczyzna] ,  => wydatki_miesieczne_na_sport : [poniżej 5%]
+=================================================================
+[ 3 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => długość_snu_nocnego : [powyżej 8 h]
+=================================================================
+[ 3 | 104 ]	wiek : [21] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => typ_odzieży : [markowa,  wysokiej klasy]
+=================================================================
+[ 3 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => typ_sprzetu : [niemarkowy]
+=================================================================
+[ 3 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => długość_snu_nocnego : [powyżej 8 h]
+=================================================================
+[ 3 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => kategoria_sportu3 : [sporty indywidualnie  ,  sporty partnerskie  ]
+=================================================================
+[ 3 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => czy_palisz_papierosy : [wcale]
+=================================================================
+[ 3 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [21] , płeć : [mężczyzna] ,  => sposób_spedzania_wakacji : [spotkania towarzyskie]
+=================================================================
+[ 3 | 78 ]	płeć : [kobieta] , wiek : [21] , stan_zdrowia : [bardzo dobry] ,  => długość_snu_nocnego : [5-6 h]
+=================================================================
+[ 3 | 78 ]	wiek : [23] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => typ_odzieży : [niemarkowa]
+=================================================================
+[ 3 | 65 ]	płeć : [kobieta] , wiek : [23] , stan_zdrowia : [bardzo dobry] ,  => typ_sprzetu : [niemarkowy]
+=================================================================
+[ 3 | 104 ]	wiek : [21] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => typ_sprzetu : [ wysokiej klasy, markowy]
+=================================================================
+[ 3 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => sposób_spedzania_wakacji : [ uprawianie sportu,  turystyka poznawcza lub wypoczynkowa, turystyka piesza]
+=================================================================
+[ 3 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [23] , płeć : [mężczyzna] ,  => typ_odzieży : [niemarkowa]
+=================================================================
+[ 3 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [23] , płeć : [mężczyzna] ,  => motywacja_do_uprawiania_sportu : [przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 3 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => typ_odzieży : [markowa,  wysokiej klasy]
+=================================================================
+[ 3 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => motywacja_do_uprawiania_sportu : [przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 3 | 65 ]	płeć : [kobieta] , wiek : [23] , stan_zdrowia : [bardzo dobry] ,  => wydatki_miesieczne_na_sport : [poniżej 5%]
+=================================================================
+[ 3 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => sposób_spedzania_wakacji : [ uprawianie sportu,  spotkania towarzyskie,  turystyka poznawcza lub wypoczynkowa, turystyka piesza]
+=================================================================
+[ 3 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => motywacja_do_uprawiania_sportu : [ troska o wygląd, troska o zdrowie,  przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 3 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [21] , płeć : [mężczyzna] ,  => długość_snu_nocnego : [7-8 h]
+=================================================================
+[ 3 | 78 ]	wiek : [23] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => ocena_nauki_i_pracy : [dobre]
+=================================================================
+[ 3 | 65 ]	płeć : [kobieta] , wiek : [23] , stan_zdrowia : [bardzo dobry] ,  => poziom_sprawności_fizycznej : [wysoka]
+=================================================================
+[ 3 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [21] , płeć : [mężczyzna] ,  => kategoria_sportu1 : [sporty całoroczne]
+=================================================================
+[ 3 | 91 ]	stan_zdrowia : [dobry] , wiek : [23] , płeć : [mężczyzna] ,  => poziom_zadowolenia_z_zycia : [wysoki]
+=================================================================
+[ 3 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => sposób_spedzania_wakacji : [ sen i lektura, turystyka poznawcza lub wypoczynkowa]
+=================================================================
+[ 3 | 65 ]	płeć : [kobieta] , wiek : [23] , stan_zdrowia : [bardzo dobry] ,  => poziom_zadowolenia_z_zycia : [wysoki]
+=================================================================
+[ 3 | 91 ]	stan_zdrowia : [dobry] , wiek : [23] , płeć : [mężczyzna] ,  => kategoria_sportu1 : [sporty letnie,  sporty zimowe]
+=================================================================
+[ 3 | 65 ]	płeć : [kobieta] , wiek : [23] , stan_zdrowia : [bardzo dobry] ,  => czy_palisz_papierosy : [wcale]
+=================================================================
+[ 3 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => wydatki_miesieczne_na_sport : [5 – 20 %]
+=================================================================
+[ 3 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => sposób_spedzania_wakacji : [ uprawianie sportu,  spotkania towarzyskie, turystyka piesza]
+=================================================================
+[ 3 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => wydatki_miesieczne_na_sport : [5 – 20 %]
+=================================================================
+[ 3 | 91 ]	stan_zdrowia : [dobry] , wiek : [23] , płeć : [mężczyzna] ,  => kategoria_sportu3 : [ sporty zespołowe  , sporty indywidualnie  ]
+=================================================================
+[ 3 | 78 ]	wiek : [23] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => motywacja_do_uprawiania_sportu : [ troska o wygląd, troska o zdrowie,  przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 3 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => typ_odzieży : [niemarkowa]
+=================================================================
+[ 3 | 65 ]	płeć : [kobieta] , wiek : [23] , stan_zdrowia : [bardzo dobry] ,  => długość_snu_nocnego : [7-8 h]
+=================================================================
+[ 3 | 39 ]	płeć : [kobieta] , wiek : [24] , stan_zdrowia : [bardzo dobry] ,  => motywacja_do_uprawiania_sportu : [troska o zdrowie,  przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 3 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => sposób_spedzania_wakacji : [ uprawianie sportu, turystyka piesza]
+=================================================================
+[ 3 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [23] , płeć : [mężczyzna] ,  => wydatki_miesieczne_na_sport : [poniżej 5%]
+=================================================================
+[ 3 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => poziom_sprawności_fizycznej : [niska]
+=================================================================
+[ 3 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => długość_snu_nocnego : [7-8 h]
+=================================================================
+[ 3 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => kategoria_sportu1 : [sporty letnie,  sporty zimowe]
+=================================================================
+[ 3 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [23] , płeć : [mężczyzna] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu,  sporty halowe]
+=================================================================
+[ 3 | 39 ]	płeć : [kobieta] , wiek : [24] , stan_zdrowia : [bardzo dobry] ,  => poziom_zadowolenia_z_zycia : [wysoki]
+=================================================================
+[ 3 | 78 ]	wiek : [23] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu3 : [ sporty zespołowe  , sporty indywidualnie  ]
+=================================================================
+[ 3 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => kategoria_sportu1 : [sporty letnie,  sporty zimowe]
+=================================================================
+[ 3 | 78 ]	wiek : [23] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => wydatki_miesieczne_na_sport : [5 – 20 %]
+=================================================================
+[ 3 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => poziom_zadowolenia_z_zycia : [przeciętny]
+=================================================================
+[ 3 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => długość_snu_nocnego : [5-6 h]
+=================================================================
+[ 3 | 78 ]	wiek : [23] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu1 : [sporty letnie,  sporty całoroczne]
+=================================================================
+[ 3 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => poziom_zadowolenia_z_zycia : [wysoki]
+=================================================================
+[ 3 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [21] , płeć : [mężczyzna] ,  => ocena_nauki_i_pracy : [dobre]
+=================================================================
+[ 3 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => typ_sprzetu : [niemarkowy]
+=================================================================
+[ 3 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => typ_sprzetu : [ wysokiej klasy, markowy]
+=================================================================
+[ 3 | 78 ]	wiek : [23] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu1 : [sporty całoroczne]
+=================================================================
+[ 3 | 104 ]	wiek : [21] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => ocena_nauki_i_pracy : [dobre]
+=================================================================
+[ 3 | 52 ]	płeć : [kobieta] , wiek : [22] , stan_zdrowia : [bardzo dobry] ,  => wydatki_miesieczne_na_sport : [poniżej 5%]
+=================================================================
+[ 3 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => motywacja_do_uprawiania_sportu : [troska o wygląd,  przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 3 | 91 ]	stan_zdrowia : [dobry] , wiek : [23] , płeć : [mężczyzna] ,  => motywacja_do_uprawiania_sportu : [ troska o wygląd, troska o zdrowie,  przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 3 | 104 ]	wiek : [21] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => sposób_spedzania_wakacji : [ uprawianie sportu,  spotkania towarzyskie, turystyka piesza]
+=================================================================
+[ 3 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [23] , płeć : [mężczyzna] ,  => typ_sprzetu : [ średniej klasy, markowy]
+=================================================================
+[ 3 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => kategoria_sportu1 : [sporty letnie,  sporty całoroczne]
+=================================================================
+[ 3 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => czy_palisz_papierosy : [sporadycznie]
+=================================================================
+[ 3 | 39 ]	płeć : [kobieta] , wiek : [24] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu]
+=================================================================
+[ 3 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => poziom_zadowolenia_z_zycia : [przeciętny]
+=================================================================
+[ 3 | 78 ]	wiek : [23] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => sposób_spedzania_wakacji : [ sen i lektura,  uprawianie sportu, turystyka piesza]
+=================================================================
+[ 3 | 78 ]	płeć : [kobieta] , wiek : [21] , stan_zdrowia : [bardzo dobry] ,  => długość_snu_nocnego : [7-8 h]
+=================================================================
+[ 2 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => sposób_spedzania_wakacji : [ sen i lektura,  uprawianie sportu,  spotkania towarzyskie, turystyka piesza]
+=================================================================
+[ 2 | 91 ]	stan_zdrowia : [dobry] , wiek : [23] , płeć : [mężczyzna] ,  => czy_palisz_papierosy : [sporadycznie]
+=================================================================
+[ 2 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => sposób_spedzania_wakacji : [turystyka poznawcza lub wypoczynkowa,  spotkania towarzyskie]
+=================================================================
+[ 2 | 65 ]	płeć : [kobieta] , wiek : [23] , stan_zdrowia : [bardzo dobry] ,  => wydatki_miesieczne_na_sport : [powyżej 20 %]
+=================================================================
+[ 2 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [21] , płeć : [mężczyzna] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu,  sporty halowe]
+=================================================================
+[ 2 | 104 ]	wiek : [21] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => sposób_spedzania_wakacji : [ uprawianie sportu,  turystyka poznawcza lub wypoczynkowa, turystyka piesza]
+=================================================================
+[ 2 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => czy_palisz_papierosy : [sporadycznie]
+=================================================================
+[ 2 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [23] , płeć : [mężczyzna] ,  => sposób_spedzania_wakacji : [turystyka poznawcza lub wypoczynkowa,  spotkania towarzyskie]
+=================================================================
+[ 2 | 39 ]	płeć : [kobieta] , wiek : [24] , stan_zdrowia : [bardzo dobry] ,  => wydatki_miesieczne_na_sport : [5 – 20 %]
+=================================================================
+[ 2 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => kategoria_sportu1 : [sporty letnie,  sporty zimowe]
+=================================================================
+[ 2 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => kategoria_sportu1 : [sporty letnie,  sporty całoroczne]
+=================================================================
+[ 2 | 26 ]	płeć : [kobieta] , wiek : [27] , stan_zdrowia : [dobry] ,  => kategoria_sportu3 : [sporty indywidualnie  ]
+=================================================================
+[ 2 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [23] , płeć : [mężczyzna] ,  => ocena_nauki_i_pracy : [bardzo dobre]
+=================================================================
+[ 2 | 65 ]	płeć : [kobieta] , wiek : [23] , stan_zdrowia : [bardzo dobry] ,  => typ_odzieży : [niemarkowa]
+=================================================================
+[ 2 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => kategoria_sportu1 : [sporty letnie,  sporty zimowe,  sporty całoroczne]
+=================================================================
+[ 2 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => kategoria_sportu1 : [ sporty całoroczne, sporty zimowe]
+=================================================================
+[ 2 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => wydatki_miesieczne_na_sport : [powyżej 20 %]
+=================================================================
+[ 2 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => kategoria_sportu3 : [ sporty zespołowe  , sporty indywidualnie  ,  sporty partnerskie  ]
+=================================================================
+[ 2 | 39 ]	płeć : [kobieta] , wiek : [24] , stan_zdrowia : [bardzo dobry] ,  => sposób_spedzania_wakacji : [ uprawianie sportu,  turystyka poznawcza lub wypoczynkowa, turystyka piesza]
+=================================================================
+[ 2 | 26 ]	stan_zdrowia : [dobry] , wiek : [20] , płeć : [mężczyzna] ,  => poziom_sprawności_fizycznej : [średnia]
+=================================================================
+[ 2 | 65 ]	płeć : [kobieta] , wiek : [23] , stan_zdrowia : [bardzo dobry] ,  => motywacja_do_uprawiania_sportu : [przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 2 | 78 ]	płeć : [kobieta] , wiek : [21] , stan_zdrowia : [bardzo dobry] ,  => ocena_nauki_i_pracy : [bardzo dobre]
+=================================================================
+[ 2 | 91 ]	stan_zdrowia : [dobry] , wiek : [23] , płeć : [mężczyzna] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu,  sporty halowe]
+=================================================================
+[ 2 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => czy_palisz_papierosy : [sporadycznie]
+=================================================================
+[ 2 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => typ_odzieży : [niemarkowa]
+=================================================================
+[ 2 | 104 ]	wiek : [21] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu1 : [sporty całoroczne]
+=================================================================
+[ 2 | 78 ]	płeć : [kobieta] , wiek : [21] , stan_zdrowia : [bardzo dobry] ,  => motywacja_do_uprawiania_sportu : [troska o zdrowie,  przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 2 | 65 ]	płeć : [kobieta] , wiek : [23] , stan_zdrowia : [bardzo dobry] ,  => ocena_nauki_i_pracy : [dobre]
+=================================================================
+[ 2 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [21] , płeć : [mężczyzna] ,  => typ_odzieży : [markowa,  średniej klasy]
+=================================================================
+[ 2 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [23] , płeć : [mężczyzna] ,  => długość_snu_nocnego : [7-8 h]
+=================================================================
+[ 2 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => sposób_spedzania_wakacji : [ sen i lektura,  uprawianie sportu,  spotkania towarzyskie,  turystyka poznawcza lub wypoczynkowa, turystyka piesza]
+=================================================================
+[ 2 | 91 ]	stan_zdrowia : [dobry] , wiek : [23] , płeć : [mężczyzna] ,  => typ_sprzetu : [ średniej klasy,  niemarkowy, markowy]
+=================================================================
+[ 2 | 65 ]	płeć : [kobieta] , wiek : [23] , stan_zdrowia : [bardzo dobry] ,  => typ_sprzetu : [ średniej klasy, markowy]
+=================================================================
+[ 2 | 65 ]	płeć : [kobieta] , wiek : [23] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu1 : [sporty letnie,  sporty zimowe]
+=================================================================
+[ 2 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => sposób_spedzania_wakacji : [ sen i lektura, turystyka poznawcza lub wypoczynkowa,  spotkania towarzyskie]
+=================================================================
+[ 2 | 65 ]	płeć : [kobieta] , wiek : [23] , stan_zdrowia : [bardzo dobry] ,  => motywacja_do_uprawiania_sportu : [ troska o wygląd, troska o zdrowie,  przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 2 | 65 ]	płeć : [kobieta] , wiek : [23] , stan_zdrowia : [bardzo dobry] ,  => długość_snu_nocnego : [5-6 h]
+=================================================================
+[ 2 | 78 ]	płeć : [kobieta] , wiek : [21] , stan_zdrowia : [bardzo dobry] ,  => motywacja_do_uprawiania_sportu : [ troska o wygląd, troska o zdrowie]
+=================================================================
+[ 2 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [21] , płeć : [mężczyzna] ,  => motywacja_do_uprawiania_sportu : [ troska o wygląd, troska o zdrowie,  przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 2 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => typ_sprzetu : [ wysokiej klasy, markowy]
+=================================================================
+[ 2 | 26 ]	stan_zdrowia : [dobry] , wiek : [24] , płeć : [mężczyzna] ,  => kategoria_sportu1 : [sporty całoroczne]
+=================================================================
+[ 2 | 78 ]	wiek : [23] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => poziom_zadowolenia_z_zycia : [przeciętny]
+=================================================================
+[ 2 | 26 ]	płeć : [kobieta] , wiek : [27] , stan_zdrowia : [dobry] ,  => czy_palisz_papierosy : [wcale]
+=================================================================
+[ 2 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => kategoria_sportu3 : [ sporty zespołowe  , sporty indywidualnie  ]
+=================================================================
+[ 2 | 52 ]	płeć : [kobieta] , wiek : [22] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu,  sporty halowe]
+=================================================================
+[ 2 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [21] , płeć : [mężczyzna] ,  => poziom_zadowolenia_z_zycia : [wysoki]
+=================================================================
+[ 2 | 26 ]	stan_zdrowia : [dobry] , wiek : [24] , płeć : [mężczyzna] ,  => czy_palisz_papierosy : [wcale]
+=================================================================
+[ 2 | 26 ]	płeć : [kobieta] , wiek : [27] , stan_zdrowia : [dobry] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu]
+=================================================================
+[ 2 | 26 ]	stan_zdrowia : [dobry] , wiek : [20] , płeć : [mężczyzna] ,  => typ_odzieży : [niemarkowa]
+=================================================================
+[ 2 | 91 ]	stan_zdrowia : [dobry] , wiek : [23] , płeć : [mężczyzna] ,  => sposób_spedzania_wakacji : [ sen i lektura,  uprawianie sportu, turystyka piesza]
+=================================================================
+[ 2 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => sposób_spedzania_wakacji : [ uprawianie sportu,  turystyka poznawcza lub wypoczynkowa, turystyka piesza]
+=================================================================
+[ 2 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [21] , płeć : [mężczyzna] ,  => typ_sprzetu : [ średniej klasy, markowy]
+=================================================================
+[ 2 | 78 ]	płeć : [kobieta] , wiek : [21] , stan_zdrowia : [bardzo dobry] ,  => poziom_zadowolenia_z_zycia : [przeciętny]
+=================================================================
+[ 2 | 78 ]	płeć : [kobieta] , wiek : [21] , stan_zdrowia : [bardzo dobry] ,  => sposób_spedzania_wakacji : [ uprawianie sportu,  spotkania towarzyskie, turystyka piesza]
+=================================================================
+[ 2 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => typ_sprzetu : [niemarkowy]
+=================================================================
+[ 2 | 78 ]	płeć : [kobieta] , wiek : [21] , stan_zdrowia : [bardzo dobry] ,  => motywacja_do_uprawiania_sportu : [troska o wygląd,  przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 2 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => wydatki_miesieczne_na_sport : [powyżej 20 %]
+=================================================================
+[ 2 | 78 ]	płeć : [kobieta] , wiek : [21] , stan_zdrowia : [bardzo dobry] ,  => wydatki_miesieczne_na_sport : [5 – 20 %]
+=================================================================
+[ 2 | 78 ]	wiek : [23] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => poziom_sprawności_fizycznej : [średnia]
+=================================================================
+[ 2 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => czy_palisz_papierosy : [regularnie]
+=================================================================
+[ 2 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => kategoria_sportu3 : [sporty indywidualnie  ,  sporty partnerskie  ]
+=================================================================
+[ 2 | 104 ]	wiek : [21] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => motywacja_do_uprawiania_sportu : [przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 2 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => poziom_sprawności_fizycznej : [wysoka]
+=================================================================
+[ 2 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => typ_sprzetu : [niemarkowy]
+=================================================================
+[ 2 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [21] , płeć : [mężczyzna] ,  => motywacja_do_uprawiania_sportu : [troska o wygląd]
+=================================================================
+[ 2 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => długość_snu_nocnego : [5-6 h]
+=================================================================
+[ 2 | 26 ]	stan_zdrowia : [dobry] , wiek : [24] , płeć : [mężczyzna] ,  => kategoria_sportu3 : [sporty indywidualnie  ]
+=================================================================
+[ 2 | 104 ]	wiek : [21] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu3 : [sporty indywidualnie  ,  sporty partnerskie  ]
+=================================================================
+[ 2 | 39 ]	płeć : [kobieta] , wiek : [24] , stan_zdrowia : [bardzo dobry] ,  => typ_sprzetu : [ średniej klasy, markowy]
+=================================================================
+[ 2 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => czy_palisz_papierosy : [regularnie]
+=================================================================
+[ 2 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => sposób_spedzania_wakacji : [ sen i lektura,  uprawianie sportu, turystyka piesza]
+=================================================================
+[ 2 | 39 ]	płeć : [kobieta] , wiek : [24] , stan_zdrowia : [bardzo dobry] ,  => ocena_nauki_i_pracy : [bardzo dobre]
+=================================================================
+[ 2 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => motywacja_do_uprawiania_sportu : [ troska o wygląd, troska o zdrowie,  przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 2 | 39 ]	płeć : [kobieta] , wiek : [24] , stan_zdrowia : [bardzo dobry] ,  => poziom_sprawności_fizycznej : [wysoka]
+=================================================================
+[ 2 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => typ_odzieży : [markowa,  wysokiej klasy]
+=================================================================
+[ 2 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => sposób_spedzania_wakacji : [ sen i lektura, turystyka poznawcza lub wypoczynkowa,  spotkania towarzyskie]
+=================================================================
+[ 2 | 78 ]	wiek : [23] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => sposób_spedzania_wakacji : [ uprawianie sportu,  turystyka poznawcza lub wypoczynkowa, turystyka piesza]
+=================================================================
+[ 2 | 78 ]	płeć : [kobieta] , wiek : [21] , stan_zdrowia : [bardzo dobry] ,  => sposób_spedzania_wakacji : [sen i lektura]
+=================================================================
+[ 2 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [21] , płeć : [mężczyzna] ,  => typ_odzieży : [niemarkowa]
+=================================================================
+[ 2 | 52 ]	płeć : [kobieta] , wiek : [22] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu1 : [sporty całoroczne]
+=================================================================
+[ 2 | 52 ]	płeć : [kobieta] , wiek : [22] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu1 : [sporty letnie]
+=================================================================
+[ 2 | 91 ]	stan_zdrowia : [dobry] , wiek : [23] , płeć : [mężczyzna] ,  => długość_snu_nocnego : [5-6 h]
+=================================================================
+[ 2 | 52 ]	płeć : [kobieta] , wiek : [22] , stan_zdrowia : [bardzo dobry] ,  => typ_sprzetu : [ wysokiej klasy, markowy]
+=================================================================
+[ 2 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [21] , płeć : [mężczyzna] ,  => kategoria_sportu3 : [ sporty zespołowe  , sporty indywidualnie  ]
+=================================================================
+[ 2 | 39 ]	płeć : [kobieta] , wiek : [24] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu3 : [sporty indywidualnie  ,  sporty partnerskie  ]
+=================================================================
+[ 2 | 91 ]	stan_zdrowia : [dobry] , wiek : [23] , płeć : [mężczyzna] ,  => sposób_spedzania_wakacji : [ sen i lektura, turystyka poznawcza lub wypoczynkowa]
+=================================================================
+[ 2 | 91 ]	stan_zdrowia : [dobry] , wiek : [23] , płeć : [mężczyzna] ,  => kategoria_sportu1 : [sporty całoroczne]
+=================================================================
+[ 2 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => motywacja_do_uprawiania_sportu : [przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 2 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => typ_odzieży : [niemarkowa]
+=================================================================
+[ 2 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [21] , płeć : [mężczyzna] ,  => czy_palisz_papierosy : [regularnie]
+=================================================================
+[ 2 | 91 ]	stan_zdrowia : [dobry] , wiek : [23] , płeć : [mężczyzna] ,  => wydatki_miesieczne_na_sport : [5 – 20 %]
+=================================================================
+[ 2 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => ocena_nauki_i_pracy : [bardzo dobre]
+=================================================================
+[ 2 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [23] , płeć : [mężczyzna] ,  => kategoria_sportu1 : [sporty letnie,  sporty całoroczne]
+=================================================================
+[ 2 | 65 ]	płeć : [kobieta] , wiek : [23] , stan_zdrowia : [bardzo dobry] ,  => ocena_nauki_i_pracy : [bardzo dobre]
+=================================================================
+[ 2 | 104 ]	wiek : [21] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => wydatki_miesieczne_na_sport : [poniżej 5%]
+=================================================================
+[ 2 | 26 ]	płeć : [kobieta] , wiek : [27] , stan_zdrowia : [dobry] ,  => ocena_nauki_i_pracy : [bardzo dobre]
+=================================================================
+[ 2 | 65 ]	płeć : [kobieta] , wiek : [23] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu3 : [sporty indywidualnie  ,  sporty partnerskie  ]
+=================================================================
+[ 2 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => sposób_spedzania_wakacji : [ sen i lektura, turystyka poznawcza lub wypoczynkowa]
+=================================================================
+[ 2 | 26 ]	stan_zdrowia : [dobry] , wiek : [24] , płeć : [mężczyzna] ,  => motywacja_do_uprawiania_sportu : [przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 2 | 104 ]	wiek : [21] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => długość_snu_nocnego : [poniżej 5 h]
+=================================================================
+[ 2 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [23] , płeć : [mężczyzna] ,  => sposób_spedzania_wakacji : [ uprawianie sportu, turystyka piesza]
+=================================================================
+[ 2 | 65 ]	płeć : [kobieta] , wiek : [23] , stan_zdrowia : [bardzo dobry] ,  => poziom_zadowolenia_z_zycia : [przeciętny]
+=================================================================
+[ 2 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => ocena_nauki_i_pracy : [przeciętne]
+=================================================================
+[ 2 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [23] , płeć : [mężczyzna] ,  => długość_snu_nocnego : [5-6 h]
+=================================================================
+[ 2 | 26 ]	płeć : [kobieta] , wiek : [27] , stan_zdrowia : [dobry] ,  => typ_odzieży : [niemarkowa]
+=================================================================
+[ 2 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [21] , płeć : [mężczyzna] ,  => typ_sprzetu : [niemarkowy]
+=================================================================
+[ 2 | 26 ]	stan_zdrowia : [dobry] , wiek : [24] , płeć : [mężczyzna] ,  => poziom_zadowolenia_z_zycia : [wysoki]
+=================================================================
+[ 2 | 26 ]	stan_zdrowia : [dobry] , wiek : [24] , płeć : [mężczyzna] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu]
+=================================================================
+[ 2 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => kategoria_sportu1 : [sporty całoroczne]
+=================================================================
+[ 2 | 39 ]	płeć : [kobieta] , wiek : [24] , stan_zdrowia : [bardzo dobry] ,  => czy_palisz_papierosy : [wcale]
+=================================================================
+[ 2 | 39 ]	płeć : [kobieta] , wiek : [24] , stan_zdrowia : [bardzo dobry] ,  => motywacja_do_uprawiania_sportu : [ troska o wygląd, troska o zdrowie,  przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 2 | 78 ]	płeć : [kobieta] , wiek : [21] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu2 : [sporty halowe]
+=================================================================
+[ 2 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => kategoria_sportu3 : [ sporty zespołowe  , sporty indywidualnie  ]
+=================================================================
+[ 2 | 78 ]	wiek : [23] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => sposób_spedzania_wakacji : [ uprawianie sportu,  spotkania towarzyskie, turystyka piesza]
+=================================================================
+[ 2 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [21] , płeć : [mężczyzna] ,  => poziom_zadowolenia_z_zycia : [przeciętny]
+=================================================================
+[ 2 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => typ_odzieży : [ niemarkowa, markowa,  średniej klasy]
+=================================================================
+[ 2 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => kategoria_sportu2 : [sporty halowe]
+=================================================================
+[ 2 | 78 ]	płeć : [kobieta] , wiek : [21] , stan_zdrowia : [bardzo dobry] ,  => typ_sprzetu : [ średniej klasy, markowy]
+=================================================================
+[ 2 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => kategoria_sportu1 : [sporty letnie,  sporty zimowe,  sporty całoroczne]
+=================================================================
+[ 2 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu,  sporty halowe]
+=================================================================
+[ 2 | 78 ]	płeć : [kobieta] , wiek : [21] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu,  sporty halowe]
+=================================================================
+[ 2 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [23] , płeć : [mężczyzna] ,  => kategoria_sportu1 : [sporty całoroczne]
+=================================================================
+[ 2 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [23] , płeć : [mężczyzna] ,  => poziom_zadowolenia_z_zycia : [niski]
+=================================================================
+[ 2 | 91 ]	stan_zdrowia : [dobry] , wiek : [23] , płeć : [mężczyzna] ,  => sposób_spedzania_wakacji : [ uprawianie sportu,  turystyka poznawcza lub wypoczynkowa, turystyka piesza]
+=================================================================
+[ 2 | 26 ]	stan_zdrowia : [dobry] , wiek : [24] , płeć : [mężczyzna] ,  => wydatki_miesieczne_na_sport : [5 – 20 %]
+=================================================================
+[ 2 | 39 ]	płeć : [kobieta] , wiek : [24] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu,  sporty halowe]
+=================================================================
+[ 2 | 91 ]	stan_zdrowia : [dobry] , wiek : [23] , płeć : [mężczyzna] ,  => typ_odzieży : [ niemarkowa, markowa,  średniej klasy]
+=================================================================
+[ 2 | 78 ]	wiek : [23] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => wydatki_miesieczne_na_sport : [poniżej 5%]
+=================================================================
+[ 1 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [21] , płeć : [mężczyzna] ,  => ocena_nauki_i_pracy : [bardzo dobre]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [22] ,  => poziom_sprawności_fizycznej : [średnia]
+=================================================================
+[ 1 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [21] , płeć : [mężczyzna] ,  => czy_palisz_papierosy : [sporadycznie]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [przeciętny] , wiek : [22] , płeć : [mężczyzna] ,  => sposób_spedzania_wakacji : [ uprawianie sportu,  turystyka poznawcza lub wypoczynkowa, turystyka piesza]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [bardzo dobry,  dobry] , wiek : [20] , płeć : [mężczyzna] ,  => wydatki_miesieczne_na_sport : [poniżej 5%,  5 – 20 %]
+=================================================================
+[ 1 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => sposób_spedzania_wakacji : [ sen i lektura,  uprawianie sportu,  spotkania towarzyskie, turystyka piesza]
+=================================================================
+[ 1 | 91 ]	stan_zdrowia : [dobry] , wiek : [23] , płeć : [mężczyzna] ,  => kategoria_sportu2 : [sporty halowe]
+=================================================================
+[ 1 | 26 ]	stan_zdrowia : [dobry] , wiek : [20] , płeć : [mężczyzna] ,  => długość_snu_nocnego : [7-8 h]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [zły] , wiek : [23] ,  => poziom_zadowolenia_z_zycia : [wysoki]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [przeciętny] , wiek : [24] , płeć : [mężczyzna] ,  => typ_sprzetu : [ średniej klasy, markowy]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [25] , stan_zdrowia : [bardzo dobry] ,  => czy_palisz_papierosy : [wcale]
+=================================================================
+[ 1 | 39 ]	płeć : [kobieta] , wiek : [24] , stan_zdrowia : [bardzo dobry] ,  => długość_snu_nocnego : [7-8 h]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [20] , stan_zdrowia : [bardzo dobry] ,  => motywacja_do_uprawiania_sportu : [ troska o wygląd, troska o zdrowie,  presja rodziny lub kolegów,  przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 1 | 104 ]	wiek : [21] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => sposób_spedzania_wakacji : [ sen i lektura,  uprawianie sportu,  spotkania towarzyskie,  turystyka poznawcza lub wypoczynkowa, turystyka piesza]
+=================================================================
+[ 1 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => sposób_spedzania_wakacji : [sen i lektura]
+=================================================================
+[ 1 | 26 ]	stan_zdrowia : [dobry] , wiek : [24] , płeć : [mężczyzna] ,  => długość_snu_nocnego : [poniżej 5 h,  5-6 h]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [22] ,  => motywacja_do_uprawiania_sportu : [ troska o wygląd, troska o zdrowie,  przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [dobry] , wiek : [22] , płeć : [mężczyzna] ,  => kategoria_sportu1 : [sporty całoroczne]
+=================================================================
+[ 1 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => typ_sprzetu : [ wysokiej klasy,  średniej klasy,  markowy, markowy]
+=================================================================
+[ 1 | 39 ]	płeć : [kobieta] , wiek : [24] , stan_zdrowia : [bardzo dobry] ,  => wydatki_miesieczne_na_sport : [poniżej 5%]
+=================================================================
+[ 1 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => poziom_sprawności_fizycznej : [wysoka]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [przeciętny] , wiek : [24] , płeć : [mężczyzna] ,  => długość_snu_nocnego : [5-6 h]
+=================================================================
+[ 1 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [23] , płeć : [mężczyzna] ,  => motywacja_do_uprawiania_sportu : [ troska o wygląd, troska o zdrowie,  przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 1 | 26 ]	płeć : [kobieta] , wiek : [27] , stan_zdrowia : [dobry] ,  => typ_sprzetu : [niemarkowy]
+=================================================================
+[ 1 | 52 ]	płeć : [kobieta] , wiek : [22] , stan_zdrowia : [bardzo dobry] ,  => wydatki_miesieczne_na_sport : [5 – 20 %]
+=================================================================
+[ 1 | 39 ]	płeć : [kobieta] , wiek : [24] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu3 : [ sporty zespołowe  , sporty indywidualnie  ,  sporty partnerskie  ]
+=================================================================
+[ 1 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => typ_odzieży : [markowa,  średniej klasy]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [22] ,  => wydatki_miesieczne_na_sport : [poniżej 5%]
+=================================================================
+[ 1 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => wydatki_miesieczne_na_sport : [powyżej 20 %]
+=================================================================
+[ 1 | 26 ]	stan_zdrowia : [dobry] , wiek : [20] , płeć : [mężczyzna] ,  => typ_sprzetu : [niemarkowy]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [24] ,  => wydatki_miesieczne_na_sport : [poniżej 5%]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [19] , stan_zdrowia : [bardzo dobry] ,  => wydatki_miesieczne_na_sport : [5 – 20 %]
+=================================================================
+[ 1 | 104 ]	wiek : [21] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => sposób_spedzania_wakacji : [spotkania towarzyskie]
+=================================================================
+[ 1 | 104 ]	wiek : [21] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu3 : [ sporty zespołowe  , sporty indywidualnie  ,  sporty partnerskie  ]
+=================================================================
+[ 1 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [21] , płeć : [mężczyzna] ,  => sposób_spedzania_wakacji : [ sen i lektura, spotkania towarzyskie]
+=================================================================
+[ 1 | 39 ]	płeć : [kobieta] , wiek : [24] , stan_zdrowia : [bardzo dobry] ,  => długość_snu_nocnego : [powyżej 8 h]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [23] ,  => kategoria_sportu3 : [sporty indywidualnie  ]
+=================================================================
+[ 1 | 91 ]	stan_zdrowia : [dobry] , wiek : [23] , płeć : [mężczyzna] ,  => poziom_zadowolenia_z_zycia : [ niski, przeciętny]
+=================================================================
+[ 1 | 78 ]	płeć : [kobieta] , wiek : [21] , stan_zdrowia : [bardzo dobry] ,  => czy_palisz_papierosy : [regularnie]
+=================================================================
+[ 1 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => poziom_sprawności_fizycznej : [niska]
+=================================================================
+[ 1 | 26 ]	płeć : [kobieta] , wiek : [27] , stan_zdrowia : [dobry] ,  => kategoria_sportu3 : [sporty indywidualnie  ,  sporty partnerskie  ]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [przeciętny] , wiek : [24] , płeć : [mężczyzna] ,  => wydatki_miesieczne_na_sport : [poniżej 5%]
+=================================================================
+[ 1 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => sposób_spedzania_wakacji : [ sen i lektura, turystyka poznawcza lub wypoczynkowa,  spotkania towarzyskie]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [przeciętny] , wiek : [22] , płeć : [mężczyzna] ,  => długość_snu_nocnego : [7-8 h]
+=================================================================
+[ 1 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => długość_snu_nocnego : [7-8 h]
+=================================================================
+[ 1 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => typ_odzieży : [ niemarkowa, markowa,  średniej klasy]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [25] , stan_zdrowia : [dobry] ,  => wydatki_miesieczne_na_sport : [poniżej 5%]
+=================================================================
+[ 1 | 39 ]	płeć : [kobieta] , wiek : [24] , stan_zdrowia : [bardzo dobry] ,  => czy_palisz_papierosy : [sporadycznie]
+=================================================================
+[ 1 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [21] , płeć : [mężczyzna] ,  => poziom_sprawności_fizycznej : [niska]
+=================================================================
+[ 1 | 26 ]	płeć : [kobieta] , wiek : [27] , stan_zdrowia : [dobry] ,  => motywacja_do_uprawiania_sportu : [troska o wygląd,  presja rodziny lub kolegów]
+=================================================================
+[ 1 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [23] , płeć : [mężczyzna] ,  => typ_sprzetu : [ średniej klasy,  niemarkowy, markowy]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [przeciętny] , wiek : [24] , płeć : [mężczyzna] ,  => poziom_sprawności_fizycznej : [średnia]
+=================================================================
+[ 1 | 26 ]	płeć : [kobieta] , wiek : [27] , stan_zdrowia : [dobry] ,  => wydatki_miesieczne_na_sport : [5 – 20 %]
+=================================================================
+[ 1 | 26 ]	płeć : [kobieta] , wiek : [27] , stan_zdrowia : [dobry] ,  => kategoria_sportu1 : [sporty całoroczne]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [25] , stan_zdrowia : [bardzo dobry] ,  => ocena_nauki_i_pracy : [dobre]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [bardzo dobry,  dobry] , wiek : [20] , płeć : [mężczyzna] ,  => poziom_zadowolenia_z_zycia : [wysoki]
+=================================================================
+[ 1 | 26 ]	stan_zdrowia : [dobry] , wiek : [24] , płeć : [mężczyzna] ,  => ocena_nauki_i_pracy : [bardzo dobre]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [bardzo dobry,  dobry] , wiek : [20] , płeć : [mężczyzna] ,  => poziom_sprawności_fizycznej : [średnia]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [22] ,  => typ_sprzetu : [niemarkowy]
+=================================================================
+[ 1 | 26 ]	stan_zdrowia : [dobry] , wiek : [20] , płeć : [mężczyzna] ,  => czy_palisz_papierosy : [regularnie]
+=================================================================
+[ 1 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [21] , płeć : [mężczyzna] ,  => długość_snu_nocnego : [5-6 h]
+=================================================================
+[ 1 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => czy_palisz_papierosy : [regularnie]
+=================================================================
+[ 1 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => poziom_sprawności_fizycznej : [wysoka]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [25] , stan_zdrowia : [dobry] ,  => ocena_nauki_i_pracy : [dobre]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [23] ,  => długość_snu_nocnego : [7-8 h]
+=================================================================
+[ 1 | 13 ]	wiek : [25] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => wydatki_miesieczne_na_sport : [poniżej 5%]
+=================================================================
+[ 1 | 91 ]	stan_zdrowia : [dobry] , wiek : [23] , płeć : [mężczyzna] ,  => długość_snu_nocnego : [powyżej 8 h]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [22] ,  => czy_palisz_papierosy : [wcale]
+=================================================================
+[ 1 | 78 ]	wiek : [23] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => typ_sprzetu : [ wysokiej klasy,  średniej klasy,  markowy, markowy]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [20] , stan_zdrowia : [bardzo dobry] ,  => ocena_nauki_i_pracy : [dobre]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [22] ,  => ocena_nauki_i_pracy : [słabe]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [23] ,  => typ_sprzetu : [ średniej klasy, markowy]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [25] , stan_zdrowia : [dobry] ,  => typ_sprzetu : [niemarkowy]
+=================================================================
+[ 1 | 26 ]	stan_zdrowia : [dobry] , wiek : [20] , płeć : [mężczyzna] ,  => długość_snu_nocnego : [5-6 h]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [przeciętny] , wiek : [24] , płeć : [mężczyzna] ,  => motywacja_do_uprawiania_sportu : [przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 1 | 52 ]	płeć : [kobieta] , wiek : [22] , stan_zdrowia : [bardzo dobry] ,  => typ_sprzetu : [niemarkowy]
+=================================================================
+[ 1 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => sposób_spedzania_wakacji : [sen i lektura]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [25] , stan_zdrowia : [dobry] ,  => czy_palisz_papierosy : [sporadycznie]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [przeciętny] , wiek : [24] , płeć : [mężczyzna] ,  => kategoria_sportu1 : [sporty całoroczne]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [23] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu,  sporty halowe]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [25] , stan_zdrowia : [dobry] ,  => kategoria_sportu1 : [sporty letnie]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [zły] , wiek : [23] ,  => motywacja_do_uprawiania_sportu : [troska o zdrowie]
+=================================================================
+[ 1 | 26 ]	płeć : [kobieta] , wiek : [27] , stan_zdrowia : [dobry] ,  => typ_sprzetu : [ wysokiej klasy, markowy]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [25] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu1 : [sporty całoroczne]
+=================================================================
+[ 1 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => kategoria_sportu1 : [sporty letnie,  sporty zimowe,  sporty całoroczne]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [bardzo dobry,  dobry] , wiek : [23] ,  => długość_snu_nocnego : [7-8 h]
+=================================================================
+[ 1 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => poziom_zadowolenia_z_zycia : [niski]
+=================================================================
+[ 1 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => sposób_spedzania_wakacji : [ sen i lektura, spotkania towarzyskie]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [24] ,  => ocena_nauki_i_pracy : [dobre]
+=================================================================
+[ 1 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => kategoria_sportu3 : [sporty zespołowe  ]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [zły] , wiek : [23] ,  => czy_palisz_papierosy : [wcale]
+=================================================================
+[ 1 | 26 ]	stan_zdrowia : [dobry] , wiek : [20] , płeć : [mężczyzna] ,  => motywacja_do_uprawiania_sportu : [troska o zdrowie,  przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 1 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => sposób_spedzania_wakacji : [spotkania towarzyskie]
+=================================================================
+[ 1 | 65 ]	płeć : [kobieta] , wiek : [23] , stan_zdrowia : [bardzo dobry] ,  => czy_palisz_papierosy : [sporadycznie]
+=================================================================
+[ 1 | 39 ]	płeć : [kobieta] , wiek : [24] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu1 : [sporty letnie,  sporty zimowe]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [przeciętny] , wiek : [22] , płeć : [mężczyzna] ,  => typ_odzieży : [niemarkowa]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [przeciętny] , wiek : [24] , płeć : [mężczyzna] ,  => czy_palisz_papierosy : [regularnie]
+=================================================================
+[ 1 | 13 ]	wiek : [25] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => poziom_zadowolenia_z_zycia : [wysoki]
+=================================================================
+[ 1 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => typ_sprzetu : [ wysokiej klasy, markowy]
+=================================================================
+[ 1 | 78 ]	płeć : [kobieta] , wiek : [21] , stan_zdrowia : [bardzo dobry] ,  => sposób_spedzania_wakacji : [ sen i lektura,  uprawianie sportu,  spotkania towarzyskie, turystyka piesza]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [zły] , wiek : [23] ,  => kategoria_sportu1 : [sporty całoroczne]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [23] ,  => poziom_sprawności_fizycznej : [średnia]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [19] , stan_zdrowia : [bardzo dobry] ,  => poziom_sprawności_fizycznej : [wysoka]
+=================================================================
+[ 1 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => poziom_sprawności_fizycznej : [niska]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [bardzo dobry,  dobry] , wiek : [20] , płeć : [mężczyzna] ,  => długość_snu_nocnego : [7-8 h]
+=================================================================
+[ 1 | 78 ]	płeć : [kobieta] , wiek : [21] , stan_zdrowia : [bardzo dobry] ,  => sposób_spedzania_wakacji : [ sen i lektura, turystyka poznawcza lub wypoczynkowa,  spotkania towarzyskie]
+=================================================================
+[ 1 | 104 ]	wiek : [21] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => motywacja_do_uprawiania_sportu : [troska o wygląd,  przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 1 | 91 ]	stan_zdrowia : [dobry] , wiek : [23] , płeć : [mężczyzna] ,  => typ_odzieży : [markowa,  wysokiej klasy]
+=================================================================
+[ 1 | 26 ]	płeć : [kobieta] , wiek : [27] , stan_zdrowia : [dobry] ,  => poziom_sprawności_fizycznej : [średnia]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [24] ,  => czy_palisz_papierosy : [wcale]
+=================================================================
+[ 1 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => poziom_sprawności_fizycznej : [średnia,  niska]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [przeciętny] , wiek : [22] , płeć : [mężczyzna] ,  => poziom_zadowolenia_z_zycia : [przeciętny]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [bardzo dobry,  dobry] , wiek : [20] , płeć : [mężczyzna] ,  => typ_odzieży : [markowa,  średniej klasy]
+=================================================================
+[ 1 | 26 ]	stan_zdrowia : [dobry] , wiek : [20] , płeć : [mężczyzna] ,  => sposób_spedzania_wakacji : [ sen i lektura,  uprawianie sportu,  spotkania towarzyskie,  turystyka poznawcza lub wypoczynkowa, turystyka piesza]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [25] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu3 : [sporty indywidualnie  ]
+=================================================================
+[ 1 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [21] , płeć : [mężczyzna] ,  => motywacja_do_uprawiania_sportu : [ troska o wygląd, troska o zdrowie,  presja rodziny lub kolegów,  przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 1 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [23] , płeć : [mężczyzna] ,  => ocena_nauki_i_pracy : [ przeciętne, dobre]
+=================================================================
+[ 1 | 104 ]	wiek : [21] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => typ_sprzetu : [niemarkowy]
+=================================================================
+[ 1 | 26 ]	płeć : [kobieta] , wiek : [27] , stan_zdrowia : [dobry] ,  => kategoria_sportu1 : [sporty letnie,  sporty całoroczne]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [20] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [20] , stan_zdrowia : [bardzo dobry] ,  => długość_snu_nocnego : [7-8 h]
+=================================================================
+[ 1 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => sposób_spedzania_wakacji : [ uprawianie sportu,  turystyka poznawcza lub wypoczynkowa, turystyka piesza]
+=================================================================
+[ 1 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => sposób_spedzania_wakacji : [spotkania towarzyskie]
+=================================================================
+[ 1 | 52 ]	płeć : [kobieta] , wiek : [22] , stan_zdrowia : [bardzo dobry] ,  => typ_odzieży : [markowa,  średniej klasy]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [25] , stan_zdrowia : [bardzo dobry] ,  => sposób_spedzania_wakacji : [turystyka poznawcza lub wypoczynkowa,  spotkania towarzyskie]
+=================================================================
+[ 1 | 104 ]	wiek : [21] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => typ_odzieży : [niemarkowa]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [22] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu]
+=================================================================
+[ 1 | 78 ]	płeć : [kobieta] , wiek : [21] , stan_zdrowia : [bardzo dobry] ,  => typ_odzieży : [niemarkowa]
+=================================================================
+[ 1 | 26 ]	stan_zdrowia : [dobry] , wiek : [24] , płeć : [mężczyzna] ,  => typ_sprzetu : [ średniej klasy, markowy]
+=================================================================
+[ 1 | 13 ]	wiek : [25] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => poziom_sprawności_fizycznej : [średnia]
+=================================================================
+[ 1 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => ocena_nauki_i_pracy : [przeciętne]
+=================================================================
+[ 1 | 39 ]	płeć : [kobieta] , wiek : [24] , stan_zdrowia : [bardzo dobry] ,  => typ_odzieży : [markowa,  średniej klasy]
+=================================================================
+[ 1 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => czy_palisz_papierosy : [regularnie]
+=================================================================
+[ 1 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => motywacja_do_uprawiania_sportu : [przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 1 | 26 ]	stan_zdrowia : [dobry] , wiek : [20] , płeć : [mężczyzna] ,  => wydatki_miesieczne_na_sport : [5 – 20 %]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [dobry] , wiek : [22] , płeć : [mężczyzna] ,  => czy_palisz_papierosy : [wcale]
+=================================================================
+[ 1 | 26 ]	płeć : [kobieta] , wiek : [27] , stan_zdrowia : [dobry] ,  => sposób_spedzania_wakacji : [turystyka poznawcza lub wypoczynkowa,  spotkania towarzyskie]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [przeciętny] , wiek : [24] , płeć : [mężczyzna] ,  => typ_odzieży : [markowa,  średniej klasy]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [przeciętny] , wiek : [22] , płeć : [mężczyzna] ,  => typ_sprzetu : [niemarkowy]
+=================================================================
+[ 1 | 26 ]	stan_zdrowia : [dobry] , wiek : [24] , płeć : [mężczyzna] ,  => ocena_nauki_i_pracy : [dobre]
+=================================================================
+[ 1 | 78 ]	wiek : [23] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => typ_odzieży : [markowa,  wysokiej klasy,  średniej klasy,  markowa]
+=================================================================
+[ 1 | 13 ]	wiek : [25] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => sposób_spedzania_wakacji : [ uprawianie sportu,  turystyka poznawcza lub wypoczynkowa, turystyka piesza]
+=================================================================
+[ 1 | 26 ]	stan_zdrowia : [dobry] , wiek : [24] , płeć : [mężczyzna] ,  => sposób_spedzania_wakacji : [ uprawianie sportu, turystyka piesza]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [22] ,  => typ_odzieży : [niemarkowa]
+=================================================================
+[ 1 | 26 ]	płeć : [kobieta] , wiek : [27] , stan_zdrowia : [dobry] ,  => motywacja_do_uprawiania_sportu : [przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [22] ,  => kategoria_sportu3 : [sporty indywidualnie  ]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [zły] , wiek : [23] ,  => długość_snu_nocnego : [ 7-8 h, 5-6 h]
+=================================================================
+[ 1 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => czy_palisz_papierosy : [sporadycznie]
+=================================================================
+[ 1 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [21] , płeć : [mężczyzna] ,  => kategoria_sportu1 : [sporty letnie,  sporty całoroczne]
+=================================================================
+[ 1 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => poziom_zadowolenia_z_zycia : [niski]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [22] ,  => kategoria_sportu1 : [sporty całoroczne]
+=================================================================
+[ 1 | 39 ]	płeć : [kobieta] , wiek : [24] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu1 : [ sporty całoroczne, sporty zimowe]
+=================================================================
+[ 1 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => kategoria_sportu2 : [sporty halowe]
+=================================================================
+[ 1 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => sposób_spedzania_wakacji : [ sen i lektura, spotkania towarzyskie]
+=================================================================
+[ 1 | 78 ]	wiek : [23] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => wydatki_miesieczne_na_sport : [powyżej 20 %]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [bardzo dobry,  dobry] , wiek : [23] ,  => typ_sprzetu : [niemarkowy]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [dobry] , wiek : [22] , płeć : [mężczyzna] ,  => poziom_sprawności_fizycznej : [średnia]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [23] ,  => wydatki_miesieczne_na_sport : [5 – 20 %]
+=================================================================
+[ 1 | 26 ]	stan_zdrowia : [dobry] , wiek : [20] , płeć : [mężczyzna] ,  => wydatki_miesieczne_na_sport : [poniżej 5%]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [20] , stan_zdrowia : [bardzo dobry] ,  => poziom_zadowolenia_z_zycia : [wysoki]
+=================================================================
+[ 1 | 65 ]	płeć : [kobieta] , wiek : [23] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu3 : [ sporty zespołowe  , sporty indywidualnie  ,  sporty partnerskie  ]
+=================================================================
+[ 1 | 13 ]	wiek : [25] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => czy_palisz_papierosy : [wcale]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [20] , stan_zdrowia : [bardzo dobry] ,  => typ_odzieży : [ niemarkowa, markowa,  wysokiej klasy]
+=================================================================
+[ 1 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => kategoria_sportu1 : [sporty całoroczne]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [24] ,  => długość_snu_nocnego : [7-8 h]
+=================================================================
+[ 1 | 26 ]	stan_zdrowia : [dobry] , wiek : [20] , płeć : [mężczyzna] ,  => kategoria_sportu2 : [sporty halowe]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [25] , stan_zdrowia : [dobry] ,  => typ_odzieży : [niemarkowa]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [bardzo dobry,  dobry] , wiek : [23] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu,  sporty halowe]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [dobry] , wiek : [22] , płeć : [mężczyzna] ,  => poziom_zadowolenia_z_zycia : [przeciętny]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [bardzo dobry,  dobry] , wiek : [23] ,  => kategoria_sportu3 : [ sporty zespołowe  , sporty indywidualnie  ]
+=================================================================
+[ 1 | 26 ]	stan_zdrowia : [dobry] , wiek : [20] , płeć : [mężczyzna] ,  => kategoria_sportu3 : [ sporty zespołowe  , sporty indywidualnie  ,  sporty partnerskie  ]
+=================================================================
+[ 1 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => ocena_nauki_i_pracy : [przeciętne]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [19] , stan_zdrowia : [bardzo dobry] ,  => poziom_zadowolenia_z_zycia : [przeciętny]
+=================================================================
+[ 1 | 52 ]	płeć : [kobieta] , wiek : [22] , stan_zdrowia : [bardzo dobry] ,  => poziom_sprawności_fizycznej : [średnia]
+=================================================================
+[ 1 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [23] , płeć : [mężczyzna] ,  => ocena_nauki_i_pracy : [przeciętne]
+=================================================================
+[ 1 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => motywacja_do_uprawiania_sportu : [przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [25] , stan_zdrowia : [dobry] ,  => poziom_zadowolenia_z_zycia : [wysoki]
+=================================================================
+[ 1 | 26 ]	stan_zdrowia : [dobry] , wiek : [20] , płeć : [mężczyzna] ,  => czy_palisz_papierosy : [wcale]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [przeciętny] , wiek : [22] , płeć : [mężczyzna] ,  => motywacja_do_uprawiania_sportu : [przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 1 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => sposób_spedzania_wakacji : [ sen i lektura,  uprawianie sportu,  spotkania towarzyskie,  turystyka poznawcza lub wypoczynkowa, turystyka piesza]
+=================================================================
+[ 1 | 39 ]	płeć : [kobieta] , wiek : [24] , stan_zdrowia : [bardzo dobry] ,  => typ_odzieży : [markowa,  wysokiej klasy]
+=================================================================
+[ 1 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => typ_odzieży : [markowa,  wysokiej klasy,  średniej klasy,  markowa]
+=================================================================
+[ 1 | 26 ]	stan_zdrowia : [dobry] , wiek : [24] , płeć : [mężczyzna] ,  => sposób_spedzania_wakacji : [spotkania towarzyskie]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [25] , stan_zdrowia : [bardzo dobry] ,  => typ_odzieży : [niemarkowa]
+=================================================================
+[ 1 | 78 ]	płeć : [kobieta] , wiek : [21] , stan_zdrowia : [bardzo dobry] ,  => typ_odzieży : [ niemarkowa, markowa,  średniej klasy]
+=================================================================
+[ 1 | 39 ]	płeć : [kobieta] , wiek : [24] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu1 : [sporty całoroczne]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [przeciętny] , wiek : [22] , płeć : [mężczyzna] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [25] , stan_zdrowia : [bardzo dobry] ,  => wydatki_miesieczne_na_sport : [5 – 20 %]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [zły] , wiek : [23] ,  => sposób_spedzania_wakacji : [turystyka poznawcza lub wypoczynkowa,  spotkania towarzyskie]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [przeciętny] , wiek : [22] , płeć : [mężczyzna] ,  => kategoria_sportu3 : [ sporty zespołowe  , sporty indywidualnie  ]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [przeciętny] , wiek : [24] , płeć : [mężczyzna] ,  => ocena_nauki_i_pracy : [dobre]
+=================================================================
+[ 1 | 78 ]	wiek : [23] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu3 : [sporty partnerskie  ]
+=================================================================
+[ 1 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [23] , płeć : [mężczyzna] ,  => kategoria_sportu2 : [sporty halowe]
+=================================================================
+[ 1 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => typ_odzieży : [ niemarkowa, markowa,  średniej klasy]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [20] , stan_zdrowia : [bardzo dobry] ,  => czy_palisz_papierosy : [wcale]
+=================================================================
+[ 1 | 104 ]	wiek : [21] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => sposób_spedzania_wakacji : [turystyka poznawcza lub wypoczynkowa]
+=================================================================
+[ 1 | 26 ]	stan_zdrowia : [dobry] , wiek : [20] , płeć : [mężczyzna] ,  => poziom_zadowolenia_z_zycia : [wysoki]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [24] ,  => typ_odzieży : [markowa,  średniej klasy]
+=================================================================
+[ 1 | 91 ]	stan_zdrowia : [dobry] , wiek : [23] , płeć : [mężczyzna] ,  => ocena_nauki_i_pracy : [bardzo dobre]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [bardzo dobry,  dobry] , wiek : [20] , płeć : [mężczyzna] ,  => typ_sprzetu : [ średniej klasy, markowy]
+=================================================================
+[ 1 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => ocena_nauki_i_pracy : [ przeciętne, dobre]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [25] , stan_zdrowia : [dobry] ,  => poziom_sprawności_fizycznej : [średnia]
+=================================================================
+[ 1 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [23] , płeć : [mężczyzna] ,  => poziom_zadowolenia_z_zycia : [przeciętny]
+=================================================================
+[ 1 | 91 ]	stan_zdrowia : [dobry] , wiek : [23] , płeć : [mężczyzna] ,  => długość_snu_nocnego : [7-8 h,  powyżej 8 h]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [bardzo dobry,  dobry] , wiek : [23] ,  => ocena_nauki_i_pracy : [przeciętne]
+=================================================================
+[ 1 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => kategoria_sportu1 : [sporty zimowe]
+=================================================================
+[ 1 | 26 ]	płeć : [kobieta] , wiek : [27] , stan_zdrowia : [dobry] ,  => sposób_spedzania_wakacji : [sen i lektura]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [20] , stan_zdrowia : [bardzo dobry] ,  => wydatki_miesieczne_na_sport : [5 – 20 %]
+=================================================================
+[ 1 | 26 ]	płeć : [kobieta] , wiek : [27] , stan_zdrowia : [dobry] ,  => poziom_zadowolenia_z_zycia : [wysoki]
+=================================================================
+[ 1 | 26 ]	płeć : [kobieta] , wiek : [27] , stan_zdrowia : [dobry] ,  => poziom_sprawności_fizycznej : [niska]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [25] , stan_zdrowia : [bardzo dobry] ,  => poziom_sprawności_fizycznej : [średnia]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [bardzo dobry,  dobry] , wiek : [23] ,  => czy_palisz_papierosy : [wcale]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [dobry] , wiek : [22] , płeć : [mężczyzna] ,  => wydatki_miesieczne_na_sport : [powyżej 20 %]
+=================================================================
+[ 1 | 26 ]	stan_zdrowia : [dobry] , wiek : [20] , płeć : [mężczyzna] ,  => kategoria_sportu1 : [sporty całoroczne]
+=================================================================
+[ 1 | 52 ]	płeć : [kobieta] , wiek : [22] , stan_zdrowia : [bardzo dobry] ,  => typ_sprzetu : [ średniej klasy, markowy]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [przeciętny] , wiek : [22] , płeć : [mężczyzna] ,  => czy_palisz_papierosy : [wcale]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [bardzo dobry,  dobry] , wiek : [23] ,  => typ_odzieży : [niemarkowa]
+=================================================================
+[ 1 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [23] , płeć : [mężczyzna] ,  => wydatki_miesieczne_na_sport : [5 – 20 %]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [24] ,  => kategoria_sportu3 : [sporty indywidualnie  ]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [25] , stan_zdrowia : [dobry] ,  => sposób_spedzania_wakacji : [spotkania towarzyskie]
+=================================================================
+[ 1 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => kategoria_sportu3 : [ sporty zespołowe  , sporty indywidualnie  ,  sporty partnerskie  ]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [25] , stan_zdrowia : [bardzo dobry] ,  => motywacja_do_uprawiania_sportu : [ troska o wygląd, troska o zdrowie]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [dobry] , wiek : [22] , płeć : [mężczyzna] ,  => motywacja_do_uprawiania_sportu : [ troska o wygląd, troska o zdrowie]
+=================================================================
+[ 1 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => czy_palisz_papierosy : [sporadycznie]
+=================================================================
+[ 1 | 78 ]	płeć : [kobieta] , wiek : [21] , stan_zdrowia : [bardzo dobry] ,  => sposób_spedzania_wakacji : [ uprawianie sportu,  turystyka poznawcza lub wypoczynkowa, turystyka piesza]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [24] ,  => sposób_spedzania_wakacji : [turystyka poznawcza lub wypoczynkowa]
+=================================================================
+[ 1 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => długość_snu_nocnego : [poniżej 5 h,  5-6 h]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [20] , stan_zdrowia : [bardzo dobry] ,  => sposób_spedzania_wakacji : [ sen i lektura,  uprawianie sportu,  spotkania towarzyskie,  turystyka poznawcza lub wypoczynkowa, turystyka piesza]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [przeciętny] , wiek : [24] , płeć : [mężczyzna] ,  => sposób_spedzania_wakacji : [ sen i lektura,  uprawianie sportu, turystyka piesza]
+=================================================================
+[ 1 | 78 ]	płeć : [kobieta] , wiek : [21] , stan_zdrowia : [bardzo dobry] ,  => typ_odzieży : [markowa,  wysokiej klasy]
+=================================================================
+[ 1 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => typ_sprzetu : [ średniej klasy,  niemarkowy, markowy]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [23] ,  => typ_odzieży : [markowa,  średniej klasy]
+=================================================================
+[ 1 | 26 ]	stan_zdrowia : [dobry] , wiek : [24] , płeć : [mężczyzna] ,  => poziom_sprawności_fizycznej : [wysoka]
+=================================================================
+[ 1 | 65 ]	płeć : [kobieta] , wiek : [23] , stan_zdrowia : [bardzo dobry] ,  => sposób_spedzania_wakacji : [ sen i lektura,  uprawianie sportu, turystyka piesza]
+=================================================================
+[ 1 | 78 ]	wiek : [23] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu3 : [ sporty zespołowe  , sporty indywidualnie  ,  sporty partnerskie  ]
+=================================================================
+[ 1 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => ocena_nauki_i_pracy : [bardzo dobre]
+=================================================================
+[ 1 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [21] , płeć : [mężczyzna] ,  => czy_palisz_papierosy : [wcale]
+=================================================================
+[ 1 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [23] , płeć : [mężczyzna] ,  => kategoria_sportu3 : [ sporty zespołowe  , sporty indywidualnie  ]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [bardzo dobry,  dobry] , wiek : [20] , płeć : [mężczyzna] ,  => kategoria_sportu1 : [sporty letnie]
+=================================================================
+[ 1 | 26 ]	stan_zdrowia : [dobry] , wiek : [24] , płeć : [mężczyzna] ,  => typ_odzieży : [markowa,  wysokiej klasy]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [bardzo dobry,  dobry] , wiek : [20] , płeć : [mężczyzna] ,  => ocena_nauki_i_pracy : [ przeciętne, dobre]
+=================================================================
+[ 1 | 39 ]	płeć : [kobieta] , wiek : [24] , stan_zdrowia : [bardzo dobry] ,  => sposób_spedzania_wakacji : [turystyka poznawcza lub wypoczynkowa,  spotkania towarzyskie]
+=================================================================
+[ 1 | 65 ]	płeć : [kobieta] , wiek : [23] , stan_zdrowia : [bardzo dobry] ,  => poziom_sprawności_fizycznej : [niska]
+=================================================================
+[ 1 | 78 ]	wiek : [23] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => sposób_spedzania_wakacji : [ uprawianie sportu,  spotkania towarzyskie,  turystyka poznawcza lub wypoczynkowa, turystyka piesza]
+=================================================================
+[ 1 | 26 ]	stan_zdrowia : [dobry] , wiek : [24] , płeć : [mężczyzna] ,  => poziom_sprawności_fizycznej : [średnia]
+=================================================================
+[ 1 | 13 ]	wiek : [25] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu3 : [ sporty zespołowe  , sporty indywidualnie  ,  sporty partnerskie  ]
+=================================================================
+[ 1 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => typ_sprzetu : [ średniej klasy, markowy]
+=================================================================
+[ 1 | 39 ]	płeć : [kobieta] , wiek : [24] , stan_zdrowia : [bardzo dobry] ,  => typ_odzieży : [niemarkowa]
+=================================================================
+[ 1 | 39 ]	płeć : [kobieta] , wiek : [24] , stan_zdrowia : [bardzo dobry] ,  => typ_sprzetu : [ wysokiej klasy, markowy]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [bardzo dobry,  dobry] , wiek : [23] ,  => motywacja_do_uprawiania_sportu : [przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [bardzo dobry,  dobry] , wiek : [20] , płeć : [mężczyzna] ,  => motywacja_do_uprawiania_sportu : [ troska o wygląd, troska o zdrowie,  przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 1 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => długość_snu_nocnego : [ 7-8 h, 5-6 h]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [przeciętny] , wiek : [22] , płeć : [mężczyzna] ,  => ocena_nauki_i_pracy : [przeciętne]
+=================================================================
+[ 1 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => kategoria_sportu1 : [sporty letnie,  sporty zimowe,  sporty całoroczne]
+=================================================================
+[ 1 | 13 ]	wiek : [25] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu,  sporty halowe]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [dobry] , wiek : [22] , płeć : [mężczyzna] ,  => ocena_nauki_i_pracy : [przeciętne]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [dobry] , wiek : [22] , płeć : [mężczyzna] ,  => kategoria_sportu2 : [sporty halowe]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [zły] , wiek : [23] ,  => poziom_sprawności_fizycznej : [niska]
+=================================================================
+[ 1 | 26 ]	płeć : [kobieta] , wiek : [27] , stan_zdrowia : [dobry] ,  => długość_snu_nocnego : [7-8 h]
+=================================================================
+[ 1 | 104 ]	wiek : [21] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => poziom_sprawności_fizycznej : [średnia]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [zły] , wiek : [23] ,  => ocena_nauki_i_pracy : [bardzo dobre]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [24] ,  => kategoria_sportu1 : [ sporty całoroczne, sporty zimowe]
+=================================================================
+[ 1 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => motywacja_do_uprawiania_sportu : [troska o wygląd,  przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [przeciętny] , wiek : [22] , płeć : [mężczyzna] ,  => wydatki_miesieczne_na_sport : [poniżej 5%]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [20] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu1 : [sporty letnie,  sporty zimowe,  sporty całoroczne]
+=================================================================
+[ 1 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => motywacja_do_uprawiania_sportu : [ troska o wygląd, troska o zdrowie,  presja rodziny lub kolegów,  przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 1 | 26 ]	stan_zdrowia : [dobry] , wiek : [20] , płeć : [mężczyzna] ,  => kategoria_sportu1 : [sporty letnie,  sporty zimowe,  sporty całoroczne]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [24] ,  => poziom_sprawności_fizycznej : [średnia]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [23] ,  => sposób_spedzania_wakacji : [ uprawianie sportu,  spotkania towarzyskie, turystyka piesza]
+=================================================================
+[ 1 | 26 ]	stan_zdrowia : [dobry] , wiek : [24] , płeć : [mężczyzna] ,  => długość_snu_nocnego : [7-8 h]
+=================================================================
+[ 1 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => długość_snu_nocnego : [ 7-8 h, 5-6 h]
+=================================================================
+[ 1 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => kategoria_sportu3 : [ sporty zespołowe  , sporty indywidualnie  ,  sporty partnerskie  ]
+=================================================================
+[ 1 | 91 ]	stan_zdrowia : [dobry] , wiek : [23] , płeć : [mężczyzna] ,  => kategoria_sportu1 : [sporty letnie,  sporty zimowe,  sporty całoroczne]
+=================================================================
+[ 1 | 26 ]	płeć : [kobieta] , wiek : [27] , stan_zdrowia : [dobry] ,  => wydatki_miesieczne_na_sport : [poniżej 5%]
+=================================================================
+[ 1 | 26 ]	stan_zdrowia : [dobry] , wiek : [20] , płeć : [mężczyzna] ,  => typ_sprzetu : [ średniej klasy, markowy]
+=================================================================
+[ 1 | 65 ]	płeć : [kobieta] , wiek : [23] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu1 : [sporty letnie,  sporty zimowe,  sporty całoroczne]
+=================================================================
+[ 1 | 26 ]	płeć : [kobieta] , wiek : [27] , stan_zdrowia : [dobry] ,  => długość_snu_nocnego : [powyżej 8 h]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [bardzo dobry,  dobry] , wiek : [23] ,  => poziom_sprawności_fizycznej : [wysoka]
+=================================================================
+[ 1 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => motywacja_do_uprawiania_sportu : [troska o wygląd,  przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [bardzo dobry,  dobry] , wiek : [20] , płeć : [mężczyzna] ,  => kategoria_sportu3 : [ sporty zespołowe  , sporty indywidualnie  ]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [zły] , wiek : [23] ,  => typ_sprzetu : [niemarkowy]
+=================================================================
+[ 1 | 26 ]	stan_zdrowia : [dobry] , wiek : [24] , płeć : [mężczyzna] ,  => typ_sprzetu : [ wysokiej klasy, markowy]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [19] , stan_zdrowia : [bardzo dobry] ,  => typ_odzieży : [markowa,  wysokiej klasy]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [25] , stan_zdrowia : [bardzo dobry] ,  => typ_sprzetu : [niemarkowy]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [20] , stan_zdrowia : [bardzo dobry] ,  => typ_sprzetu : [ średniej klasy,  niemarkowy, markowy]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [24] ,  => motywacja_do_uprawiania_sportu : [troska o zdrowie,  przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 1 | 91 ]	stan_zdrowia : [dobry] , wiek : [23] , płeć : [mężczyzna] ,  => typ_sprzetu : [ wysokiej klasy, markowy]
+=================================================================
+[ 1 | 39 ]	płeć : [kobieta] , wiek : [24] , stan_zdrowia : [bardzo dobry] ,  => ocena_nauki_i_pracy : [dobre]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [przeciętny] , wiek : [22] , płeć : [mężczyzna] ,  => kategoria_sportu1 : [sporty letnie]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [przeciętny] , wiek : [22] , płeć : [mężczyzna] ,  => poziom_sprawności_fizycznej : [średnia]
+=================================================================
+[ 1 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => poziom_zadowolenia_z_zycia : [niski]
+=================================================================
+[ 1 | 26 ]	stan_zdrowia : [dobry] , wiek : [24] , płeć : [mężczyzna] ,  => typ_odzieży : [markowa,  średniej klasy]
+=================================================================
+[ 1 | 26 ]	stan_zdrowia : [dobry] , wiek : [20] , płeć : [mężczyzna] ,  => poziom_zadowolenia_z_zycia : [przeciętny]
+=================================================================
+[ 1 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => kategoria_sportu1 : [sporty letnie,  sporty zimowe,  sporty całoroczne]
+=================================================================
+[ 1 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [23] , płeć : [mężczyzna] ,  => typ_sprzetu : [niemarkowy]
+=================================================================
+[ 1 | 26 ]	stan_zdrowia : [dobry] , wiek : [20] , płeć : [mężczyzna] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu,  sporty halowe]
+=================================================================
+[ 1 | 65 ]	płeć : [kobieta] , wiek : [23] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu1 : [sporty całoroczne]
+=================================================================
+[ 1 | 39 ]	płeć : [kobieta] , wiek : [24] , stan_zdrowia : [bardzo dobry] ,  => długość_snu_nocnego : [5-6 h]
+=================================================================
+[ 1 | 52 ]	płeć : [kobieta] , wiek : [22] , stan_zdrowia : [bardzo dobry] ,  => czy_palisz_papierosy : [regularnie]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [bardzo dobry,  dobry] , wiek : [20] , płeć : [mężczyzna] ,  => czy_palisz_papierosy : [wcale]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [24] ,  => poziom_zadowolenia_z_zycia : [przeciętny]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [19] , stan_zdrowia : [bardzo dobry] ,  => motywacja_do_uprawiania_sportu : [przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 1 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [21] , płeć : [mężczyzna] ,  => sposób_spedzania_wakacji : [ sen i lektura,  uprawianie sportu,  spotkania towarzyskie, turystyka piesza]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [20] , stan_zdrowia : [bardzo dobry] ,  => poziom_sprawności_fizycznej : [średnia]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [23] ,  => ocena_nauki_i_pracy : [dobre]
+=================================================================
+[ 1 | 13 ]	wiek : [25] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu1 : [sporty letnie,  sporty zimowe,  sporty całoroczne]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [19] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu,  sporty halowe]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [25] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu2 : [sporty halowe]
+=================================================================
+[ 1 | 65 ]	płeć : [kobieta] , wiek : [23] , stan_zdrowia : [bardzo dobry] ,  => poziom_sprawności_fizycznej : [średnia]
+=================================================================
+[ 1 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => poziom_zadowolenia_z_zycia : [niski]
+=================================================================
+[ 1 | 39 ]	płeć : [kobieta] , wiek : [24] , stan_zdrowia : [bardzo dobry] ,  => poziom_sprawności_fizycznej : [średnia]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [bardzo dobry,  dobry] , wiek : [23] ,  => poziom_zadowolenia_z_zycia : [przeciętny]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [dobry] , wiek : [22] , płeć : [mężczyzna] ,  => sposób_spedzania_wakacji : [turystyka poznawcza lub wypoczynkowa,  spotkania towarzyskie]
+=================================================================
+[ 1 | 104 ]	wiek : [21] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => wydatki_miesieczne_na_sport : [powyżej 20 %]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [22] ,  => długość_snu_nocnego : [7-8 h]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [25] , stan_zdrowia : [dobry] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu]
+=================================================================
+[ 1 | 13 ]	wiek : [25] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => typ_sprzetu : [ średniej klasy,  niemarkowy, markowy]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [bardzo dobry,  dobry] , wiek : [20] , płeć : [mężczyzna] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu,  sporty halowe]
+=================================================================
+[ 1 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [23] , płeć : [mężczyzna] ,  => poziom_zadowolenia_z_zycia : [wysoki]
+=================================================================
+[ 1 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => ocena_nauki_i_pracy : [słabe]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [19] , stan_zdrowia : [bardzo dobry] ,  => czy_palisz_papierosy : [wcale]
+=================================================================
+[ 1 | 78 ]	płeć : [kobieta] , wiek : [21] , stan_zdrowia : [bardzo dobry] ,  => poziom_sprawności_fizycznej : [wysoka]
+=================================================================
+[ 1 | 39 ]	płeć : [kobieta] , wiek : [24] , stan_zdrowia : [bardzo dobry] ,  => sposób_spedzania_wakacji : [ sen i lektura,  uprawianie sportu,  spotkania towarzyskie,  turystyka poznawcza lub wypoczynkowa, turystyka piesza]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [24] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu,  sporty halowe]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [19] , stan_zdrowia : [bardzo dobry] ,  => typ_sprzetu : [ wysokiej klasy, markowy]
+=================================================================
+[ 1 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [23] , płeć : [mężczyzna] ,  => sposób_spedzania_wakacji : [ uprawianie sportu,  spotkania towarzyskie, turystyka piesza]
+=================================================================
+[ 1 | 91 ]	stan_zdrowia : [dobry] , wiek : [23] , płeć : [mężczyzna] ,  => sposób_spedzania_wakacji : [ sen i lektura, turystyka poznawcza lub wypoczynkowa,  spotkania towarzyskie]
+=================================================================
+[ 1 | 26 ]	stan_zdrowia : [dobry] , wiek : [20] , płeć : [mężczyzna] ,  => motywacja_do_uprawiania_sportu : [przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 1 | 91 ]	stan_zdrowia : [dobry] , wiek : [23] , płeć : [mężczyzna] ,  => sposób_spedzania_wakacji : [ sen i lektura,  uprawianie sportu,  spotkania towarzyskie,  turystyka poznawcza lub wypoczynkowa, turystyka piesza]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [zły] , wiek : [23] ,  => kategoria_sportu3 : [ sporty zespołowe  , sporty indywidualnie  ,  sporty partnerskie  ]
+=================================================================
+[ 1 | 78 ]	płeć : [kobieta] , wiek : [21] , stan_zdrowia : [bardzo dobry] ,  => motywacja_do_uprawiania_sportu : [ troska o wygląd, troska o zdrowie,  przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [19] , stan_zdrowia : [bardzo dobry] ,  => sposób_spedzania_wakacji : [ sen i lektura,  uprawianie sportu,  spotkania towarzyskie, turystyka piesza]
+=================================================================
+[ 1 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => typ_sprzetu : [ średniej klasy,  niemarkowy, markowy]
+=================================================================
+[ 1 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => sposób_spedzania_wakacji : [ sen i lektura, turystyka poznawcza lub wypoczynkowa,  spotkania towarzyskie]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [25] , stan_zdrowia : [dobry] ,  => motywacja_do_uprawiania_sportu : [troska o zdrowie,  presja rodziny lub kolegów]
+=================================================================
+[ 1 | 91 ]	stan_zdrowia : [dobry] , wiek : [23] , płeć : [mężczyzna] ,  => poziom_sprawności_fizycznej : [wysoka]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [zły] , wiek : [23] ,  => kategoria_sportu2 : [sporty halowe]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [bardzo dobry,  dobry] , wiek : [23] ,  => kategoria_sportu1 : [sporty letnie,  sporty całoroczne]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [przeciętny] , wiek : [24] , płeć : [mężczyzna] ,  => poziom_zadowolenia_z_zycia : [przeciętny]
+=================================================================
+[ 1 | 26 ]	płeć : [kobieta] , wiek : [27] , stan_zdrowia : [dobry] ,  => poziom_zadowolenia_z_zycia : [przeciętny]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [20] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu3 : [sporty indywidualnie  ,  sporty partnerskie  ]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [dobry] , wiek : [22] , płeć : [mężczyzna] ,  => kategoria_sportu3 : [sporty indywidualnie  ]
+=================================================================
+[ 1 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => typ_odzieży : [markowa,  wysokiej klasy]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [przeciętny] , wiek : [24] , płeć : [mężczyzna] ,  => kategoria_sportu3 : [ sporty zespołowe  , sporty partnerskie  ]
+=================================================================
+[ 1 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [23] , płeć : [mężczyzna] ,  => typ_odzieży : [ niemarkowa, markowa,  średniej klasy]
+=================================================================
+[ 1 | 13 ]	wiek : [25] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => ocena_nauki_i_pracy : [bardzo dobre]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [dobry] , wiek : [22] , płeć : [mężczyzna] ,  => długość_snu_nocnego : [5-6 h]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [dobry] , wiek : [22] , płeć : [mężczyzna] ,  => typ_odzieży : [niemarkowa]
+=================================================================
+[ 1 | 78 ]	płeć : [kobieta] , wiek : [21] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu3 : [ sporty zespołowe  , sporty indywidualnie  ]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [19] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu1 : [ sporty całoroczne, sporty zimowe]
+=================================================================
+[ 1 | 26 ]	stan_zdrowia : [dobry] , wiek : [20] , płeć : [mężczyzna] ,  => ocena_nauki_i_pracy : [dobre]
+=================================================================
+[ 1 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [22] ,  => sposób_spedzania_wakacji : [ sen i lektura, turystyka poznawcza lub wypoczynkowa,  spotkania towarzyskie]
+=================================================================
+[ 1 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => kategoria_sportu3 : [sporty indywidualnie  ,  sporty partnerskie  ]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [19] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu3 : [sporty indywidualnie  ,  sporty partnerskie  ]
+=================================================================
+[ 1 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => sposób_spedzania_wakacji : [ sen i lektura,  uprawianie sportu,  turystyka poznawcza lub wypoczynkowa, turystyka piesza]
+=================================================================
+[ 1 | 221 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [21] ,  => typ_odzieży : [markowa,  wysokiej klasy,  średniej klasy,  markowa]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [zły] , wiek : [23] ,  => typ_odzieży : [niemarkowa]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [23] ,  => poziom_zadowolenia_z_zycia : [wysoki]
+=================================================================
+[ 1 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => kategoria_sportu3 : [ sporty zespołowe  , sporty indywidualnie  ,  sporty partnerskie  ]
+=================================================================
+[ 1 | 65 ]	płeć : [kobieta] , wiek : [23] , stan_zdrowia : [bardzo dobry] ,  => motywacja_do_uprawiania_sportu : [troska o wygląd]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [19] , stan_zdrowia : [bardzo dobry] ,  => ocena_nauki_i_pracy : [dobre]
+=================================================================
+[ 1 | 13 ]	wiek : [25] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => długość_snu_nocnego : [ 7-8 h, 5-6 h]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [25] , stan_zdrowia : [bardzo dobry] ,  => długość_snu_nocnego : [7-8 h]
+=================================================================
+[ 1 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => ocena_nauki_i_pracy : [przeciętne]
+=================================================================
+[ 1 | 13 ]	wiek : [25] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => typ_odzieży : [ niemarkowa, markowa,  średniej klasy]
+=================================================================
+[ 1 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => wydatki_miesieczne_na_sport : [5 – 20 %]
+=================================================================
+[ 1 | 104 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [23] ,  => typ_sprzetu : [ średniej klasy,  niemarkowy, markowy]
+=================================================================
+[ 1 | 13 ]	wiek : [25] , płeć : [mężczyzna] , stan_zdrowia : [bardzo dobry] ,  => motywacja_do_uprawiania_sportu : [ troska o wygląd, troska o zdrowie,  przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 1 | 52 ]	płeć : [kobieta] , wiek : [22] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu1 : [sporty letnie,  sporty zimowe,  sporty całoroczne]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [25] , stan_zdrowia : [dobry] ,  => kategoria_sportu3 : [sporty indywidualnie  ]
+=================================================================
+[ 1 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [23] , płeć : [mężczyzna] ,  => długość_snu_nocnego : [ 7-8 h, 5-6 h]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [25] , stan_zdrowia : [dobry] ,  => długość_snu_nocnego : [5-6 h]
+=================================================================
+[ 1 | 169 ]	stan_zdrowia : [dobry] , wiek : [21] , płeć : [mężczyzna] ,  => sposób_spedzania_wakacji : [ sen i lektura,  uprawianie sportu,  spotkania towarzyskie,  turystyka poznawcza lub wypoczynkowa, turystyka piesza]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [przeciętny] , wiek : [24] , płeć : [mężczyzna] ,  => kategoria_sportu2 : [sporty uprawiane na świeżym powietrzu,  sporty halowe]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [25] , stan_zdrowia : [bardzo dobry] ,  => poziom_zadowolenia_z_zycia : [przeciętny]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , wiek : [19] , stan_zdrowia : [bardzo dobry] ,  => długość_snu_nocnego : [7-8 h]
+=================================================================
+[ 1 | 26 ]	stan_zdrowia : [dobry] , wiek : [20] , płeć : [mężczyzna] ,  => ocena_nauki_i_pracy : [bardzo dobre]
+=================================================================
+[ 1 | 26 ]	stan_zdrowia : [dobry] , wiek : [20] , płeć : [mężczyzna] ,  => sposób_spedzania_wakacji : [sen i lektura]
+=================================================================
+[ 1 | 91 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [21] ,  => motywacja_do_uprawiania_sportu : [troska o wygląd,  presja rodziny lub kolegów]
+=================================================================
+[ 1 | 26 ]	stan_zdrowia : [dobry] , wiek : [20] , płeć : [mężczyzna] ,  => kategoria_sportu3 : [sporty partnerskie  ]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [zły] , wiek : [23] ,  => wydatki_miesieczne_na_sport : [poniżej 5%]
+=================================================================
+[ 1 | 52 ]	stan_zdrowia : [przeciętny] , wiek : [21] , płeć : [mężczyzna] ,  => wydatki_miesieczne_na_sport : [5 – 20 %]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [23] ,  => czy_palisz_papierosy : [wcale]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [22] ,  => sposób_spedzania_wakacji : [ uprawianie sportu, turystyka piesza]
+=================================================================
+[ 1 | 65 ]	płeć : [kobieta] , wiek : [23] , stan_zdrowia : [bardzo dobry] ,  => sposób_spedzania_wakacji : [turystyka poznawcza lub wypoczynkowa,  spotkania towarzyskie]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [bardzo dobry,  dobry] , wiek : [20] , płeć : [mężczyzna] ,  => sposób_spedzania_wakacji : [ sen i lektura,  uprawianie sportu,  spotkania towarzyskie, turystyka piesza]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [bardzo dobry,  dobry] , wiek : [23] ,  => wydatki_miesieczne_na_sport : [powyżej 20 %]
+=================================================================
+[ 1 | 52 ]	płeć : [kobieta] , wiek : [22] , stan_zdrowia : [bardzo dobry] ,  => kategoria_sportu3 : [sporty indywidualnie  ,  sporty partnerskie  ]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [23] ,  => motywacja_do_uprawiania_sportu : [ troska o wygląd, troska o zdrowie,  przyjemność płynąca z uprawiania sportu]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [bardzo dobry,  dobry] , wiek : [23] ,  => sposób_spedzania_wakacji : [ uprawianie sportu, turystyka piesza]
+=================================================================
+[ 1 | 65 ]	płeć : [kobieta] , wiek : [23] , stan_zdrowia : [bardzo dobry] ,  => czy_palisz_papierosy : [regularnie]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [dobry] , wiek : [24] ,  => typ_sprzetu : [ średniej klasy, markowy]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [23] ,  => kategoria_sportu1 : [sporty letnie,  sporty całoroczne]
+=================================================================
+[ 1 | 13 ]	płeć : [kobieta] , stan_zdrowia : [przeciętny] , wiek : [22] ,  => poziom_zadowolenia_z_zycia : [niski]
+=================================================================
+[ 1 | 13 ]	stan_zdrowia : [dobry] , wiek : [22] , płeć : [mężczyzna] ,  => typ_sprzetu : [niemarkowy]

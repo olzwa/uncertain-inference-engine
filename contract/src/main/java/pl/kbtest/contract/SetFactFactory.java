@@ -50,17 +50,24 @@ import static pl.kbtest.contract.Config.GLOBAL_SPLIT_REGEX;
         }
         
         public static SetFact getInstance(final String fact, final GrfIrf grfIrf, boolean conj){
-            boolean negate = false;
-            String[] parts = fact.split(GLOBAL_SPLIT_REGEX);
-              if(parts.length > 1){
-                if(parts[1].trim().equals("!")){
-                    negate = true;
-                }
-            }
-            return new DefaultSetFact(parts[0],
-                     new HashSet<String>(Arrays.asList(Arrays.copyOfRange(parts,1,parts.length))),
-                     grfIrf,BigDecimal.ONE,false,negate,conj);
+        boolean negate = false;
+            String[] splitHead = fact.split("=>");
+
+        if(splitHead.length < 2){
+            System.out.println(Arrays.toString(splitHead));
+            System.exit(0);
         }
+
+        String[] parts = splitHead[1].split(GLOBAL_SPLIT_REGEX);
+        if(parts.length > 1){
+            if(parts[1].trim().equals("!")){
+                negate = true;
+            }
+        }
+        return new DefaultSetFact(splitHead[0],new HashSet<>(Arrays.asList(parts)),grfIrf,BigDecimal.ONE,false,negate,conj);
+    }
+
+
         
 
 

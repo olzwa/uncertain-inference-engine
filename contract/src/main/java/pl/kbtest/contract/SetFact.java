@@ -6,11 +6,7 @@
 package pl.kbtest.contract;
 
 import java.math.BigDecimal;
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.Set;
-import static pl.kbtest.contract.Config.GLOBAL_SPLIT_REGEX;
-import pl.kbtest.contract.GrfIrf;
 
 /**
  *

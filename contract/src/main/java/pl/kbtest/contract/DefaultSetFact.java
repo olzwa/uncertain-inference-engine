@@ -81,4 +81,27 @@ import java.util.Set;
                 return this.head+": "+this.set+" grfIrf: "+this.grfIrf;
             }
 
-        }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        DefaultSetFact that = (DefaultSetFact) o;
+
+        if (head != null ? !head.equals(that.head) : that.head != null) return false;
+        if (set != null ? !set.equals(that.set) : that.set != null) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = head != null ? head.hashCode() : 0;
+        result = 31 * result + (set != null ? set.hashCode() : 0);
+        return result;
+    }
+
+
+
+}

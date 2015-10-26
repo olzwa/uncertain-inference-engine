@@ -32,4 +32,9 @@ public class Column {
         return this.key;
     }
     
+    @Override
+    public String toString(){
+        return this.columnName;
+    }
+    
 }
