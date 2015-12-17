@@ -14,7 +14,7 @@ public class ReadCVS {
 
 	private List<List<String>> rows = new LinkedList<>();
 	private List<String> columns = new LinkedList<>();
-	private List<String> conditions = new LinkedList<>();
+	private List<String> conditions = new LinkedList<>(); //if a condition is met, the row is rejected
 	private List<Pattern> patterns= new LinkedList<>();
 	int minlength=1;
 	String separator = ",";
@@ -42,19 +42,16 @@ public class ReadCVS {
 
 				boolean rowValidity=true;
 
-				for(String temp : conditions){
-					patterns.add(Pattern.compile(temp));
-				}
 
-				for(int i =0;i<cells.length;i++){
+				for(int i =0;i<cells.length && rowValidity==true;i++){
 					cells[i] = cells[i].replaceAll("\t", "");
 					if(cells[i].trim().length()<minlength){
 						rowValidity=false;
+						break;
 					}
 					else{
 						for(Pattern temp : patterns){
 							rowValidity=!temp.matcher((cells[i])).find();
-							if(!rowValidity){break;}
 						}
 					}
 				}
@@ -106,7 +103,10 @@ public class ReadCVS {
 	}
 
 	public void addCondition (String regex){
+
 		this.conditions.add(regex);
+
+		patterns.add(Pattern.compile(regex));
 	}
 
 	public void removeColumn (int columnNumber)
@@ -122,6 +122,13 @@ public class ReadCVS {
 	}
 
 	public void setConditions (List<String> conditions){
+
 		this.conditions=conditions;
+
+		for(String temp : conditions){
+			patterns.add(Pattern.compile(temp));
+		}
+
 	}
+
 }
