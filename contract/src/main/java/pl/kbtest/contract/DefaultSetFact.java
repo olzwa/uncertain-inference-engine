@@ -89,6 +89,7 @@ import java.util.Set;
 
         DefaultSetFact that = (DefaultSetFact) o;
 
+        if (conjunction != that.conjunction) return false;
         if (head != null ? !head.equals(that.head) : that.head != null) return false;
         if (set != null ? !set.equals(that.set) : that.set != null) return false;
 
@@ -99,9 +100,7 @@ import java.util.Set;
     public int hashCode() {
         int result = head != null ? head.hashCode() : 0;
         result = 31 * result + (set != null ? set.hashCode() : 0);
+        result = 31 * result + (conjunction ? 1 : 0);
         return result;
     }
-
-
-
 }

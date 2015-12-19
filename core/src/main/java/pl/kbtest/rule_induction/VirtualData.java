@@ -18,7 +18,7 @@ public class VirtualData {
     final Set<SetFact> additionalFacts;
     final SetFact conclusionFact;
     private Integer count = 1;
-    private Integer keyCount = 1;
+    private Integer keyCount = 13;
 
     public VirtualData(final Set<SetFact> keyFacts,final Set<SetFact> additionalFacts,
                        final SetFact conclusionFact){
@@ -29,11 +29,15 @@ public class VirtualData {
     }
     
     public void incrementCount(){
-        this.count++;
+        this.count+=1;
     }
 
     public void incrementKeyCount(){
-        this.keyCount++;
+        this.keyCount+=1;
+    }
+
+    public void setKeyCount(Integer keyCount) {
+        this.keyCount = keyCount;
     }
 
     public Set<SetFact> getKeyFacts() {

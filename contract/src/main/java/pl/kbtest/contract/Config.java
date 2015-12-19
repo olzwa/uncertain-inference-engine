@@ -13,5 +13,8 @@ package pl.kbtest.contract;
 public class Config {
     
     public static String GLOBAL_SPLIT_REGEX = ",";
-    
+
+    public static String FACT_CONJUNCTION = ",";
+    public static String FACT_DISJUNCTION = "|";
+
 }

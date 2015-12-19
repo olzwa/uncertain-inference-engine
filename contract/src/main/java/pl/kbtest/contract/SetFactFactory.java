@@ -10,65 +10,100 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.regex.Pattern;
+
 import static pl.kbtest.contract.Config.GLOBAL_SPLIT_REGEX;
 
 /**
- *
  * @author Kamil
  */
-    public class SetFactFactory {
+public class SetFactFactory {
 
-        private SetFactFactory(){}
-        
-        public static SetFact getInstance(final String head, final String body,final GrfIrf grfIrf,
-                final BigDecimal wParamter, final boolean axiom, boolean conj){
-            boolean negate = false;
-            String[] b = body.split(GLOBAL_SPLIT_REGEX);
-            if(b.length > 1){
-                if(b[1].trim().equals("!")){
-                    negate = true;
-                }
-            }
-            Set<String> set = new HashSet(Arrays.asList(b));
-            return new DefaultSetFact(head,set,grfIrf,wParamter,axiom,negate,conj);
-        }
-        public static SetFact getInstance(final String head, final String body,final GrfIrf grfIrf, boolean conj){
-            boolean negate = false;
-            String[] b = body.split(GLOBAL_SPLIT_REGEX);
-            if(b.length > 1){
-                if(b[1].trim().equals("!")){
-                    negate = true;
-                }
-            }
-            Set<String> set = new HashSet(Arrays.asList(body.split(GLOBAL_SPLIT_REGEX)));
-            return new DefaultSetFact(head,set,grfIrf,BigDecimal.ONE,false,negate,conj);
-        }
-        
-        public static SetFact getInstance(final String head, final Set<String> bodySet, final GrfIrf grfIrf, final BigDecimal w, boolean negate, boolean conj){
-            
-            return new DefaultSetFact(head,bodySet,grfIrf,w,false, negate, conj);
-        }
-        
-        public static SetFact getInstance(final String fact, final GrfIrf grfIrf, boolean conj){
+    private SetFactFactory() {
+    }
+
+    public static SetFact getInstance(final String head, final String body, final GrfIrf grfIrf,
+                                      final BigDecimal wParamter, final boolean axiom, boolean conj) {
         boolean negate = false;
-            String[] splitHead = fact.split("=>");
+        String[] b = body.split(GLOBAL_SPLIT_REGEX);
+        if (b.length > 1) {
+            if (b[1].trim().equals("!")) {
+                negate = true;
+            }
+        }
+        Set<String> set = new HashSet(Arrays.asList(b));
+        return new DefaultSetFact(head, set, grfIrf, wParamter, axiom, negate, conj);
+    }
 
-        if(splitHead.length < 2){
+    public static SetFact getInstance(final String head, final String body, final GrfIrf grfIrf, boolean conj) {
+        boolean negate = false;
+        String[] b = body.split(GLOBAL_SPLIT_REGEX);
+        if (b.length > 1) {
+            if (b[1].trim().equals("!")) {
+                negate = true;
+            }
+        }
+        Set<String> set = new HashSet(Arrays.asList(body.split(GLOBAL_SPLIT_REGEX)));
+        return new DefaultSetFact(head, set, grfIrf, BigDecimal.ONE, false, negate, conj);
+    }
+
+    public static SetFact getInstance(final String head, final Set<String> bodySet, final GrfIrf grfIrf, final BigDecimal w, boolean negate, boolean conj) {
+
+        return new DefaultSetFact(head, bodySet, grfIrf, w, false, negate, conj);
+    }
+
+    @Deprecated
+    public static SetFact getInstance(final String fact, final GrfIrf grfIrf, boolean conj) {
+        boolean negate = false;
+        String[] splitHead = fact.split("=>");
+
+        if (splitHead.length < 2) {
             System.out.println(Arrays.toString(splitHead));
             System.exit(0);
         }
 
         String[] parts = splitHead[1].split(GLOBAL_SPLIT_REGEX);
-        if(parts.length > 1){
-            if(parts[1].trim().equals("!")){
+        for (int i = 0; i < parts.length; i++) {
+            parts[i] = parts[i].trim();
+        }
+        if (parts.length > 1) {
+            if (parts[1].trim().equals("!")) {
                 negate = true;
             }
         }
-        return new DefaultSetFact(splitHead[0],new HashSet<>(Arrays.asList(parts)),grfIrf,BigDecimal.ONE,false,negate,conj);
+        return new DefaultSetFact(splitHead[0], new HashSet<>(Arrays.asList(parts)), grfIrf, BigDecimal.ONE, false, negate, conj);
+    }
+
+    public static SetFact getInstance(final String fact, final GrfIrf grfIrf) {
+        boolean negate = false;
+
+        boolean isConjunction = true;
+        String split = Config.FACT_CONJUNCTION;
+
+        String[] splitHead = fact.split("=>");
+
+        if (splitHead.length < 2) {
+            System.out.println(Arrays.toString(splitHead));
+            System.exit(0);
+        }
+        if(splitHead[1].contains(Config.FACT_DISJUNCTION)){
+            isConjunction = false;
+            split = Config.FACT_DISJUNCTION;
+        }else if(splitHead[1].contains(Config.FACT_DISJUNCTION) && splitHead[1].contains(Config.FACT_CONJUNCTION)){
+            throw new IllegalArgumentException();
+        }
+        String[] parts = splitHead[1].split(Pattern.quote(split));
+        System.out.println(Arrays.toString(parts));
+        for (int i = 0; i < parts.length; i++) {
+            parts[i] = parts[i].trim();
+        }
+        if (parts.length > 1) {
+            if (parts[1].trim().equals("!")) {
+                negate = true;
+            }
+        }
+        return new DefaultSetFact(splitHead[0], new HashSet<>(Arrays.asList(parts)), grfIrf, BigDecimal.ONE, false, negate, isConjunction);
     }
 
 
-        
-
-
-    }
+}
