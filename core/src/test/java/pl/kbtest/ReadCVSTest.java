@@ -5,6 +5,8 @@ import pl.kbtest.core.ReadCVS;
 
 import org.junit.Assert;
 
+import java.io.File;
+import java.net.URL;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -13,21 +15,17 @@ import java.util.List;
 
 public class ReadCVSTest {
 
-    @org.junit.Before
-    public void setUp() throws Exception {
-
-        ReadCVS parser = new ReadCVS();
-        parser.setSeparator("\t");
-
-    }
-
     @org.junit.Test
     public void testParse() throws Exception {
 
         ReadCVS parser = new ReadCVS();
+
+        File file = new File(ReadCVS.class.getClassLoader().getResource("ankietatestowa.tsv").getFile());
+
         parser.setSeparator("\t");
         parser.addCondition("_");
-        parser.parse("ankietatestowa.tsv");
+
+        parser.parse(file);
 
         List<List<String>> correctRows = new LinkedList<>();
 

@@ -2,6 +2,7 @@ package pl.kbtest.core;
 
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -27,7 +28,7 @@ public class ReadCVS {
 
 	}
 
-	public void parse(String csvFile){
+	public void parse(File csvFile){
 		BufferedReader br = null;
 		String line = "";
 

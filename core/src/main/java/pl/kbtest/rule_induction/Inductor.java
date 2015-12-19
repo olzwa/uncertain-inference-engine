@@ -5,6 +5,7 @@
  */
 package pl.kbtest.rule_induction;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
 import java.io.PrintWriter;
@@ -17,6 +18,7 @@ import pl.kbtest.contract.SetFact;
 import pl.kbtest.contract.SetFactFactory;
 import pl.kbtest.core.ReadCVS;
 
+import pl.kbtest.rule_induction.Column;
 /**
  *
  * @author Kamil
@@ -102,7 +104,7 @@ public class Inductor {
         ReadCVS obj = new ReadCVS();
 
         obj.setSeparator("\t");
-        obj.parse("ankieta6.tsv");
+        obj.parse(new File("ankieta6.tsv"));
 
         List<String> columns = obj.getColumns();
         List<List<String>> rows = obj.getRows();
