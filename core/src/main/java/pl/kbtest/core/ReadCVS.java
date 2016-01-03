@@ -1,6 +1,9 @@
 package pl.kbtest.core;
 
 
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -19,6 +22,8 @@ public class ReadCVS {
 	private List<Pattern> patterns= new LinkedList<>();
 	int minlength=1;
 	String separator = ",";
+
+	static Logger logger = LoggerFactory.getLogger(ReadCVS.class);
 
 
 	public static void main(String[] args) {
@@ -48,11 +53,15 @@ public class ReadCVS {
 					cells[i] = cells[i].replaceAll("\t", "");
 					if(cells[i].trim().length()<minlength){
 						rowValidity=false;
+						logger.debug("\""+cells[i]+"\""+" length < minlength ");
 						break;
 					}
 					else{
 						for(Pattern temp : patterns){
 							rowValidity=!temp.matcher((cells[i])).find();
+							if(!rowValidity){
+								logger.debug("\""+cells[i]+"\""+" match found "+temp);
+							}
 						}
 					}
 				}

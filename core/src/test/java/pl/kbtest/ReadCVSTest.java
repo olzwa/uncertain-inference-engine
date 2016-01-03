@@ -24,6 +24,7 @@ public class ReadCVSTest {
 
         parser.setSeparator("\t");
         parser.addCondition("_");
+        parser.addCondition("&");
 
         parser.parse(file);
 
