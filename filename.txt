@@ -27,9 +27,9 @@
 =================================================================
 [ 1 | 1 ]	wiek : [21] , płeć : [kobieta] , stan_zdrowia : [dobry] ,  => wydatki_miesieczne_na_sport : [poniżej 52%]
 =================================================================
-[ 1 | 1 ]	wiek : [21] , płeć : [kobieta] , stan_zdrowia : [dobry] ,  => kategoria_sportu1 : [sporty całoroczne2, sporty zimowe2]
-=================================================================
 [ 1 | 1 ]	wiek : [21] , płeć : [kobieta] , stan_zdrowia : [dobry] ,  => wydatki_miesieczne_na_sport : [poniżej 5%]
+=================================================================
+[ 1 | 1 ]	wiek : [21] , płeć : [kobieta] , stan_zdrowia : [dobry] ,  => kategoria_sportu1 : [sporty całoroczne2, sporty zimowe]
 =================================================================
 [ 1 | 1 ]	wiek : [21] , płeć : [kobieta] , stan_zdrowia : [dobry] ,  => poziom_zadowolenia_z_zycia : [przeciętny]
 =================================================================

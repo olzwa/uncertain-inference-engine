@@ -8,10 +8,12 @@ package pl.kbtest.rule_induction;
 import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Sets;
 import com.google.common.collect.Table;
+import org.javatuples.Pair;
 import pl.kbtest.contract.GrfIrf;
 import pl.kbtest.contract.SetFact;
 import pl.kbtest.contract.SetFactFactory;
 import pl.kbtest.core.ReadCVS;
+import pl.kbtest.rule_induction.output.VirtualDataWriter;
 
 import java.io.PrintWriter;
 import java.math.BigDecimal;
@@ -97,6 +99,8 @@ public class Inductor {
 
         Map<Set<SetFact>, ArrayDeque<SetFact>> rules = new HashMap<>();
 
+        Map<Set<SetFact>, Pair<ArrayDeque<SetFact>,AtomicInteger>> rules2 = new HashMap<>();
+
         List<VirtualData> totalVirtualData = new LinkedList<>();
 
 
@@ -130,6 +134,10 @@ public class Inductor {
         keysColumns.add(1);
 
         this.columns = getColumns();
+
+        VirtualDataGenerator virtualDataGenerator = new VirtualDataGenerator();
+        VirtualDataWriter writer = new VirtualDataWriter();
+        writer.write(virtualDataGenerator.virtualDataTraversal4(virtualDataGenerator.perform(this.columns,rows)));
 
         int count = 0;
         for (List<String> row : rows) {
