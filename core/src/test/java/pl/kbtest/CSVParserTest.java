@@ -1,30 +1,28 @@
 package pl.kbtest;
 
-import pl.kbtest.core.ReadCVS;
+import pl.kbtest.rule_induction.input.CSVParser;
 
 
 import org.junit.Assert;
 
 import java.io.File;
-import java.net.URL;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
 
 
-public class ReadCVSTest {
+public class CSVParserTest {
 
     @org.junit.Test
     public void testParse() throws Exception {
 
-        ReadCVS parser = new ReadCVS();
-
-        File file = new File(ReadCVS.class.getClassLoader().getResource("ankietatestowa.tsv").getFile());
-
+        CSVParser parser = new CSVParser(Arrays.asList("_","&"));
         parser.setSeparator("\t");
-        parser.addCondition("_");
-        parser.addCondition("&");
+
+
+        File file = new File(CSVParser.class.getClassLoader().getResource("ankietatestowa.tsv").getFile());
+
 
         parser.parse(file);
 

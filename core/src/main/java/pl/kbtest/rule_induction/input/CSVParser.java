@@ -1,4 +1,4 @@
-package pl.kbtest.core;
+package pl.kbtest.rule_induction.input;
 
 
 
@@ -14,7 +14,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-public class ReadCVS {
+public class CSVParser implements Parser {
 
 	private List<List<String>> rows = new LinkedList<>();
 	private List<String> columns = new LinkedList<>();
@@ -23,12 +23,23 @@ public class ReadCVS {
 	int minlength=1;
 	String separator = ",";
 
-	static Logger logger = LoggerFactory.getLogger(ReadCVS.class);
+	static Logger logger = LoggerFactory.getLogger(CSVParser.class);
+
+
+	public CSVParser(){}
+
+	public CSVParser(List<String> conditions){
+		this.conditions = conditions;
+
+		for(String temp : conditions){
+			patterns.add(Pattern.compile(temp));
+		}
+	}
 
 
 	public static void main(String[] args) {
 
-		ReadCVS obj = new ReadCVS();
+		CSVParser obj = new CSVParser();
 		obj.getRows();
 
 	}
