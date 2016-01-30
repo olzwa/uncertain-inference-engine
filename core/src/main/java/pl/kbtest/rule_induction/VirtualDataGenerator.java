@@ -14,6 +14,7 @@ import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import static java.util.Objects.nonNull;
+import static pl.kbtest.rule_induction.SetFactUtils.isSetFactSubset;
 
 /**
  * Created by Kamil on 2015-12-24.
@@ -41,7 +42,7 @@ public class VirtualDataGenerator {
                     conclusions.getValue0().add(virtualData.conclusionFact);
                     //conclusions.getValue1().incrementAndGet();
                 } else {
-                    conclusions = new Pair<>(new ArrayDeque<>(Arrays.asList(virtualData.getConclusionFact())), new AtomicInteger(columns.size()-virtualData.getKeyFacts().size()));
+                    conclusions = new Pair<>(new ArrayDeque<>(Arrays.asList(virtualData.getConclusionFact())), new AtomicInteger(columns.size() - virtualData.getKeyFacts().size()));
                     rules2.put(virtualData.getKeyFacts(), conclusions);
                 }
 
@@ -128,9 +129,9 @@ public class VirtualDataGenerator {
         return virtualData;
     }
 
-    public Table<Set<SetFact>, SetFact, Triplet<AtomicInteger, AtomicInteger,Integer>> virtualDataTraversal4(Map<Set<SetFact>, Pair<ArrayDeque<SetFact>, AtomicInteger>> rules2) {
+    public Table<Set<SetFact>, SetFact, Triplet<AtomicInteger, AtomicInteger, Integer>> virtualDataTraversal4(Map<Set<SetFact>, Pair<ArrayDeque<SetFact>, AtomicInteger>> rules2) {
 
-        Table<Set<SetFact>, SetFact, Triplet<AtomicInteger, AtomicInteger,Integer>> resultTable = HashBasedTable.create();
+        Table<Set<SetFact>, SetFact, Triplet<AtomicInteger, AtomicInteger, Integer>> resultTable = HashBasedTable.create();
 
         for (Set<SetFact> keyFacts : rules2.keySet()) {
             System.out.println(keyFacts);
@@ -158,7 +159,7 @@ public class VirtualDataGenerator {
 
             }
             rowResult.forEach((fact, counter) -> {
-                resultTable.put(keyFacts, fact, new Triplet<>(new AtomicInteger(conclusions.size()), counter,conclusionCount.get()));
+                resultTable.put(keyFacts, fact, new Triplet<>(new AtomicInteger(conclusions.size()), counter, conclusionCount.get()));
             });
         }
 
@@ -169,29 +170,7 @@ public class VirtualDataGenerator {
     }
 
 
-    private boolean isSetFactSubset(SetFact subset, SetFact of) {
-        if (subset.equals(of)) {
-            return true;
-        }
-        if (of.getHead().equals(subset.getHead())) {
-            if (subset.getSet().isEmpty() && of.getSet().isEmpty()) {
-                return true;
-            }
-            if (of.isConjunction()) {
-                if (subset.getSet().containsAll(of.getSet())) {
-                    return true;
-                }
-/*                if (of.getSet().containsAll(subset.getSet())) {
-                    return true;
-                }*/
-            } else {
-                if (!Collections.disjoint(of.getSet(), subset.getSet())) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
+
 
 
     private Set<SetFact> getFacts(final Set<String> setFact) {

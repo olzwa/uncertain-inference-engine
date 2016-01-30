@@ -1,9 +1,8 @@
 [4,2] 21 kobieta dobry  => przyjemność płynąca z uprawiania sportu2 AND troska o wygląd2
-[4,4] 21 kobieta dobry  => sporty całoroczne OR sporty zimowe
 [4,2] 21 kobieta dobry  => przeciętny2
 [4,2] 21 kobieta dobry  => poniżej 52%
-[4,2] 21 kobieta dobry  => sporty indywidualnie
 [4,2] 21 kobieta dobry  => markowy2 AND średniej klasy2
+[4,2] 21 kobieta dobry  => sporty zespołowe2 AND sporty indywidualnie
 [4,2] 21 kobieta dobry  => markowa AND średniej klasy
 [4,2] 21 kobieta dobry  => spotkania towarzyskie AND sen i lektura
 [4,2] 21 kobieta dobry  => sporadycznie2
