@@ -12,9 +12,10 @@ import org.javatuples.Pair;
 import pl.kbtest.contract.GrfIrf;
 import pl.kbtest.contract.SetFact;
 import pl.kbtest.contract.SetFactFactory;
-import pl.kbtest.core.ReadCVS;
+import pl.kbtest.rule_induction.input.CSVParser;
 import pl.kbtest.rule_induction.output.VirtualDataWriter;
 
+import java.io.File;
 import java.io.PrintWriter;
 import java.math.BigDecimal;
 import java.util.*;
@@ -110,13 +111,12 @@ public class Inductor {
         //List<VirtualData> virtualDataRow2 = generateVirtualDataFromRow(row2);
 
 
-        ReadCVS obj = new ReadCVS();
+        CSVParser parser = new CSVParser(Arrays.asList("_","&"));
+        parser.setSeparator("\t");
+        parser.parse(new File("ankieta6.tsv"));
 
-        obj.setSeparator("\t");
-        obj.parse("ankieta6.tsv");
-
-        List<String> columns = obj.getColumns();
-        List<List<String>> rows = obj.getRows();
+        List<String> columns = parser.getColumns();
+        List<List<String>> rows = parser.getRows();
 
         skipColumn(columns, rows, 0);//timestamp
  /*       skipColumn(columns, rows, 1);
