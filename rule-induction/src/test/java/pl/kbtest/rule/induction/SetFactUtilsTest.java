@@ -1,4 +1,4 @@
-package pl.kbtest.rule_induction;
+package pl.kbtest.rule.induction;
 
 import org.junit.Test;
 import pl.kbtest.contract.SetFact;

@@ -1,4 +1,4 @@
-package pl.kbtest.rule_induction.output;
+package pl.kbtest.rule.induction.output;
 
 import com.google.common.base.Joiner;
 import com.google.common.collect.Table;

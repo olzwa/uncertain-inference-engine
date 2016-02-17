@@ -1,4 +1,4 @@
-package pl.kbtest.rule_induction.exception;
+package pl.kbtest.rule.induction.exception;
 
 /**
  * Created by Kamil on 2015-12-16.

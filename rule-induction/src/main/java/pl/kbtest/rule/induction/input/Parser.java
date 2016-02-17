@@ -1,4 +1,4 @@
-package pl.kbtest.rule_induction.input;
+package pl.kbtest.rule.induction.input;
 
 import java.util.List;
 

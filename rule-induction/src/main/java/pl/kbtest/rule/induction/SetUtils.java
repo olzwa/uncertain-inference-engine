@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package pl.kbtest.rule_induction;
+package pl.kbtest.rule.induction;
 
 import pl.kbtest.contract.SetFact;
 

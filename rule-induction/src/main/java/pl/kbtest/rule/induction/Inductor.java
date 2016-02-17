@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pl.kbtest.rule_induction;
+package pl.kbtest.rule.induction;
 
 import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Sets;
@@ -12,8 +12,8 @@ import org.javatuples.Pair;
 import pl.kbtest.contract.GrfIrf;
 import pl.kbtest.contract.SetFact;
 import pl.kbtest.contract.SetFactFactory;
-import pl.kbtest.rule_induction.input.CSVParser;
-import pl.kbtest.rule_induction.output.VirtualDataWriter;
+import pl.kbtest.rule.induction.input.CSVParser;
+import pl.kbtest.rule.induction.output.VirtualDataWriter;
 
 import java.io.File;
 import java.io.PrintWriter;

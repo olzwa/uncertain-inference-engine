@@ -1,4 +1,4 @@
-package pl.kbtest.rule_induction;
+package pl.kbtest.rule.induction;
 
 import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Sets;
@@ -14,7 +14,7 @@ import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import static java.util.Objects.nonNull;
-import static pl.kbtest.rule_induction.SetFactUtils.isSetFactSubset;
+import static pl.kbtest.rule.induction.SetFactUtils.isSetFactSubset;
 
 /**
  * Created by Kamil on 2015-12-24.
