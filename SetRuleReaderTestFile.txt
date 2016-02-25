@@ -1,0 +1,2 @@
+[4,2] wiek=21,kolejna_wartosc plec=kobieta stan_zdrowia=dobry,kolejna_wartosc2  => motywacja=przyjemność płynąca z uprawiania sportu2 AND troska o wygląd2
+[0,0] kolumna=wartosc1 AND wartosc2 kolumna2=wartosc3,wartosc4 kolumna3=wartosc4,wartosc5  => fakt=wartosc6
