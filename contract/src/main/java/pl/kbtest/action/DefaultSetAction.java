@@ -40,7 +40,25 @@ public class DefaultSetAction implements SetAction {
     public boolean isConjunction() {
         return conjunction;
     }
-    
-    
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        DefaultSetAction that = (DefaultSetAction) o;
+
+        if (conjunction != that.conjunction) return false;
+        if (fact != null ? !fact.equals(that.fact) : that.fact != null) return false;
+        return !(output != null ? !output.equals(that.output) : that.output != null);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = fact != null ? fact.hashCode() : 0;
+        result = 31 * result + (output != null ? output.hashCode() : 0);
+        result = 31 * result + (conjunction ? 1 : 0);
+        return result;
+    }
 }

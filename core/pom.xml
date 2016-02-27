@@ -21,6 +21,12 @@
         </dependency>
 
         <dependency>
+            <groupId>pl.kbtest</groupId>
+            <artifactId>rule-induction</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.11</version>

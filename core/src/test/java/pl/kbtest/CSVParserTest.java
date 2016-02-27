@@ -1,10 +1,8 @@
 package pl.kbtest;
 
-import pl.kbtest.rule_induction.input.CSVParser;
-
 
 import org.junit.Assert;
-
+import pl.kbtest.rule.induction.input.CSVParser;
 import java.io.File;
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -22,7 +20,6 @@ public class CSVParserTest {
 
 
         File file = new File(CSVParser.class.getClassLoader().getResource("ankietatestowa.tsv").getFile());
-
 
         parser.parse(file);
 

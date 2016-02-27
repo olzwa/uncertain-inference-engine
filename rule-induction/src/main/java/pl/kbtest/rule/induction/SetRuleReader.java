@@ -31,10 +31,10 @@ public class SetRuleReader {
 
 
 
-    SetRuleReader(File file, Set delimiters, String token) {
+    SetRuleReader(File file, Set delimiters, String conjunctionToken) {
         this.file = file;
         this.delimitersSet = delimiters;
-        this.conjunctionToken = token;
+        this.conjunctionToken = conjunctionToken;
     }
 
     List<SetRule> readRules() {
@@ -64,20 +64,23 @@ public class SetRuleReader {
                 }
             }
 
-            //if(columnDelimiter == null){throw new Exception();}
+            if(columnDelimiter == null){throw new IllegalArgumentException("Invalid column delimiters");}
 
             while (currentLine != null) {
 
                 currentLine=currentLine.replaceAll("[.*]","");
 
                 String[] sides = currentLine.split("=>");
-                //if(sides.length!=2){throw new Exception("");}
+                if(sides.length!=2){throw new IllegalArgumentException("More than one \"=>\" token in input line");}
                 String[] leftside = sides[0].split(" ");
 
                 ArrayList<SetPremise> premises = parseLeftSide(leftside);
 
                 String[] rightside = sides[1].split(columnDelimiter);
                 boolean conjunction = sides[1].contains("AND");
+                for (int i = 0; i < rightside.length; i++) {
+                    rightside[i]=rightside[i].trim();
+                }
                 SetAction sa = new DefaultSetAction(rightside[0], rightside[1],conjunction );
                 List actions = new LinkedList<>(Arrays.asList(sa));
 
@@ -91,14 +94,14 @@ public class SetRuleReader {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        catch (InputParsingException e){
+        catch (IllegalArgumentException e){
             e.printStackTrace();
         }
 
         return rules;
     }
 
-    ArrayList<SetPremise> parseLeftSide(String[] leftside) {
+    private ArrayList<SetPremise> parseLeftSide(String[] leftside) {
 
         StringBuilder sb = new StringBuilder();
         boolean hasHead = false;
@@ -113,18 +116,18 @@ public class SetRuleReader {
                 sb.append(leftside[i]);
                 if(i == leftside.length-1){
 
-                    premises.add(divide(sb));
+                    premises.add(getPremise(sb));
                     sb.setLength(0);
                 }
             }
             else if(hasHead == true && containsDelimiter){
 
-                premises.add(divide(sb));
+                premises.add(getPremise(sb));
                 sb.setLength(0);
                 sb.append(leftside[i]);
 
                 if(i == leftside.length-1){
-                    premises.add(divide(sb));
+                    premises.add(getPremise(sb));
                     sb.setLength(0);
                 }
             }
@@ -134,7 +137,7 @@ public class SetRuleReader {
                 hasHead=true;
                 if(i == leftside.length-1){
 
-                    premises.add(divide(sb));
+                    premises.add(getPremise(sb));
                     sb.setLength(0);
                 }
             }
@@ -143,12 +146,12 @@ public class SetRuleReader {
         return premises;
     }
 
-    SetPremise divide (StringBuilder sb){
+    private SetPremise getPremise(StringBuilder sb){
         String temp = sb.toString();
         boolean conjunction=false;
-        if(temp.contains(columnDelimiter)){
+        if(temp.contains(conjunctionToken)){
             conjunction = true;
-            temp=temp.replaceAll(columnDelimiter,",");
+            temp=temp.replaceAll(conjunctionToken,",");
         }
 
         String regex = valueSeparator+"|"+columnDelimiter+"|"+conjunctionToken;
@@ -161,15 +164,4 @@ public class SetRuleReader {
         return premise;
     }
 
-
-
-
-    public static void main(String[] args) {
-    /*
-        File file = new File("SetRuleReaderTestFile.txt");
-        Set del  = new HashSet<>(Arrays.asList("="));
-        SetRuleReader srr = new SetRuleReader(file,del,"AND");
-        srr.readRules();
-     */
-    }
 }

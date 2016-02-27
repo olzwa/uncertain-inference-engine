@@ -74,4 +74,29 @@ public class SetPremise {
         }
         
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        SetPremise that = (SetPremise) o;
+
+        if (negate != that.negate) return false;
+        if (conjunction != that.conjunction) return false;
+        if (head != null ? !head.equals(that.head) : that.head != null) return false;
+        if (set != null ? !set.equals(that.set) : that.set != null) return false;
+        return !(grfIrf != null ? !grfIrf.equals(that.grfIrf) : that.grfIrf != null);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = head != null ? head.hashCode() : 0;
+        result = 31 * result + (set != null ? set.hashCode() : 0);
+        result = 31 * result + (negate ? 1 : 0);
+        result = 31 * result + (conjunction ? 1 : 0);
+        result = 31 * result + (grfIrf != null ? grfIrf.hashCode() : 0);
+        return result;
+    }
 }
