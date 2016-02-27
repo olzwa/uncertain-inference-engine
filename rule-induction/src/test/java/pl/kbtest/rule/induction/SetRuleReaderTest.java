@@ -6,6 +6,7 @@ import org.hamcrest.MatcherAssert;
 import org.hamcrest.collection.IsIterableContainingInOrder;
 import org.junit.Assert;
 import org.junit.matchers.JUnitMatchers;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pl.kbtest.action.DefaultSetAction;
 import pl.kbtest.action.SetAction;
@@ -70,30 +71,9 @@ public class SetRuleReaderTest {
 
         List<SetRule> result = srr.readRules();
 
-        for (int i = 0; i < result.size(); i++) {
-            SetRule resultRule = (result.get(i));
-            SetRule expectedRule = (expectedRules.get(i));
-            for (int j = 0; j < resultRule.getPremises().size(); j++) {
-                SetPremise resultPremise = resultRule.getPremises().get(j);
-                SetPremise expectedPremise = expectedRule.getPremises().get(j);
-                assertEquals(resultPremise, expectedPremise);
-            }
-            for (int j = 0; j < resultRule.getConclusions().size(); j++) {
-                SetAction resultAction = resultRule.getConclusions().get(j);
-                SetAction expectedAction = expectedRule.getConclusions().get(j);
-                assertEquals(resultAction, expectedAction);
-            }
-
-        }
 
 
-
-        /*for (int i = 0; i < result.size(); i++) {
-            Integer r = result.get(i).hashCode();
-            Integer exr = expectedRules.get(i).hashCode();
-            assertEquals(result.get(i), expectedRules.get(i));
-        }*/
+        assertEquals(result,expectedRules);
     }
-
 
 }

@@ -61,7 +61,6 @@ public class SetRule {
         return this.grfIrf;
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (obj == null) return false;
@@ -74,15 +73,17 @@ public class SetRule {
             for (int j = 0; j < this.getPremises().size(); j++) {
                 SetPremise thisPremise = this.getPremises().get(j);
                 SetPremise objPremise = ((SetRule) obj).getPremises().get(j);
-                if (thisPremise.toString() != objPremise.toString() || thisPremise.getGrfIrf() != objPremise.getGrfIrf()
-                        || thisPremise.isNegated() != objPremise.isNegated() || thisPremise.isConjunction() != objPremise.isConjunction()) {
+                if (!thisPremise.toString().equals( objPremise.toString()) ||
+                        thisPremise.getGrfIrf() != objPremise.getGrfIrf() ||
+                        thisPremise.isNegated() != objPremise.isNegated() ||
+                        thisPremise.isConjunction() != objPremise.isConjunction()) {
                     return false;
                 }
             }
             for (int j = 0; j < this.getConclusions().size(); j++) {
                 SetAction thisAction = this.getConclusions().get(j);
                 SetAction objAction = ((SetRule) obj).getConclusions().get(j);
-                if (thisAction.toString() != objAction.toString() || thisAction.isConjunction() != objAction.isConjunction()) {
+                if (!thisAction.toString().equals(objAction.toString()) || thisAction.isConjunction() != objAction.isConjunction()) {
                     return false;
                 }
             }
