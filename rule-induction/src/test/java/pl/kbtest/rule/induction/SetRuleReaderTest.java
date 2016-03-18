@@ -1,12 +1,6 @@
 package pl.kbtest.rule.induction;
 
-import org.assertj.core.internal.cglib.core.CollectionUtils;
-import org.hamcrest.Matcher;
-import org.hamcrest.MatcherAssert;
-import org.hamcrest.collection.IsIterableContainingInOrder;
-import org.junit.Assert;
-import org.junit.matchers.JUnitMatchers;
-import org.testng.annotations.BeforeMethod;
+
 import org.testng.annotations.Test;
 import pl.kbtest.action.DefaultSetAction;
 import pl.kbtest.action.SetAction;
@@ -31,6 +25,7 @@ import static org.testng.Assert.*;
  */
 public class SetRuleReaderTest {
 
+
     @Test
     public void testReadRules() throws Exception {
 
@@ -41,7 +36,8 @@ public class SetRuleReaderTest {
         SetPremise first = new SetPremise("wiek", new HashSet<>(Arrays.asList("kolejna_wartosc", "21")), false, false);
         SetPremise second = new SetPremise("plec", new HashSet<>(Arrays.asList("kobieta")), false, false);
         SetPremise third = new SetPremise("stan_zdrowia", new HashSet<>(Arrays.asList("kolejna_wartosc2", "dobry")), false, false);
-        SetAction action = new DefaultSetAction("motywacja", "przyjemność płynąca z uprawiania sportu2 AND troska o wygląd2", true);
+        //SetAction action = new DefaultSetAction("motywacja", "przyjemność płynąca z uprawiania sportu2 AND troska o wygląd2", true);
+        SetAction action = new DefaultSetAction("motywacja", "przyjemnosc plynaca z uprawiania sportu2 AND troska o wyglad2", true);
         List premises = new ArrayList<>();
         premises.add(first);
         premises.add(second);
@@ -67,7 +63,7 @@ public class SetRuleReaderTest {
         rule = new SetRule(premises, conclusions, null);
         expectedRules.add(rule);
 
-        SetRuleReader srr = new SetRuleReader(f, delimiters, conjunctionToken);
+        SetRuleReader srr = new SetRuleReader(f, delimiters, conjunctionToken,true);
 
         List<SetRule> result = srr.readRules();
 

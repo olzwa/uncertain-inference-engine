@@ -10,9 +10,11 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
@@ -28,13 +30,16 @@ public class SetRuleReader {
     String columnDelimiter = null;
     String conjunctionToken = null;
     String valueSeparator = ",";
+    boolean transliteration = false;
 
 
 
-    SetRuleReader(File file, Set delimiters, String conjunctionToken) {
+
+    SetRuleReader(File file, Set delimiters, String conjunctionToken, boolean transliteration) {
         this.file = file;
         this.delimitersSet = delimiters;
         this.conjunctionToken = conjunctionToken;
+        this.transliteration = transliteration;
     }
 
     List<SetRule> readRules() {
@@ -47,6 +52,13 @@ public class SetRuleReader {
 
             BufferedReader bf = new BufferedReader(new FileReader(file));
             String currentLine = bf.readLine();
+
+            if(transliteration){
+                currentLine = Normalizer.normalize(currentLine,Normalizer.Form.NFD);
+                currentLine=currentLine.replaceAll("'|̨|̇|́","");
+                currentLine=currentLine.replaceAll("ł","l");
+                currentLine=currentLine.replaceAll("Ł","L");
+            }
 
             ArrayList<String> delimitersList = new ArrayList<>(delimitersSet);
             ArrayList<Pattern> patterns = new ArrayList<>();
@@ -90,7 +102,7 @@ public class SetRuleReader {
                 currentLine = bf.readLine();
             }
 
-
+            bf.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
