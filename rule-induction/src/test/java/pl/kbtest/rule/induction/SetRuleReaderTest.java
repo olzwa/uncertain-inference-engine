@@ -1,13 +1,15 @@
 package pl.kbtest.rule.induction;
 
+import com.cedarsoftware.util.DeepEquals;
+import com.thoughtworks.xstream.XStream;
+import org.custommonkey.xmlunit.DetailedDiff;
+import org.custommonkey.xmlunit.Diff;
+import org.custommonkey.xmlunit.Difference;
 import org.junit.Test;
-import org.junit.Assert;
 import pl.kbtest.action.DefaultSetAction;
 import pl.kbtest.action.SetAction;
 import pl.kbtest.contract.SetPremise;
 import pl.kbtest.contract.SetRule;
-import pl.kbtest.rule.induction.SetRuleReader;
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,7 +18,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import static org.junit.Assert.*;
 
 /**
  * Created by Ja on 2016-04-05.
@@ -63,8 +64,31 @@ public class SetRuleReaderTest {
 
         List<SetRule> result = srr.readRules();
 
+        System.out.println(result.hashCode()+" <- result hashcode "+result.toString()+ "\n");
+        System.out.println(expectedRules.hashCode()+" <- expected hashcode"+expectedRules.toString()+ "\n");
+        DeepEquals.deepEquals(result,expectedRules);
 
+        XStream xs = new XStream();
 
-        assertEquals(result,expectedRules);
+        String xmlResult = xs.toXML(result);
+        String xmlExpected = xs.toXML(expectedRules);
+
+       // System.out.println(xmlExpected);
+       // System.out.println(xmlResult);
+
+        Diff d = new Diff(xmlExpected,xmlResult);
+        DetailedDiff dd = new DetailedDiff(d);
+
+        List l = dd.getAllDifferences();
+
+        for (Object t: l) {
+            Difference dtemp = (Difference) t;
+            System.out.println("======");
+            System.out.println(dtemp);
+            System.out.println("///////");
+        }
+        
+        //Assert.assertEquals(result,expectedRules);
+       // assertEquals(result,expectedRules);
     }
 }
