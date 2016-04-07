@@ -46,7 +46,7 @@ public class CSVParser implements Parser {
 
 	public void parse(File csvFile){
 		BufferedReader br = null;
-		String line = "";
+		String line;
 
 
 		try {

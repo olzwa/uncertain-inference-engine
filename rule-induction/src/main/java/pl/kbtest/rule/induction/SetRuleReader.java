@@ -4,8 +4,6 @@ import pl.kbtest.action.DefaultSetAction;
 import pl.kbtest.action.SetAction;
 import pl.kbtest.contract.SetPremise;
 import pl.kbtest.contract.SetRule;
-import pl.kbtest.rule.induction.exception.InputParsingException;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -14,7 +12,6 @@ import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;

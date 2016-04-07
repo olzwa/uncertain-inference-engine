@@ -19,22 +19,26 @@ public class CSVParserTest {
         parser.setSeparator("\t");
 
 
-        File file = new File(CSVParser.class.getClassLoader().getResource("ankietatestowa.tsv").getFile());
+        try {
+            File file = new File(CSVParser.class.getClassLoader().getResource("ankietatestowa.tsv").getFile());
 
-        parser.parse(file);
+            parser.parse(file);
 
-        List<List<String>> correctRows = new LinkedList<>();
+            List<List<String>> correctRows = new LinkedList<>();
 
-        String[] cells;
+            String[] cells;
 
-        cells = new String[]{"Rok-miesiac-dzien","111","aaa, bbb","ccc"};
-        correctRows.add(Arrays.asList(cells));
-        cells = new String[]{"Rok-miesiac-dzien","444","aaa4","bbb4"};
-        correctRows.add(Arrays.asList(cells));
-        cells = new String[]{"Rok-miesiac-dzien","555","aaa5, aa, a","bbb5"};
-        correctRows.add(Arrays.asList(cells));
+            cells = new String[]{"Rok-miesiac-dzien","111","aaa, bbb","ccc"};
+            correctRows.add(Arrays.asList(cells));
+            cells = new String[]{"Rok-miesiac-dzien","444","aaa4","bbb4"};
+            correctRows.add(Arrays.asList(cells));
+            cells = new String[]{"Rok-miesiac-dzien","555","aaa5, aa, a","bbb5"};
+            correctRows.add(Arrays.asList(cells));
 
-        Assert.assertEquals(correctRows,parser.getRows());
+            Assert.assertEquals(correctRows,parser.getRows());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
     

@@ -1,11 +1,12 @@
 package pl.kbtest.rule.induction;
 
-
-import org.testng.annotations.Test;
+import org.junit.Test;
+import org.junit.Assert;
 import pl.kbtest.action.DefaultSetAction;
 import pl.kbtest.action.SetAction;
 import pl.kbtest.contract.SetPremise;
 import pl.kbtest.contract.SetRule;
+import pl.kbtest.rule.induction.SetRuleReader;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -15,20 +16,15 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-
-import org.hamcrest.Matchers;
-
-import static org.testng.Assert.*;
+import static org.junit.Assert.*;
 
 /**
- * Created by Ja on 2016-02-24.
+ * Created by Ja on 2016-04-05.
  */
 public class SetRuleReaderTest {
 
-
     @Test
     public void testReadRules() throws Exception {
-
         Set delimiters = new HashSet<>(Arrays.asList("=", ":"));
         String conjunctionToken = new String("AND");
         File f = new File(SetRuleReader.class.getClassLoader().getResource("SetRuleReaderTestFile.txt").getFile());
@@ -38,7 +34,7 @@ public class SetRuleReaderTest {
         SetPremise third = new SetPremise("stan_zdrowia", new HashSet<>(Arrays.asList("kolejna_wartosc2", "dobry")), false, false);
         //SetAction action = new DefaultSetAction("motywacja", "przyjemność płynąca z uprawiania sportu2 AND troska o wygląd2", true);
         SetAction action = new DefaultSetAction("motywacja", "przyjemnosc plynaca z uprawiania sportu2 AND troska o wyglad2", true);
-        List premises = new ArrayList<>();
+        List<SetPremise> premises = new ArrayList();
         premises.add(first);
         premises.add(second);
         premises.add(third);
@@ -71,5 +67,4 @@ public class SetRuleReaderTest {
 
         assertEquals(result,expectedRules);
     }
-
 }
