@@ -26,7 +26,7 @@ public class SetRuleReader {
     Set<String> delimitersSet = null;
     String columnDelimiter = null;
     String conjunctionToken = null;
-    String valueSeparator = ",";
+    String valueSeparator = ","; //same as pl.kbtest.contract.Config.GLOBAL_SPLIT_REGEX
     boolean transliteration = false;
 
 
@@ -60,8 +60,8 @@ public class SetRuleReader {
             ArrayList<String> delimitersList = new ArrayList<>(delimitersSet);
             ArrayList<Pattern> patterns = new ArrayList<>();
 
-            for (String s : delimitersList) {
-                patterns.add(Pattern.compile("\\w"+s+"\\w")); //avoid matching "=" with "=>"
+            for (String delimiter : delimitersList) {
+                patterns.add(Pattern.compile("\\w"+delimiter+"\\w")); //avoid matching "=" with "=>"
             }
 
 
@@ -86,7 +86,8 @@ public class SetRuleReader {
                 ArrayList<SetPremise> premises = parseLeftSide(leftside);
 
                 String[] rightside = sides[1].split(columnDelimiter);
-                boolean conjunction = sides[1].contains("AND");
+                //boolean conjunction = sides[1].contains("AND");
+                boolean conjunction = sides[1].contains(conjunctionToken);
                 for (int i = 0; i < rightside.length; i++) {
                     rightside[i]=rightside[i].trim();
                 }
