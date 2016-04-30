@@ -35,14 +35,7 @@ public class CSVParser implements Parser {
 			patterns.add(Pattern.compile(temp));
 		}
 	}
-
-
-	public static void main(String[] args) {
-
-		CSVParser obj = new CSVParser();
-		obj.getRows();
-
-	}
+	
 
 	public void parse(File csvFile){
 		BufferedReader br = null;

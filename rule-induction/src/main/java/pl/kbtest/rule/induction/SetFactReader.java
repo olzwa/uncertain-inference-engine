@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -22,7 +23,6 @@ public class SetFactReader {
 
     File file = null;
     Set<String> delimitersSet = null;
-    String columnDelimiter = null;
     String conjunctionToken = null;
     String disjunctionToken = null;
     //String valueSeparator = ",";
@@ -43,51 +43,55 @@ public class SetFactReader {
             BufferedReader bf = new BufferedReader(new FileReader(file));
 
 
-
             String currentLine = bf.readLine();
             while (currentLine != null) {
-                boolean conjunction = false;
-                currentLine = currentLine.replaceAll("[.*]", "");
+                boolean conjunction = true;
+                currentLine = currentLine.replaceAll("\\[.*\\]", "");
                 boolean negate = currentLine.contains("!");
+                if(negate){currentLine=currentLine.replaceAll("!","");}
                 String[] sides = currentLine.split("=>");
                 if (sides.length != 2) {
                     throw new IllegalArgumentException("More than one \"=>\" token in input line");
                 }
-                String head = sides[0];
-                String body = sides[1];
+                String head = sides[0].trim();
+                String body = sides[1].trim();
                 SetFact f;
-                String token=null;
+                String token = null;
 
-                    if(body.contains(conjunctionToken)) {
-                        conjunction = true;
-                        token = conjunctionToken;
-                    }
-                    else if(body.contains(disjunctionToken)){
-                        token = disjunctionToken;
-                    }
+                if (body.contains(conjunctionToken)) {
+                    token = conjunctionToken;
+                } else if (body.contains(disjunctionToken)) {
+                    token = disjunctionToken;
+                    conjunction = false;
+                }
 
-                    if(token != null) {
 
-                        String[] bodyparts = body.split(token);
-                        Set<String> bodySet = new HashSet<String>(Arrays.asList(bodyparts));
-                        f = SetFactFactory.getInstance(head, bodySet, null, null, negate, conjunction);
+                if (token != null) {
+
+                    String[] bodyparts = body.split(token);
+                    for (int i = 0; i < bodyparts.length; i++) {
+                        bodyparts[i] = bodyparts[i].trim();
                     }
-                    else{f = SetFactFactory.getInstance(head, body, null, null, negate, conjunction);}
+                    Set<String> bodySet = new HashSet<String>(Arrays.asList(bodyparts));
+                    f = SetFactFactory.getInstance(head, bodySet, null, null, negate, conjunction);
+                } else {
+                    f = SetFactFactory.getInstance(head, body, null, null, negate, conjunction);
+                }
 
                 //String[] bodyparts = body.split(valueSeparator);
 
                 facts.add(f);
+                currentLine = bf.readLine();
             }
 
-
+            bf.close();
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        return  facts;
+        return facts;
     }
 
 }

@@ -5,6 +5,7 @@ import com.thoughtworks.xstream.XStream;
 import org.custommonkey.xmlunit.DetailedDiff;
 import org.custommonkey.xmlunit.Diff;
 import org.custommonkey.xmlunit.Difference;
+import org.junit.Assert;
 import org.junit.Test;
 import pl.kbtest.action.DefaultSetAction;
 import pl.kbtest.action.SetAction;
@@ -17,7 +18,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
+import org.junit.Assert.*;
 
 /**
  * Created by Ja on 2016-04-05.
@@ -39,7 +40,8 @@ public class SetRuleReaderTest {
         premises.add(first);
         premises.add(second);
         premises.add(third);
-        List conclusions = Collections.singletonList(action);
+       // List conclusions = Collections.singletonList(action);
+        List conclusions = Arrays.asList(action);
 
 
         SetRule rule = new SetRule(premises, conclusions, null);
@@ -54,7 +56,8 @@ public class SetRuleReaderTest {
         premises.add(first);
         premises.add(second);
         premises.add(third);
-        conclusions = Collections.singletonList(action);
+
+        conclusions =Arrays.asList(action); //Collections.singletonList(action);
 
 
         rule = new SetRule(premises, conclusions, null);
@@ -66,8 +69,10 @@ public class SetRuleReaderTest {
 
         System.out.println(result.hashCode()+" <- result hashcode "+result.toString()+ "\n");
         System.out.println(expectedRules.hashCode()+" <- expected hashcode"+expectedRules.toString()+ "\n");
-        DeepEquals.deepEquals(result,expectedRules);
-
+        boolean eq = DeepEquals.deepEquals(result,expectedRules);
+        if(eq){
+            System.out.println("deep equals returns true");
+        }
         XStream xs = new XStream();
 
         String xmlResult = xs.toXML(result);
@@ -87,8 +92,8 @@ public class SetRuleReaderTest {
             System.out.println(dtemp);
             System.out.println("///////");
         }
-        
+
         //Assert.assertEquals(result,expectedRules);
-       // assertEquals(result,expectedRules);
+       //assertEquals(result,expectedRules);
     }
 }

@@ -77,7 +77,7 @@ public class SetRuleReader {
 
             while (currentLine != null) {
 
-                currentLine=currentLine.replaceAll("[.*]","");
+                //currentLine=currentLine.replaceAll("\\[.*\\]","");
 
                 String[] sides = currentLine.split("=>");
                 if(sides.length!=2){throw new IllegalArgumentException("More than one \"=>\" token in input line");}
