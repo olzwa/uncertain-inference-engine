@@ -5,6 +5,8 @@ import com.thoughtworks.xstream.XStream;
 import org.custommonkey.xmlunit.DetailedDiff;
 import org.custommonkey.xmlunit.Diff;
 import org.custommonkey.xmlunit.Difference;
+import org.javers.core.Javers;
+import org.javers.core.JaversBuilder;
 import org.junit.Assert;
 import org.junit.Test;
 import pl.kbtest.action.DefaultSetAction;
@@ -19,6 +21,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import org.junit.Assert.*;
+import org.javers.*;
 
 /**
  * Created by Ja on 2016-04-05.
@@ -27,43 +30,69 @@ public class SetRuleReaderTest {
 
     @Test
     public void testReadRules() throws Exception {
-        Set delimiters = new HashSet<>(Arrays.asList("=", ":"));
-        String conjunctionToken = new String("AND");
+        Set delimiters = new HashSet<>(Arrays.asList("="));
+        String conjunctionToken = "AND";
+        String disjunctionToken = "OR";
         File f = new File(SetRuleReader.class.getClassLoader().getResource("SetRuleReaderTestFile.txt").getFile());
 
-        SetPremise first = new SetPremise("wiek", new HashSet<>(Arrays.asList("kolejna_wartosc", "21")), false, false);
-        SetPremise second = new SetPremise("plec", new HashSet<>(Arrays.asList("kobieta")), false, false);
-        SetPremise third = new SetPremise("stan_zdrowia", new HashSet<>(Arrays.asList("kolejna_wartosc2", "dobry")), false, false);
-        //SetAction action = new DefaultSetAction("motywacja", "przyjemność płynąca z uprawiania sportu2 AND troska o wygląd2", true);
-        SetAction action = new DefaultSetAction("motywacja", "przyjemnosc plynaca z uprawiania sportu2 AND troska o wyglad2", true);
+        // [3,3] 16. Scharakteryzuj stan swojego zdrowia.=dobry 8. Scharakteryzuj najczęściej używaną przez Ciebie odzież sportową. =markowa
+        // AND średniej klasy 1. Podaj swoją płeć. Zaznacz odpowiedź. =kobieta 2. Podaj swój wiek (w latach):=21
+        // => 9. Na co przeznaczasz zasadniczą część swoich wakacji (urlopu)? =spotkania towarzyskie AND sen i lektura
+
+        SetPremise first = new SetPremise("16. Scharakteryzuj stan swojego zdrowia.", new HashSet<>(Arrays.asList("dobry")), false, true);
+        SetPremise second = new SetPremise("8. Scharakteryzuj najczęściej używaną przez Ciebie odzież sportową.", new HashSet<>(Arrays.asList("markowa","średniej klasy")), false, true);
+        SetPremise third = new SetPremise("1. Podaj swoją płeć. Zaznacz odpowiedź.", new HashSet<>(Arrays.asList("kobieta")), false, true);
+        SetPremise fourth = new SetPremise("2. Podaj swój wiek (w latach):", new HashSet<>(Arrays.asList("21")), false, true);
+        SetAction action = new DefaultSetAction("9. Na co przeznaczasz zasadniczą część swoich wakacji (urlopu)?", "spotkania towarzyskie AND sen i lektura", true);
         List<SetPremise> premises = new ArrayList();
         premises.add(first);
         premises.add(second);
         premises.add(third);
-       // List conclusions = Collections.singletonList(action);
+        premises.add(fourth);
         List conclusions = Arrays.asList(action);
-
-
         SetRule rule = new SetRule(premises, conclusions, null);
         List<SetRule> expectedRules = new ArrayList<>();
         expectedRules.add(rule);
 
-        first = new SetPremise("kolumna", new HashSet<>(Arrays.asList("wartosc2", "wartosc1")), false, true);
-        second = new SetPremise("kolumna2", new HashSet<>(Arrays.asList("wartosc4", "wartosc3")), false, false);
-        third = new SetPremise("kolumna3", new HashSet<>(Arrays.asList("wartosc5", "wartosc6")), false, false);
-        action = new DefaultSetAction("fakt", "wartosc7", false);
+        //[3,3] 13. Oceń swoje dotychczasowe postępy w nauce i pracy. =bardzo dobre
+        // 16. Scharakteryzuj stan swojego zdrowia.=dobry 1. Podaj swoją płeć. Zaznacz odpowiedź. =kobieta
+        // 2. Podaj swój wiek (w latach):=21  => 11. Czy palisz papierosy? Zaznacz odpowiedź. =sporadycznie
+
+        first = new SetPremise("13. Oceń swoje dotychczasowe postępy w nauce i pracy.", new HashSet<>(Arrays.asList("bardzo dobre")), false, true);
+        second = new SetPremise("16. Scharakteryzuj stan swojego zdrowia.", new HashSet<>(Arrays.asList("dobry")), false, true);
+        third = new SetPremise("1. Podaj swoją płeć. Zaznacz odpowiedź.", new HashSet<>(Arrays.asList("kobieta")), false, true);
+        fourth = new SetPremise("2. Podaj swój wiek (w latach):", new HashSet<>(Arrays.asList("21")), false, true);
+        action = new DefaultSetAction("11. Czy palisz papierosy? Zaznacz odpowiedź.", "sporadycznie", true);
         premises = new ArrayList<>();
         premises.add(first);
         premises.add(second);
         premises.add(third);
-
-        conclusions =Arrays.asList(action); //Collections.singletonList(action);
-
-
+        premises.add(fourth);
+        conclusions =Arrays.asList(action);
         rule = new SetRule(premises, conclusions, null);
         expectedRules.add(rule);
 
-        SetRuleReader srr = new SetRuleReader(f, delimiters, conjunctionToken,true);
+        //13. Oceń swoje dotychczasowe postępy w nauce i pracy. =bardzo dobre
+        // 16. Scharakteryzuj stan swojego zdrowia.=dobry 1. Podaj swoją płeć. Zaznacz odpowiedź. =kobieta
+        // 2. Podaj swój wiek (w latach):=21  => 3. Do jakiej kategorii (I) należą uprawiane przez Ciebie sporty?=sporty całoroczne OR sporty zimowe
+
+        first = new SetPremise("13. Oceń swoje dotychczasowe postępy w nauce i pracy.", new HashSet<>(Arrays.asList("bardzo dobre")), false, true);
+        second = new SetPremise("16. Scharakteryzuj stan swojego zdrowia.", new HashSet<>(Arrays.asList("dobry")), false, true);
+        third = new SetPremise("1. Podaj swoją płeć. Zaznacz odpowiedź.", new HashSet<>(Arrays.asList("kobieta")), false, true);
+        fourth = new SetPremise("2. Podaj swój wiek (w latach):", new HashSet<>(Arrays.asList("21")), false, true);
+        action = new DefaultSetAction("3. Do jakiej kategorii (I) należą uprawiane przez Ciebie sporty?", "sporty całoroczne OR sporty zimowe", false);
+        premises = new ArrayList<>();
+        premises.add(first);
+        premises.add(second);
+        premises.add(third);
+        premises.add(fourth);
+        conclusions =Arrays.asList(action);
+        rule = new SetRule(premises, conclusions, null);
+        expectedRules.add(rule);
+
+
+//
+        SetRuleReader srr = new SetRuleReader(f, delimiters, conjunctionToken, disjunctionToken,false);
 
         List<SetRule> result = srr.readRules();
 
@@ -73,7 +102,7 @@ public class SetRuleReaderTest {
         if(eq){
             System.out.println("deep equals returns true");
         }
-        XStream xs = new XStream();
+      /*  XStream xs = new XStream();
 
         String xmlResult = xs.toXML(result);
         String xmlExpected = xs.toXML(expectedRules);
@@ -92,8 +121,21 @@ public class SetRuleReaderTest {
             System.out.println(dtemp);
             System.out.println("///////");
         }
+*/
+        //javers
+        Javers javers = JaversBuilder.javers().build();
+        org.javers.core.diff.Diff diff = javers.compareCollections(result,expectedRules,SetRule.class);
+        System.out.println("Javers diff: \n"+diff);
+        //
 
+        /*for (int i = 0; i < result.size() ; i++) {
+            System.out.println("compared rules: "+i);
+            Assert.assertEquals(result.get(i),expectedRules.get(i));
+        }*/
+        Assert.assertEquals(diff.getChanges().size(),0);
         //Assert.assertEquals(result,expectedRules);
        //assertEquals(result,expectedRules);
+
+
     }
 }

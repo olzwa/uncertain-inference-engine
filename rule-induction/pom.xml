@@ -67,7 +67,15 @@
             <artifactId>java-util</artifactId>
             <version>1.8.0</version>
         </dependency>
-<!--test-->
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>4.1</version>
+        </dependency>
+
+
+        <!--test-->
         <dependency>
             <groupId>xstream</groupId>
             <artifactId>xstream</artifactId>
@@ -80,6 +88,14 @@
             <version>1.6</version>
         </dependency>
 
+        <!-- http://mvnrepository.com/artifact/org.javers/javers-core -->
+        <dependency>
+            <groupId>org.javers</groupId>
+            <artifactId>javers-core</artifactId>
+            <version>1.6.7</version>
+        </dependency>
+
+       
     </dependencies>
 
 </project>
