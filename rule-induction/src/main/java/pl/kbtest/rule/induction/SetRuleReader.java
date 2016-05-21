@@ -62,12 +62,7 @@ public class SetRuleReader {
             BufferedReader bf = new BufferedReader(new FileReader(file));
             String currentLine = bf.readLine();
 
-            if (transliteration) {
-                currentLine = Normalizer.normalize(currentLine, Normalizer.Form.NFD);
-                currentLine = currentLine.replaceAll("'|̨|̇|́", "");
-                currentLine = currentLine.replaceAll("ł", "l");
-                currentLine = currentLine.replaceAll("Ł", "L");
-            }
+
 
             ArrayList<String> delimitersList = new ArrayList<>(delimitersSet);
             ArrayList<Pattern> patterns = new ArrayList<>();
@@ -92,6 +87,14 @@ public class SetRuleReader {
 
                 currentLine = currentLine.replaceAll("\\[.*\\]", "");
                 currentLine = currentLine.trim();
+
+                if (transliteration) {
+                    currentLine = Normalizer.normalize(currentLine, Normalizer.Form.NFD);
+                    currentLine = currentLine.replaceAll("'|̨|̇|́", "");
+                    currentLine = currentLine.replaceAll("ł", "l");
+                    currentLine = currentLine.replaceAll("Ł", "L");
+                }
+
                 String[] sides = currentLine.split("=>");
                 if (sides.length != 2) {
                     throw new IllegalArgumentException("More than one \"=>\" token in input line");

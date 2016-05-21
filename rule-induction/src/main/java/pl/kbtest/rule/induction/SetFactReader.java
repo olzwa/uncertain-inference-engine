@@ -47,6 +47,7 @@ public class SetFactReader {
             while (currentLine != null) {
                 boolean conjunction = true;
                 currentLine = currentLine.replaceAll("\\[.*\\]", "");
+//                currentLine=currentLine.trim();
                 boolean negate = currentLine.contains("!");
                 if(negate){currentLine=currentLine.replaceAll("!","");}
                 String[] sides = currentLine.split("=>");

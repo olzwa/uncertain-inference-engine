@@ -30,6 +30,7 @@ public class SetRuleReaderTest {
 
     @Test
     public void testReadRules() throws Exception {
+
         Set delimiters = new HashSet<>(Arrays.asList("="));
         String conjunctionToken = "AND";
         String disjunctionToken = "OR";
@@ -124,7 +125,7 @@ public class SetRuleReaderTest {
 */
         //javers
         Javers javers = JaversBuilder.javers().build();
-        org.javers.core.diff.Diff diff = javers.compareCollections(result,expectedRules,SetRule.class);
+        org.javers.core.diff.Diff diff = javers.compareCollections(expectedRules,result,SetRule.class);
         System.out.println("Javers diff: \n"+diff);
         //
 
@@ -132,7 +133,7 @@ public class SetRuleReaderTest {
             System.out.println("compared rules: "+i);
             Assert.assertEquals(result.get(i),expectedRules.get(i));
         }*/
-        Assert.assertEquals(diff.getChanges().size(),0);
+        Assert.assertEquals(0,diff.getChanges().size());
         //Assert.assertEquals(result,expectedRules);
        //assertEquals(result,expectedRules);
 

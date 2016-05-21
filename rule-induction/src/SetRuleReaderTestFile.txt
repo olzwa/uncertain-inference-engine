@@ -1,1 +1,0 @@
-[4,2] wiek=21 plec=kobieta stan_zdrowia=dobry  => motywacja=przyjemność płynąca z uprawiania sportu2 AND troska o wygląd2
