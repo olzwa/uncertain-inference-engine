@@ -49,7 +49,7 @@ public class SetFactReaderTest {
         expectedFacts.add(expectedFact);
 /*
 
- */
+
         expectedHead =
                 "16. Scharakteryzuj stan swojego zdrowia.=dobry 8. Scharakteryzuj najczęściej używaną przez Ciebie odzież sportową. =markowa AND średniej klasy 1. Podaj swoją płeć. Zaznacz odpowiedź. =kobieta 2. Podaj swój wiek (w latach):=21";
         expectedBodySet = new HashSet<>(Arrays.asList("9. Na co przeznaczasz zasadniczą część swoich wakacji (urlopu)? =spotkania towarzyskie","sen i lektura"));
@@ -68,7 +68,7 @@ public class SetFactReaderTest {
         expectedFact = SetFactFactory.getInstance(expectedHead,expectedBodySet,null,null,false,false);
         expectedFacts.add(expectedFact);
 
-
+*/
        // Collection disjunction = org.apache.commons.collections4.CollectionUtils.disjunction(expectedFacts,facts);
        // System.out.println(disjunction);
         assertEquals(expectedFacts,facts);

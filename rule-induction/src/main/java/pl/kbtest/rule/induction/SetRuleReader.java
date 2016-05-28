@@ -8,8 +8,10 @@ import pl.kbtest.rule.induction.exception.InputParsingException;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -59,7 +61,8 @@ public class SetRuleReader {
             rules = new ArrayList<>();
 
 
-            BufferedReader bf = new BufferedReader(new FileReader(file));
+            //BufferedReader bf = new BufferedReader(new FileReader(file));
+            BufferedReader bf = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
             String currentLine = bf.readLine();
 
 
