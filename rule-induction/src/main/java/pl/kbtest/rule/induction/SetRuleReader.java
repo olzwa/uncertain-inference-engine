@@ -53,7 +53,7 @@ public class SetRuleReader {
         this.transliteration = transliteration;
     }
 
-    List<SetRule> readRules() {
+    public List<SetRule> readRules() {
         List<SetRule> rules = new ArrayList<>();
 
 
@@ -64,7 +64,6 @@ public class SetRuleReader {
             //BufferedReader bf = new BufferedReader(new FileReader(file));
             BufferedReader bf = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
             String currentLine = bf.readLine();
-
 
 
             ArrayList<String> delimitersList = new ArrayList<>(delimitersSet);
@@ -221,8 +220,7 @@ public class SetRuleReader {
                     sb.append(leftside[i]);
                     hasHead = true;
                 }
-            }
-            else {
+            } else {
                 sb.append(leftside[i]);
                 hasHead = true;
             }
@@ -247,7 +245,7 @@ public class SetRuleReader {
         String regex = columnDelimiter + "|" + conjunctionToken;
         String[] parts = temp.split(regex);
         for (int i = 0; i < parts.length; i++) {
-            parts[i]=parts[i].trim();
+            parts[i] = parts[i].trim();
         }
         Set premiseSet = new HashSet<>();
         for (int i = 1; i < parts.length; i++) {

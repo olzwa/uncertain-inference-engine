@@ -9,10 +9,9 @@ package pl.kbtest;
 import pl.kbtest.contract.Context;
 import java.math.BigDecimal;
 import java.util.Deque;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
+
 import pl.kbtest.conclusionExecutor.SetConclusionExecutor1;
 import pl.kbtest.contract.GrfIrf;
 import pl.kbtest.contract.SetFact;
@@ -20,7 +19,6 @@ import pl.kbtest.contract.SetFactFactory;
 import pl.kbtest.contract.SetPremise;
 import pl.kbtest.contract.SetRule;
 import pl.kbtest.premiseEvaluator.SetPremiseComparator;
-import pl.kbtest.premiseEvaluator.SimplePremiseEvaluator;
 
 /**
  *

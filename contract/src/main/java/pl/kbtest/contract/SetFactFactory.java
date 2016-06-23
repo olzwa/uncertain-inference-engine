@@ -80,20 +80,18 @@ public class SetFactFactory {
         boolean isConjunction = true;
         String split = Config.FACT_CONJUNCTION;
 
-        String[] splitHead = fact.split("=>");
+        String[] splitHead = fact.split(Config.FACT_ATTRIBUTION);
 
         if (splitHead.length < 2) {
-            System.out.println(Arrays.toString(splitHead));
             System.exit(0);
         }
-        if(splitHead[1].contains(Config.FACT_DISJUNCTION)){
+        if (splitHead[1].contains(Config.FACT_DISJUNCTION)) {
             isConjunction = false;
             split = Config.FACT_DISJUNCTION;
-        }else if(splitHead[1].contains(Config.FACT_DISJUNCTION) && splitHead[1].contains(Config.FACT_CONJUNCTION)){
+        } else if (splitHead[1].contains(Config.FACT_DISJUNCTION) && splitHead[1].contains(Config.FACT_CONJUNCTION)) {
             throw new IllegalArgumentException();
         }
         String[] parts = splitHead[1].split(Pattern.quote(split));
-        System.out.println(Arrays.toString(parts));
         for (int i = 0; i < parts.length; i++) {
             parts[i] = parts[i].trim();
         }

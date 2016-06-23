@@ -8,6 +8,8 @@ package pl.kbtest.contract;
 
 import java.util.LinkedList;
 import java.util.List;
+
+import com.google.common.base.MoreObjects;
 import pl.kbtest.action.SetAction;
 import pl.kbtest.contract.GrfIrf;
 import pl.kbtest.contract.SetPremise;
@@ -91,4 +93,12 @@ public class SetRule {
         }
     }
 
+    @Override
+    public String toString() {
+        return MoreObjects.toStringHelper(this)
+                .add("premises", premises)
+                .add("conclusions", conclusions)
+                .add("grfIrf", grfIrf)
+                .toString();
+    }
 }

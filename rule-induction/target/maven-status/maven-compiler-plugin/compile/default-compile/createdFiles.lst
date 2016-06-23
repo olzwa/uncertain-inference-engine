@@ -1,0 +1,14 @@
+pl\kbtest\rule\induction\SetFactReader.class
+pl\kbtest\rule\induction\exception\InputParsingException.class
+pl\kbtest\rule\induction\SetFactUtils.class
+pl\kbtest\rule\induction\SetRuleReader.class
+pl\kbtest\rule\induction\input\Parser.class
+pl\kbtest\rule\induction\Inductor.class
+pl\kbtest\rule\induction\SetUtils.class
+pl\kbtest\rule\induction\input\CSVParser.class
+pl\kbtest\rule\induction\VirtualData.class
+pl\kbtest\rule\induction\Column.class
+pl\kbtest\rule\induction\Inductor$1.class
+pl\kbtest\rule\induction\output\VirtualDataWriter.class
+pl\kbtest\rule\induction\Powerset.class
+pl\kbtest\rule\induction\VirtualDataGenerator.class

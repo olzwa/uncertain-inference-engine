@@ -6,6 +6,8 @@
 package pl.kbtest.action;
 
 import java.util.Map;
+
+import com.google.common.base.MoreObjects;
 import pl.kbtest.contract.GrfIrf;
 import pl.kbtest.contract.SetFact;
 import pl.kbtest.contract.SetFactFactory;
@@ -60,5 +62,14 @@ public class DefaultSetAction implements SetAction {
         result = 31 * result + (output != null ? output.hashCode() : 0);
         result = 31 * result + (conjunction ? 1 : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return MoreObjects.toStringHelper(this)
+                .add("fact", fact)
+                .add("output", output)
+                .add("conjunction", conjunction)
+                .toString();
     }
 }

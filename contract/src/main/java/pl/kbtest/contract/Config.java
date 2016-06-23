@@ -14,7 +14,8 @@ public class Config {
     
     public static String GLOBAL_SPLIT_REGEX = ",";
 
-    public static String FACT_CONJUNCTION = ",";
-    public static String FACT_DISJUNCTION = "|";
+    public static String FACT_ATTRIBUTION = "=";
+    public static String FACT_CONJUNCTION = "and";
+    public static String FACT_DISJUNCTION = "or";
 
 }

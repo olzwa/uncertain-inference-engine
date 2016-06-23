@@ -6,6 +6,8 @@
 
 package pl.kbtest.contract;
 
+import com.google.common.base.MoreObjects;
+
 import java.math.BigDecimal;
 import java.util.Set;
 
@@ -75,12 +77,18 @@ import java.util.Set;
             public boolean isNegated() {
                 return this.negate;
             }
-            
-            @Override
-            public String toString(){
-                return this.head+": "+this.set+" grfIrf: "+this.grfIrf;
-            }
 
+    @Override
+    public String toString() {
+        return MoreObjects.toStringHelper(this)
+                .add("head", head)
+                .add("set", set)
+                .add("grfIrf", grfIrf)
+                .add("axiom", axiom)
+                .add("conjunction", conjunction)
+                .add("wParamter", wParamter)
+                .toString();
+    }
 
     @Override
     public boolean equals(Object o) {
