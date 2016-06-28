@@ -11,9 +11,11 @@ import org.junit.Assert;
 import org.junit.Test;
 import pl.kbtest.action.DefaultSetAction;
 import pl.kbtest.action.SetAction;
+import pl.kbtest.contract.GrfIrf;
 import pl.kbtest.contract.SetPremise;
 import pl.kbtest.contract.SetRule;
 import java.io.File;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -36,7 +38,7 @@ public class SetRuleReaderTest {
         String disjunctionToken = "OR";
         File f = new File(SetRuleReader.class.getClassLoader().getResource("SetRuleReaderTestFile.txt").getFile());
 
-        // [3,3] 16. Scharakteryzuj stan swojego zdrowia.=dobry 8. Scharakteryzuj najczęściej używaną przez Ciebie odzież sportową. =markowa
+        // [1,2] 16. Scharakteryzuj stan swojego zdrowia.=dobry 8. Scharakteryzuj najczęściej używaną przez Ciebie odzież sportową. =markowa
         // AND średniej klasy 1. Podaj swoją płeć. Zaznacz odpowiedź. =kobieta 2. Podaj swój wiek (w latach):=21
         // => 9. Na co przeznaczasz zasadniczą część swoich wakacji (urlopu)? =spotkania towarzyskie AND sen i lektura
 
@@ -51,11 +53,11 @@ public class SetRuleReaderTest {
         premises.add(third);
         premises.add(fourth);
         List conclusions = Arrays.asList(action);
-        SetRule rule = new SetRule(premises, conclusions, null);
+        SetRule rule = new SetRule(premises, conclusions, new GrfIrf(BigDecimal.valueOf(1),BigDecimal.valueOf(2)));
         List<SetRule> expectedRules = new ArrayList<>();
         expectedRules.add(rule);
 
-        //[3,3] 13. Oceń swoje dotychczasowe postępy w nauce i pracy. =bardzo dobre
+        //[3,4] 13. Oceń swoje dotychczasowe postępy w nauce i pracy. =bardzo dobre
         // 16. Scharakteryzuj stan swojego zdrowia.=dobry 1. Podaj swoją płeć. Zaznacz odpowiedź. =kobieta
         // 2. Podaj swój wiek (w latach):=21  => 11. Czy palisz papierosy? Zaznacz odpowiedź. =sporadycznie
 
@@ -70,10 +72,10 @@ public class SetRuleReaderTest {
         premises.add(third);
         premises.add(fourth);
         conclusions =Arrays.asList(action);
-        rule = new SetRule(premises, conclusions, null);
+        rule = new SetRule(premises, conclusions, new GrfIrf(BigDecimal.valueOf(3),BigDecimal.valueOf(4)));
         expectedRules.add(rule);
 
-        //13. Oceń swoje dotychczasowe postępy w nauce i pracy. =bardzo dobre
+        //[10,10]13. Oceń swoje dotychczasowe postępy w nauce i pracy. =bardzo dobre
         // 16. Scharakteryzuj stan swojego zdrowia.=dobry 1. Podaj swoją płeć. Zaznacz odpowiedź. =kobieta
         // 2. Podaj swój wiek (w latach):=21  => 3. Do jakiej kategorii (I) należą uprawiane przez Ciebie sporty?=sporty całoroczne OR sporty zimowe
 
@@ -88,7 +90,7 @@ public class SetRuleReaderTest {
         premises.add(third);
         premises.add(fourth);
         conclusions =Arrays.asList(action);
-        rule = new SetRule(premises, conclusions, null);
+        rule = new SetRule(premises, conclusions, new GrfIrf(BigDecimal.valueOf(10),BigDecimal.valueOf(10)));
         expectedRules.add(rule);
 
 
@@ -97,12 +99,12 @@ public class SetRuleReaderTest {
 
         List<SetRule> result = srr.readRules();
 
-        System.out.println(result.hashCode()+" <- result hashcode "+result.toString()+ "\n");
+        /*System.out.println(result.hashCode()+" <- result hashcode "+result.toString()+ "\n");
         System.out.println(expectedRules.hashCode()+" <- expected hashcode"+expectedRules.toString()+ "\n");
         boolean eq = DeepEquals.deepEquals(result,expectedRules);
         if(eq){
             System.out.println("deep equals returns true");
-        }
+        }*/
       /*  XStream xs = new XStream();
 
         String xmlResult = xs.toXML(result);

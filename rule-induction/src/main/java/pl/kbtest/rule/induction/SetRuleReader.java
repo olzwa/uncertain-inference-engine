@@ -2,6 +2,7 @@ package pl.kbtest.rule.induction;
 
 import pl.kbtest.action.DefaultSetAction;
 import pl.kbtest.action.SetAction;
+import pl.kbtest.contract.GrfIrf;
 import pl.kbtest.contract.SetPremise;
 import pl.kbtest.contract.SetRule;
 import pl.kbtest.rule.induction.exception.InputParsingException;
@@ -12,6 +13,7 @@ import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.math.BigDecimal;
 import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -87,6 +89,20 @@ public class SetRuleReader {
 
             while (currentLine != null) {
 
+                Pattern p = Pattern.compile("\\[([0-9]+),([0-9]+)\\]");
+                Matcher m = p.matcher(currentLine);
+
+                BigDecimal grf = null;
+                BigDecimal irf = null;
+
+                if(m.find()){
+                    grf = BigDecimal.valueOf(Integer.parseInt(m.group(1)));
+                    irf = BigDecimal.valueOf(Integer.parseInt(m.group(2)));
+
+                }
+
+                if (grf == null || irf == null){throw new IllegalArgumentException("No grf/irf parameters");}
+
                 currentLine = currentLine.replaceAll("\\[.*\\]", "");
                 currentLine = currentLine.trim();
 
@@ -119,7 +135,7 @@ public class SetRuleReader {
                 SetAction sa = new DefaultSetAction(rightside[0], rightside[1], conjunction);
                 List actions = new LinkedList<>(Arrays.asList(sa));
 
-                SetRule sr = new SetRule(premises, actions, null);
+                SetRule sr = new SetRule(premises, actions, new GrfIrf(grf,irf));
                 rules.add(sr);
 
                 currentLine = bf.readLine();
