@@ -38,7 +38,7 @@ public class SetRuleReaderTest {
         String disjunctionToken = "OR";
         File f = new File(SetRuleReader.class.getClassLoader().getResource("SetRuleReaderTestFile.txt").getFile());
 
-        // [1,2] 16. Scharakteryzuj stan swojego zdrowia.=dobry 8. Scharakteryzuj najczęściej używaną przez Ciebie odzież sportową. =markowa
+        // [1,0.2] 16. Scharakteryzuj stan swojego zdrowia.=dobry 8. Scharakteryzuj najczęściej używaną przez Ciebie odzież sportową. =markowa
         // AND średniej klasy 1. Podaj swoją płeć. Zaznacz odpowiedź. =kobieta 2. Podaj swój wiek (w latach):=21
         // => 9. Na co przeznaczasz zasadniczą część swoich wakacji (urlopu)? =spotkania towarzyskie AND sen i lektura
 
@@ -53,11 +53,11 @@ public class SetRuleReaderTest {
         premises.add(third);
         premises.add(fourth);
         List conclusions = Arrays.asList(action);
-        SetRule rule = new SetRule(premises, conclusions, new GrfIrf(BigDecimal.valueOf(1),BigDecimal.valueOf(2)));
+        SetRule rule = new SetRule(premises, conclusions, new GrfIrf(BigDecimal.valueOf(1),BigDecimal.valueOf(0.2)));
         List<SetRule> expectedRules = new ArrayList<>();
         expectedRules.add(rule);
 
-        //[3,4] 13. Oceń swoje dotychczasowe postępy w nauce i pracy. =bardzo dobre
+        //[0.3,0.4] 13. Oceń swoje dotychczasowe postępy w nauce i pracy. =bardzo dobre
         // 16. Scharakteryzuj stan swojego zdrowia.=dobry 1. Podaj swoją płeć. Zaznacz odpowiedź. =kobieta
         // 2. Podaj swój wiek (w latach):=21  => 11. Czy palisz papierosy? Zaznacz odpowiedź. =sporadycznie
 
@@ -72,10 +72,10 @@ public class SetRuleReaderTest {
         premises.add(third);
         premises.add(fourth);
         conclusions =Arrays.asList(action);
-        rule = new SetRule(premises, conclusions, new GrfIrf(BigDecimal.valueOf(3),BigDecimal.valueOf(4)));
+        rule = new SetRule(premises, conclusions, new GrfIrf(BigDecimal.valueOf(0.3),BigDecimal.valueOf(0.4)));
         expectedRules.add(rule);
 
-        //[10,10]13. Oceń swoje dotychczasowe postępy w nauce i pracy. =bardzo dobre
+        //[0.10,0.10]13. Oceń swoje dotychczasowe postępy w nauce i pracy. =bardzo dobre
         // 16. Scharakteryzuj stan swojego zdrowia.=dobry 1. Podaj swoją płeć. Zaznacz odpowiedź. =kobieta
         // 2. Podaj swój wiek (w latach):=21  => 3. Do jakiej kategorii (I) należą uprawiane przez Ciebie sporty?=sporty całoroczne OR sporty zimowe
 
@@ -90,7 +90,7 @@ public class SetRuleReaderTest {
         premises.add(third);
         premises.add(fourth);
         conclusions =Arrays.asList(action);
-        rule = new SetRule(premises, conclusions, new GrfIrf(BigDecimal.valueOf(10),BigDecimal.valueOf(10)));
+        rule = new SetRule(premises, conclusions, new GrfIrf(BigDecimal.valueOf(0.10),BigDecimal.valueOf(0.10)));
         expectedRules.add(rule);
 
 

@@ -87,21 +87,26 @@ public class SetRuleReader {
                 throw new IllegalArgumentException("Invalid column delimiters");
             }
 
+            Pattern p = Pattern.compile("\\[([0-9]+(\\.|,)*[0-9]*),([0-9]+(\\.|,)*[0-9]*)\\]");
+
             while (currentLine != null) {
 
-                Pattern p = Pattern.compile("\\[([0-9]+),([0-9]+)\\]");
-                Matcher m = p.matcher(currentLine);
 
                 BigDecimal grf = null;
                 BigDecimal irf = null;
 
-                if(m.find()){
-                    grf = BigDecimal.valueOf(Integer.parseInt(m.group(1)));
-                    irf = BigDecimal.valueOf(Integer.parseInt(m.group(2)));
+                Matcher m = p.matcher(currentLine);
+
+                if (m.find()) {
+
+                    grf = (m.group(1).contains(".") || m.group(1).contains(",")) ? BigDecimal.valueOf(Double.parseDouble(m.group(1))) : BigDecimal.valueOf(Integer.parseInt(m.group(1)));
+                    irf = (m.group(3).contains(".") || m.group(3).contains(",")) ? BigDecimal.valueOf(Double.parseDouble(m.group(3))) : BigDecimal.valueOf(Integer.parseInt(m.group(3)));
 
                 }
 
-                if (grf == null || irf == null){throw new IllegalArgumentException("No grf/irf parameters");}
+                if (grf == null || irf == null) {
+                    throw new IllegalArgumentException("No grf/irf parameters");
+                }
 
                 currentLine = currentLine.replaceAll("\\[.*\\]", "");
                 currentLine = currentLine.trim();
@@ -135,7 +140,7 @@ public class SetRuleReader {
                 SetAction sa = new DefaultSetAction(rightside[0], rightside[1], conjunction);
                 List actions = new LinkedList<>(Arrays.asList(sa));
 
-                SetRule sr = new SetRule(premises, actions, new GrfIrf(grf,irf));
+                SetRule sr = new SetRule(premises, actions, new GrfIrf(grf, irf));
                 rules.add(sr);
 
                 currentLine = bf.readLine();
