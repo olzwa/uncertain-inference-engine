@@ -97,7 +97,7 @@ public class SetRuleReader {
 
                 if(m.find()){
                     grf = BigDecimal.valueOf(Integer.parseInt(m.group(1)));
-                    irf = BigDecimal.valueOf(Integer.parseInt(m.group(2)));
+                    irf = BigDecimal.valueOf(Integer.parseInt(m.group(1))/Integer.parseInt(m.group(2)));
 
                 }
 

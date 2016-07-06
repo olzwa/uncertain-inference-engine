@@ -13,6 +13,8 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.*;
 import java.util.concurrent.ConcurrentLinkedDeque;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import pl.kbtest.action.DefaultSetAction;
 import pl.kbtest.contract.GrfIrf;
@@ -62,8 +64,18 @@ public class UncertainRules4 {
                 facts.forEach(System.out::println);
             }
             if (command.startsWith(ADD_FACT)) {
-                String[] split = command.split(ADD_FACT);
-                SetFact fact = SetFactFactory.getInstance(split[1].trim(), null);
+                String[] splitCommand = command.split(ADD_FACT);
+                String factBody = splitCommand[1].trim();
+                String[] splitFactBody = factBody.split(" ");
+                Pattern grfIrfPattern = Pattern.compile("\\{([0-9]+),([0-9]+)\\}");
+                Matcher m = grfIrfPattern.matcher(splitFactBody[1]);
+                BigDecimal grf = null;
+                BigDecimal irf = null;
+                if(m.find()){
+                    grf = BigDecimal.valueOf(Integer.parseInt(m.group(1)));
+                    irf = BigDecimal.valueOf(Integer.parseInt(m.group(2)));
+                }
+                SetFact fact = SetFactFactory.getInstance(splitFactBody[0],  new GrfIrf(grf,irf));
                 facts.add(fact);
                 System.out.println("Added: " + fact);
             }
