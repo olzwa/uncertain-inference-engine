@@ -34,7 +34,7 @@ public class SetRuleReader {
     String columnDelimiter = null;
     String conjunctionToken = null;
     String disjunctionToken = null;
-    //String valueSeparator = ","; //same as pl.kbtest.contract.Config.GLOBAL_SPLIT_REGEX
+    String premiseSeparator = ","; //same as pl.kbtest.contract.Config.GLOBAL_SPLIT_REGEX
     boolean transliteration = false;
 
 
@@ -53,6 +53,15 @@ public class SetRuleReader {
         this.conjunctionToken = conjunctionToken;
         this.disjunctionToken = disjunctionToken;
         this.transliteration = transliteration;
+    }
+
+    public SetRuleReader(File file, Set<String> delimitersSet, String columnDelimiter, String conjunctionToken, String disjunctionToken, String premiseSeparator) {
+        this.file = file;
+        this.delimitersSet = delimitersSet;
+        this.columnDelimiter = columnDelimiter;
+        this.conjunctionToken = conjunctionToken;
+        this.disjunctionToken = disjunctionToken;
+        this.premiseSeparator = premiseSeparator;
     }
 
     public List<SetRule> readRules() {
@@ -117,9 +126,9 @@ public class SetRuleReader {
                 if (sides.length != 2) {
                     throw new IllegalArgumentException("More than one \"=>\" token in input line");
                 }
-                String[] leftside = sides[0].split(" ");
+                String leftside = sides[0];
 
-                ArrayList<SetPremise> premises = parseLeftSide(leftside);
+                ArrayList<SetPremise> premises = parseLeftSide(leftside,premiseSeparator);
 
                 String[] rightside = sides[1].split(columnDelimiter);
                 //boolean conjunction = sides[1].contains("AND");
@@ -151,67 +160,23 @@ public class SetRuleReader {
         return rules;
     }
 
-    /*private ArrayList<SetPremise> parseLeftSide(String[] leftside) {
+    private ArrayList<SetPremise> parseLeftSide(String left, String separator) {
 
         StringBuilder sb = new StringBuilder();
-        boolean hasHead = false;
-        boolean containsDelimiter;
-
-        String nextColumn = "[0-9]/.";
-
         ArrayList<SetPremise> premises = new ArrayList<>();
 
-        for (int i = 0; i <leftside.length ; i++) {
-            containsDelimiter = leftside[i].contains(columnDelimiter);
+        String[] parts = left.split(",");
 
-            if(hasHead == true && !containsDelimiter){
-
-                sb.append(leftside[i]);
-
-                if(leftside[i].contains(nextColumn)){
-
-                    premises.add(getPremise(sb));
-                    sb.setLength(0);
-
-                }
-            }
-            else if(hasHead == true && containsDelimiter){
-
-                //String[] end = leftside[i].split(columnDelimiter);
-                //if(end.length != 2)
-                //{throw new IllegalArgumentException("More than one column delimiter unseparated by whitespace");}
-               // sb.append(end[0]);
-                //sb.append(end[1])
-                sb.append(leftside[i]);
-                //premises.add(getPremise(sb));
-                sb.setLength(0);
-
-
-                if(leftside[i].contains(nextColumn)){
-                    premises.add(getPremise(sb));
-                    sb.setLength(0);
-                }
-            }
-
-            else if(hasHead == false && containsDelimiter){
-                sb.append(leftside[i]);
-                hasHead=true;
-                if(leftside[i].contains(nextColumn)){
-
-                    premises.add(getPremise(sb));
-                    sb.setLength(0);
-                }
-            }
-            else{
-                sb.append(leftside[i]);
-                hasHead=true;
-            }
-            sb.append(" ");
+        for (int i = 0; i < parts.length; i++) {
+            premises.add(getPremise(parts[i]));
         }
-        return premises;
-    }*/
 
-    private ArrayList<SetPremise> parseLeftSide(String[] leftside) {
+        return premises;
+    }
+
+    private ArrayList<SetPremise> parseLeftSide(String left) {
+
+        String[] leftside = left.split(" ");
 
         StringBuilder sb = new StringBuilder();
         boolean hasHead = false;
@@ -228,7 +193,7 @@ public class SetRuleReader {
 
             if (m.find()) {
                 if (hasHead) {
-                    premises.add(getPremise(sb));
+                    premises.add(getPremise(sb.toString()));
                     hasHead = false;
                     sb.setLength(0);
                     sb.append(leftside[i]);
@@ -242,7 +207,7 @@ public class SetRuleReader {
             }
 
             if (i == leftside.length - 1) {
-                premises.add(getPremise(sb));
+                premises.add(getPremise(sb.toString()));
             }
             sb.append(" ");
 
@@ -251,15 +216,15 @@ public class SetRuleReader {
         return premises;
     }
 
-    private SetPremise getPremise(StringBuilder sb) {
-        String temp = sb.toString();
+    private SetPremise getPremise(String sb) {
+
         boolean conjunction = true;
-        if (temp.contains(disjunctionToken)) {
+        if (sb.contains(disjunctionToken)) {
             conjunction = false;
         }
 
         String regex = columnDelimiter + "|" + conjunctionToken;
-        String[] parts = temp.split(regex);
+        String[] parts = sb.split(regex);
         for (int i = 0; i < parts.length; i++) {
             parts[i] = parts[i].trim();
         }
