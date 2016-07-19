@@ -52,7 +52,7 @@ public class UncertainRules4 {
             if (command.startsWith(LOAD_RULES)) {
                 String[] split = command.split(LOAD_RULES);
                 File ruleFile = new File(split[1].trim());
-                SetRuleReader srr = new SetRuleReader(ruleFile, delimiters, conjunctionToken, disjunctionToken, false);
+                SetRuleReader srr = new SetRuleReader(ruleFile, delimiters, conjunctionToken, disjunctionToken, ",");
                 List<SetRule> setRules = srr.readRules();
                 rules.addAll(setRules);
                 System.out.println("Added " + rules.size() + " rules");

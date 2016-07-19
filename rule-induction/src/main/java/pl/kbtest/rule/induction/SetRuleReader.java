@@ -47,18 +47,17 @@ public class SetRuleReader {
         this.transliteration = transliteration;
     }*/
 
-    public SetRuleReader(File file, Set<String> delimitersSet, String conjunctionToken, String disjunctionToken, boolean transliteration) {
+    /*public SetRuleReader(File file, Set<String> delimitersSet, String conjunctionToken, String disjunctionToken, boolean transliteration) {
         this.file = file;
         this.delimitersSet = delimitersSet;
         this.conjunctionToken = conjunctionToken;
         this.disjunctionToken = disjunctionToken;
         this.transliteration = transliteration;
-    }
+    }*/
 
-    public SetRuleReader(File file, Set<String> delimitersSet, String columnDelimiter, String conjunctionToken, String disjunctionToken, String premiseSeparator) {
+    public SetRuleReader(File file, Set<String> delimitersSet, String conjunctionToken, String disjunctionToken, String premiseSeparator) {
         this.file = file;
         this.delimitersSet = delimitersSet;
-        this.columnDelimiter = columnDelimiter;
         this.conjunctionToken = conjunctionToken;
         this.disjunctionToken = disjunctionToken;
         this.premiseSeparator = premiseSeparator;
@@ -98,17 +97,19 @@ public class SetRuleReader {
 
             while (currentLine != null) {
 
-                Pattern p = Pattern.compile("\\[([0-9]+),([0-9]+)\\]");
+                Pattern p = Pattern.compile("\\[.+\\]");
                 Matcher m = p.matcher(currentLine);
 
                 BigDecimal grf = null;
                 BigDecimal irf = null;
-
-                if(m.find()){
-                    grf = BigDecimal.valueOf(Integer.parseInt(m.group(1)));
-                    irf = BigDecimal.valueOf(Integer.parseInt(m.group(1))/Integer.parseInt(m.group(2)));
-
+                if (m.find()){
+                    String match = m.group(0);
+                    match = match.replaceAll("(\\[|\\])","");
+                    String[] parts = match.split(",");
+                    grf = BigDecimal.valueOf(Double.parseDouble(parts[0]));
+                    irf = BigDecimal.valueOf(Double.parseDouble(parts[1]));
                 }
+
 
                 if (grf == null || irf == null){throw new IllegalArgumentException("No grf/irf parameters");}
 
@@ -165,7 +166,7 @@ public class SetRuleReader {
         StringBuilder sb = new StringBuilder();
         ArrayList<SetPremise> premises = new ArrayList<>();
 
-        String[] parts = left.split(",");
+        String[] parts = left.split(separator);
 
         for (int i = 0; i < parts.length; i++) {
             premises.add(getPremise(parts[i]));
