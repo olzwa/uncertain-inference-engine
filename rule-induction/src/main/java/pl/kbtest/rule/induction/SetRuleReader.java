@@ -131,18 +131,15 @@ public class SetRuleReader {
 
                 ArrayList<SetPremise> premises = parseLeftSide(leftside,premiseSeparator);
 
-                String[] rightside = sides[1].split(columnDelimiter);
+                String rightside = sides[1];
                 //boolean conjunction = sides[1].contains("AND");
                 //!
-                boolean conjunction = true;
+                boolean conjunction = !sides[1].contains(disjunctionToken);
                 //if (disjunctionToken == null){ disjunctionToken = "OR";}
-                conjunction = !sides[1].contains(disjunctionToken);
 
+                rightside = rightside.trim();
 
-                for (int i = 0; i < rightside.length; i++) {
-                    rightside[i] = rightside[i].trim();
-                }
-                SetAction sa = new DefaultSetAction(rightside[0], rightside[1], conjunction);
+                SetAction sa = new DefaultSetAction(rightside, null, conjunction);
                 List actions = new LinkedList<>(Arrays.asList(sa));
 
                 SetRule sr = new SetRule(premises, actions, new GrfIrf(grf,irf));

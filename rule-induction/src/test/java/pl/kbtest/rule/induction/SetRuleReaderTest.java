@@ -46,7 +46,7 @@ public class SetRuleReaderTest {
         SetPremise second = new SetPremise("Scharakteryzuj najczęściej używaną przez Ciebie odzież sportową.", new HashSet<>(Arrays.asList("markowa","średniej klasy")), false, true);
         SetPremise third = new SetPremise("Podaj swoją płeć. Zaznacz odpowiedź.", new HashSet<>(Arrays.asList("kobieta")), false, true);
         SetPremise fourth = new SetPremise("Podaj swój wiek (w latach):", new HashSet<>(Arrays.asList("21")), false, true);
-        SetAction action = new DefaultSetAction("Na co przeznaczasz zasadniczą część swoich wakacji (urlopu)?", "spotkania towarzyskie AND sen i lektura", true);
+        SetAction action = new DefaultSetAction("Na co przeznaczasz zasadniczą część swoich wakacji (urlopu)? =spotkania towarzyskie AND sen i lektura", null, true);
         List<SetPremise> premises = new ArrayList();
         premises.add(first);
         premises.add(second);
@@ -65,7 +65,7 @@ public class SetRuleReaderTest {
         second = new SetPremise("Scharakteryzuj stan swojego zdrowia.", new HashSet<>(Arrays.asList("dobry")), false, true);
         third = new SetPremise("Podaj swoją płeć. Zaznacz odpowiedź.", new HashSet<>(Arrays.asList("kobieta")), false, true);
         fourth = new SetPremise("Podaj swój wiek (w latach):", new HashSet<>(Arrays.asList("21")), false, true);
-        action = new DefaultSetAction("Czy palisz papierosy? Zaznacz odpowiedź.", "sporadycznie", true);
+        action = new DefaultSetAction("Czy palisz papierosy? Zaznacz odpowiedź. =sporadycznie", null, true);
         premises = new ArrayList<>();
         premises.add(first);
         premises.add(second);
@@ -83,7 +83,7 @@ public class SetRuleReaderTest {
         second = new SetPremise("Scharakteryzuj stan swojego zdrowia.", new HashSet<>(Arrays.asList("dobry")), false, true);
         third = new SetPremise("Podaj swoją płeć. Zaznacz odpowiedź.", new HashSet<>(Arrays.asList("kobieta")), false, true);
         fourth = new SetPremise("Podaj swój wiek (w latach):", new HashSet<>(Arrays.asList("21")), false, true);
-        action = new DefaultSetAction("Do jakiej kategorii (I) należą uprawiane przez Ciebie sporty?", "sporty całoroczne OR sporty zimowe", false);
+        action = new DefaultSetAction("Do jakiej kategorii (I) należą uprawiane przez Ciebie sporty?=sporty całoroczne OR sporty zimowe",null, false);
         premises = new ArrayList<>();
         premises.add(first);
         premises.add(second);
@@ -99,32 +99,7 @@ public class SetRuleReaderTest {
 
         List<SetRule> result = srr.readRules();
 
-        /*System.out.println(result.hashCode()+" <- result hashcode "+result.toString()+ "\n");
-        System.out.println(expectedRules.hashCode()+" <- expected hashcode"+expectedRules.toString()+ "\n");
-        boolean eq = DeepEquals.deepEquals(result,expectedRules);
-        if(eq){
-            System.out.println("deep equals returns true");
-        }*/
-      /*  XStream xs = new XStream();
 
-        String xmlResult = xs.toXML(result);
-        String xmlExpected = xs.toXML(expectedRules);
-
-       // System.out.println(xmlExpected);
-       // System.out.println(xmlResult);
-
-        Diff d = new Diff(xmlExpected,xmlResult);
-        DetailedDiff dd = new DetailedDiff(d);
-
-        List l = dd.getAllDifferences();
-
-        for (Object t: l) {
-            Difference dtemp = (Difference) t;
-            System.out.println("======");
-            System.out.println(dtemp);
-            System.out.println("///////");
-        }
-*/
         //javers
         Javers javers = JaversBuilder.javers().build();
         org.javers.core.diff.Diff diff = javers.compareCollections(expectedRules,result,SetRule.class);
