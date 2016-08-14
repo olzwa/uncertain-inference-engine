@@ -7,6 +7,7 @@
 package pl.kbtest;
 
 import pl.kbtest.contract.Context;
+
 import java.math.BigDecimal;
 import java.util.Deque;
 import java.util.LinkedList;
@@ -21,17 +22,16 @@ import pl.kbtest.contract.SetRule;
 import pl.kbtest.premiseEvaluator.SetPremiseComparator;
 
 /**
- *
  * @author Kamil
  */
 public class UncertainRuleEngine {
-    
+
     final private Context context;
 
     public UncertainRuleEngine(Context context) {
         this.context = context;
     }
-    
+
     private SetFact contextFactsContains(SetFact f) {
         SetFact result = null;
         for (SetFact fact : context.getFacts()) {
@@ -40,30 +40,29 @@ public class UncertainRuleEngine {
             }
         }
         if (result != null) {
-            System.out.println("fact already exists");
+            //System.out.println("fact already exists");
         }
         return result;
     }
 
-    
-     private int addFacts(List<SetFact> facts, SetRule rule) {
-        int count = 0 ;
+
+    private int addFacts(List<SetFact> facts, SetRule rule) {
+        int count = 0;
         for (SetFact f : facts) {
             SetFact search = contextFactsContains(f);
             if (search != null) {
                 if (search.isAxiom()) {
-                    System.out.println("found but axiom");
+                    System.out.println("\tALREADY EXISTS IN DB AS AXIOM");
                 } else {
-                    System.out.println("found not axiom");
+                    System.out.println("\tALREADY EXISTS IN DB");
                     SetFact propagated = UncertainRuleEngine.PropagationFunctions.propagationF3(rule, search, f);
-                    
                     count++;
-                    System.out.println(propagated);
+                    System.out.println("\tPROPAGATED USING F3 FUNCTION: " + propagated);
                     context.getFacts().add(propagated);
                     context.getFacts().remove(f);
                 }
             } else {
-                System.out.println("Fact added");
+                System.out.print("\tFACT ADDED: ");
                 System.out.println(f);
 
                 context.getFacts().add(f);
@@ -72,7 +71,7 @@ public class UncertainRuleEngine {
         }
         return count;
     }
-    
+
     public void fireRules() {
 
         SetConclusionExecutor1 dce = new SetConclusionExecutor1();
@@ -81,7 +80,7 @@ public class UncertainRuleEngine {
         GrfIrf premisesGrfIrf;
 
         for (SetRule rule : context.getRules()) {
-
+            System.out.println("Analyzing rule: " + rule);
             boolean correctFacts = dpe.evaluate(rule);
             if (correctFacts) {
                 if (rule.getPremises().size() == 1) {
@@ -90,69 +89,70 @@ public class UncertainRuleEngine {
                     premisesGrfIrf = UncertainRuleEngine.PropagationFunctions.propagationF1(rule);
                 }
                 List<SetFact> facts = dce.executeConclusions(rule.getConclusions(), rule.getGrfIrf(), premisesGrfIrf);
-                 if (facts.size() > 0) {
+                if (facts.size() > 0) {
                     addFacts(facts, rule);
                 }
             }
 
+            System.out.println("==================================================================================");
         }
 
     }
 
-       private static class SetPremiseEvaluator {
+    private static class SetPremiseEvaluator {
 
         private Deque<SetFact> facts;
         private List<SetPremise> premises;
-        
+
         public List<SetFact> correctFacts = new LinkedList<>();
         public List<SetFact> results;
 
-        
-         public SetPremiseEvaluator(Deque<SetFact> facts) {
+
+        public SetPremiseEvaluator(Deque<SetFact> facts) {
             this.facts = facts;
         }
-        
+
         public void setPremises(List<SetPremise> premises) {
             this.premises = premises;
         }
 
-          public boolean evaluate(SetRule rule) {//TODO remove Rule
+        public boolean evaluate(SetRule rule) {//TODO remove Rule
 
             boolean result = false;
-             SetPremiseComparator comparator = new SetPremiseComparator();
+            SetPremiseComparator comparator = new SetPremiseComparator();
 
             List<SetPremise> premises = rule.getPremises();
-            
-          
+
+
             for (int i = 0; i < premises.size(); i++) {
                 SetPremise premise = premises.get(i);
 
                 List<SetFact> factEquals = new LinkedList<>();
-                
 
-                System.out.println("premise fact: " + premise);
-           
+
+                System.out.println("\tAnalyzing premise fact: " + premise);
+
                 for (SetFact fact : facts) {
-                    System.out.println("checking fact in database: " + fact);
-                   
+                    System.out.println("\tchecking fact from db: " + fact);
+
                     if (comparator.isEquals(premise, fact)) {
                         result = true;
-                        if(premise.isNegated()){
+                        if (premise.isNegated()) {
                             premise.setGrfIrf(PropagationFunctions.propagationF4(fact));
-                        }else{
+                        } else {
                             premise.setGrfIrf(fact.getGrfIrf());
                         }
                         factEquals.add(fact);
-                        System.out.println("correct for given fact");
+                        System.out.println("\tPREMISE FACT CORRECT");
                         System.out.println();
                         break;
                     } else {
                         result = false;
-                       
+
                     }
                 }
                 if (result == false) {
-                    System.out.println("Premise not correct");
+                    System.out.println("\tPREMISE NOT CORRECT");
                     break;
                 }
             }
@@ -160,10 +160,9 @@ public class UncertainRuleEngine {
             return result;
         }
     }
-       
-       
-       
-       public static class PropagationFunctions {
+
+
+    public static class PropagationFunctions {
 
         public static GrfIrf propagationF1(SetRule r) {
             List<SetPremise> premises = r.getPremises();
@@ -215,7 +214,7 @@ public class UncertainRuleEngine {
             BigDecimal irf = part1.add(part2);
             BigDecimal grf = Utils.getMax(foundFact.getGrfIrf().getGrf(), toAdd.getGrfIrf().getGrf());
 
-            return SetFactFactory.getInstance(toAdd.getHead(),toAdd.getSet(), new GrfIrf(grf, irf), w,false, toAdd.isConjunction());
+            return SetFactFactory.getInstance(toAdd.getHead(), toAdd.getSet(), new GrfIrf(grf, irf), w, false, toAdd.isConjunction());
         }
     }
 }
