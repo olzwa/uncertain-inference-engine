@@ -98,8 +98,7 @@ public class UncertainRuleEngine {
         }
 
     }
-    
-    
+
        private static class SetPremiseEvaluator {
 
         private Deque<SetFact> facts;
@@ -131,10 +130,10 @@ public class UncertainRuleEngine {
                 List<SetFact> factEquals = new LinkedList<>();
                 
 
-                System.out.println("premise: " + premise);
+                System.out.println("premise fact: " + premise);
            
                 for (SetFact fact : facts) {
-                    System.out.println("fact: " + fact);
+                    System.out.println("checking fact in database: " + fact);
                    
                     if (comparator.isEquals(premise, fact)) {
                         result = true;
@@ -144,9 +143,8 @@ public class UncertainRuleEngine {
                             premise.setGrfIrf(fact.getGrfIrf());
                         }
                         factEquals.add(fact);
-                        System.out.println("Premise");
-                        System.out.println(premise);
-                        System.out.println("correct");
+                        System.out.println("correct for given fact");
+                        System.out.println();
                         break;
                     } else {
                         result = false;

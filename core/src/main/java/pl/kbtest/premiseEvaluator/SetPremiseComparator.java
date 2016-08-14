@@ -19,14 +19,14 @@ public class SetPremiseComparator {
 
     public boolean isEquals(final SetPremise premise, final SetFact fact) {
         if (premise.getHead().equals(fact.getHead())) {
-            if (!premise.isConjunction()) {
+            //if (!premise.isConjunction()) {
                 for(String elem: premise.getSet()){
                     if(fact.getSet().contains(elem)){
                         return true;
                     }
                 }
                 
-            }
+            //}
         }
         return false;
     }

@@ -33,7 +33,7 @@ public class VirtualDataGenerator {
             //System.out.println(count);
             System.out.println(row);
             for (int i = 0; i < row.size(); i++) {
-                rowWithColumns.add(columns.get(i).getColumnName() + "=>" + row.get(i));
+                rowWithColumns.add(columns.get(i).getColumnName() + "=" + row.get(i));
             }
             List<VirtualData> virtualDataRow1 = generateVirtualDataFromRow(columns, rowWithColumns);
             virtualDataRow1.forEach((virtualData) -> {

@@ -55,7 +55,7 @@ public class SetFactFactory {
     @Deprecated
     public static SetFact getInstance(final String fact, final GrfIrf grfIrf, boolean conj) {
         boolean negate = false;
-        String[] splitHead = fact.split("=>");
+        String[] splitHead = fact.split("=");
 
         if (splitHead.length < 2) {
             System.out.println(Arrays.toString(splitHead));
