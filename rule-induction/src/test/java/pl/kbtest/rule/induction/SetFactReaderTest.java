@@ -1,6 +1,10 @@
 package pl.kbtest.rule.induction;
 
+import org.javers.core.Javers;
+import org.javers.core.JaversBuilder;
+import org.junit.Assert;
 import org.junit.Test;
+import pl.kbtest.contract.Config;
 import pl.kbtest.contract.SetFact;
 import pl.kbtest.contract.SetFactFactory;
 
@@ -21,31 +25,31 @@ public class SetFactReaderTest {
     @Test
     public void testParse() throws Exception {
         File f = new File(SetFactReader.class.getClassLoader().getResource("SetFactReaderTestFile.txt").getFile());
-        String conjunctionToken = "AND";
-        String disjunctionToken = "OR";
-        Set<String> delimiters = new HashSet<>(Arrays.asList(","));
-        SetFactReader sfr = new SetFactReader(f,delimiters,conjunctionToken,disjunctionToken);
+        String conjunctionToken = Config.FACT_CONJUNCTION /*"AND"*/;
+        String disjunctionToken = Config.FACT_DISJUNCTION /*"OR"*/;
+        Set<String> delimiters = new HashSet<>(Arrays.asList(Config.GLOBAL_SPLIT_REGEX /*","*/));
+        SetFactReader sfr = new SetFactReader(f, delimiters, conjunctionToken, disjunctionToken);
 
-        List<SetFact> facts =sfr.readFacts();
+        List<SetFact> facts = sfr.readFacts();
 
-        String expectedHead = "head=samplehead1";
+        String expectedHead = "samplehead1";
         String expectedBody = "body";
         boolean negate = false;
 
 
-        SetFact expectedFact = SetFactFactory.getInstance(expectedHead,expectedBody,null,null,false,true);
+        SetFact expectedFact = SetFactFactory.getInstance(expectedHead, expectedBody, null, null, false, true);
 
-        List<SetFact> expectedFacts =new ArrayList<>();
+        List<SetFact> expectedFacts = new ArrayList<>();
         expectedFacts.add(expectedFact);
 
-        expectedHead ="head=samplehead2";
-        Set<String> expectedBodySet = new HashSet<>(Arrays.asList("b1","b2"));
-        expectedFact = SetFactFactory.getInstance(expectedHead,expectedBodySet,null,null,false,false);
+        expectedHead = "samplehead2";
+        Set<String> expectedBodySet = new HashSet<>(Arrays.asList("b1", "b2"));
+        expectedFact = SetFactFactory.getInstance(expectedHead, expectedBodySet, null, null, true, false);
         expectedFacts.add(expectedFact);
 
-        expectedHead ="head=samplehead3";
-        expectedBodySet = new HashSet<>(Arrays.asList("b1","b2"));
-        expectedFact = SetFactFactory.getInstance(expectedHead,expectedBodySet,null,null,false,true);
+        expectedHead = "samplehead3";
+        expectedBodySet = new HashSet<>(Arrays.asList("b1", "b2"));
+        expectedFact = SetFactFactory.getInstance(expectedHead, expectedBodySet, null, null, false, true);
         expectedFacts.add(expectedFact);
 /*
 
@@ -69,11 +73,20 @@ public class SetFactReaderTest {
         expectedFacts.add(expectedFact);
 
 */
-       // Collection disjunction = org.apache.commons.collections4.CollectionUtils.disjunction(expectedFacts,facts);
-       // System.out.println(disjunction);
-        assertEquals(expectedFacts,facts);
+        // Collection disjunction = org.apache.commons.collections4.CollectionUtils.disjunction(expectedFacts,facts);
+        // System.out.println(disjunction);
+        assertEquals(expectedFacts, facts);
 
+        Javers javers = JaversBuilder.javers().build();
+        org.javers.core.diff.Diff diff = javers.compareCollections(expectedFacts, facts, SetFact.class);
+        if (diff.getChanges().size() != 0) {
+            String expected = expectedFacts.stream().map(SetFact::toString).reduce("", (a, b) -> a + b);
+            System.out.println(expected);
+            String actual = facts.stream().map(SetFact::toString).reduce("", (a, b) -> a + b);
+            System.out.println(actual);
+        }
 
+        Assert.assertEquals(0, diff.getChanges().size());
 
 
     }

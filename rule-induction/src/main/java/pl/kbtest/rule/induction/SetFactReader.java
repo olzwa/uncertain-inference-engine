@@ -50,10 +50,11 @@ public class SetFactReader {
 //                currentLine=currentLine.trim();
                 boolean negate = currentLine.contains("!");
                 if(negate){currentLine=currentLine.replaceAll("!","");}
-                String[] sides = currentLine.split("=>");
+                String[] sides = currentLine.split("=");
                 if (sides.length != 2) {
-                    throw new IllegalArgumentException("More than one \"=>\" token in input line");
+                    throw new IllegalArgumentException("More than one fact attribution token in input line");
                 }
+
                 String head = sides[0].trim();
                 String body = sides[1].trim();
                 SetFact f;
@@ -76,7 +77,7 @@ public class SetFactReader {
                     Set<String> bodySet = new HashSet<String>(Arrays.asList(bodyparts));
                     f = SetFactFactory.getInstance(head, bodySet, null, null, negate, conjunction);
                 } else {
-                    f = SetFactFactory.getInstance(head, body, null, null, negate, conjunction);
+                    f = SetFactFactory.getInstance(head, body, null, null, false, conjunction);
                 }
 
                 //String[] bodyparts = body.split(valueSeparator);
