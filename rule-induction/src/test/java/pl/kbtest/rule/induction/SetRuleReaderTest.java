@@ -81,7 +81,7 @@ public class SetRuleReaderTest {
         // 16. Scharakteryzuj stan swojego zdrowia.=dobry 1. Podaj swoją płeć. Zaznacz odpowiedź. =kobieta
         // 2. Podaj swój wiek (w latach):=21  => 3. Do jakiej kategorii (I) należą uprawiane przez Ciebie sporty?=sporty całoroczne OR sporty zimowe
 
-        first = new SetPremise("Oceń swoje dotychczasowe postępy w nauce i pracy.", new HashSet<>(Arrays.asList("bardzo dobre")), false, true);
+        first = new SetPremise("Oceń swoje dotychczasowe postępy w nauce i pracy.", new HashSet<>(Arrays.asList("bardzo dobre")), true, true);
         second = new SetPremise("Scharakteryzuj stan swojego zdrowia.", new HashSet<>(Arrays.asList("dobry")), false, true);
         third = new SetPremise("Podaj swoją płeć. Zaznacz odpowiedź.", new HashSet<>(Arrays.asList("kobieta")), false, true);
         fourth = new SetPremise("Podaj swój wiek (w latach):", new HashSet<>(Arrays.asList("21")), false, true);

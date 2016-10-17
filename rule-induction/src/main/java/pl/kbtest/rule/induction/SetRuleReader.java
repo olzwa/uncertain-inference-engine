@@ -220,17 +220,21 @@ public class SetRuleReader {
         if (sb.contains(disjunctionToken)) {
             conjunction = false;
         }
+        boolean negation = false;
+        if(sb.contains("!")){
+            negation = true;
+        }
 
         String regex = columnDelimiter + "|" + conjunctionToken;
         String[] parts = sb.split(regex);
         for (int i = 0; i < parts.length; i++) {
-            parts[i] = parts[i].trim();
+            parts[i] = parts[i].trim().replace("!","");
         }
         Set premiseSet = new HashSet<>();
         for (int i = 1; i < parts.length; i++) {
             premiseSet.add(parts[i]);
         }
-        SetPremise premise = new SetPremise(parts[0], premiseSet, false, conjunction);
+        SetPremise premise = new SetPremise(parts[0], premiseSet, negation, conjunction);
         return premise;
     }
 
