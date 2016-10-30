@@ -49,9 +49,9 @@
         </dependency>
 
         <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-api</artifactId>
-        <version>1.7.5</version>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.5</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -94,28 +94,19 @@
             <artifactId>xlsx-streamer</artifactId>
             <version>1.0.0</version>
         </dependency>
-
-        <!--test-->
-        <dependency>
-            <groupId>xstream</groupId>
-            <artifactId>xstream</artifactId>
-            <version>1.2.2</version>
-        </dependency>
-
-        <dependency>
-            <groupId>xmlunit</groupId>
-            <artifactId>xmlunit</artifactId>
-            <version>1.6</version>
-        </dependency>
-
-        <!-- http://mvnrepository.com/artifact/org.javers/javers-core -->
+        
         <dependency>
             <groupId>org.javers</groupId>
             <artifactId>javers-core</artifactId>
             <version>1.6.7</version>
         </dependency>
 
-       
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.7</version>
+        </dependency>
+
     </dependencies>
 
 </project>
