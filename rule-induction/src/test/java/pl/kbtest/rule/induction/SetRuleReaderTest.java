@@ -1,10 +1,6 @@
 package pl.kbtest.rule.induction;
 
-import com.cedarsoftware.util.DeepEquals;
-import com.thoughtworks.xstream.XStream;
-import org.custommonkey.xmlunit.DetailedDiff;
-import org.custommonkey.xmlunit.Diff;
-import org.custommonkey.xmlunit.Difference;
+
 import org.javers.core.Javers;
 import org.javers.core.JaversBuilder;
 import org.junit.Assert;
