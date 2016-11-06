@@ -20,11 +20,14 @@ import pl.kbtest.contract.SetFactFactory;
 import pl.kbtest.contract.SetPremise;
 import pl.kbtest.contract.SetRule;
 import pl.kbtest.premiseEvaluator.SetPremiseComparator;
+import pl.kbtest.rule.induction.SetFactUtils;
 
 /**
  * @author Kamil
  */
 public class UncertainRuleEngine {
+
+
 
     final private Context context;
 
@@ -35,12 +38,9 @@ public class UncertainRuleEngine {
     private SetFact contextFactsContains(SetFact f) {
         SetFact result = null;
         for (SetFact fact : context.getFacts()) {
-            if (fact.equals(f)) {
+            if (SetFactUtils.compareFactBody(f,fact)) {
                 result = fact;
             }
-        }
-        if (result != null) {
-            //System.out.println("fact already exists");
         }
         return result;
     }
@@ -198,7 +198,7 @@ public class UncertainRuleEngine {
         }
 
         public static SetFact propagationF3(SetRule r, SetFact foundFact, SetFact toAdd) {
-            BigDecimal tParamter = new BigDecimal(1.8);
+            BigDecimal tParamter = new BigDecimal(1.8);//FIXME should be configurable
 
             BigDecimal pCi = foundFact.getGrfIrf().getIrf();
             BigDecimal pCj = toAdd.getGrfIrf().getIrf();
@@ -216,5 +216,9 @@ public class UncertainRuleEngine {
 
             return SetFactFactory.getInstance(toAdd.getHead(), toAdd.getSet(), new GrfIrf(grf, irf), w, false, toAdd.isConjunction());
         }
+    }
+
+    public Context getContext() {
+        return context;
     }
 }

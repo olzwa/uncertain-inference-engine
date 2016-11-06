@@ -9,106 +9,104 @@ package pl.kbtest.contract;
 import com.google.common.base.MoreObjects;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 import java.util.Set;
 
 /**
- *
  * @author Kamil
  */
-        public class DefaultSetFact implements SetFact {
+public class DefaultSetFact implements SetFact {
 
-            private final String head;
-            private final Set<String> set;
-            private final GrfIrf grfIrf;
+    private final String head;
+    private final Set<String> set;
+    private final GrfIrf grfIrf;
 
-            private final BigDecimal wParamter;
-            private final boolean axiom;
-            private final boolean conjunction;
-            private final boolean negate;
+    private final BigDecimal wParamter;
+    private final boolean axiom;
+    private final boolean conjunction;
+    private final boolean negate;
 
-            public DefaultSetFact(final String head, final Set<String> set, final GrfIrf grfIrf,
-                    final BigDecimal wParamter, final boolean axiom,final boolean negate, final boolean conj) {
-                this.head = head;
-                this.set = set;
-                this.grfIrf = grfIrf;
-                this.wParamter = wParamter;
-                this.axiom = axiom;
-                this.negate = negate;
-                this.conjunction = conj;
-                
-            }
+    public DefaultSetFact(final String head, final Set<String> set, final GrfIrf grfIrf,
+                          final BigDecimal wParamter, final boolean axiom, final boolean negate, final boolean conj) {
+        this.head = head;
+        this.set = set;
+        this.grfIrf = grfIrf;
+        this.wParamter = wParamter;
+        this.axiom = axiom;
+        this.negate = negate;
+        this.conjunction = conj;
 
-            @Override
-            public String getHead() {
-                return head;
-            }
+    }
 
-            @Override
-            public Set<String> getSet() {
-                return set;
-            }
+    @Override
+    public String getHead() {
+        return head;
+    }
 
-            @Override
-            public GrfIrf getGrfIrf() {
-                return grfIrf;
-            }
+    @Override
+    public Set<String> getSet() {
+        return set;
+    }
 
-            @Override
-            public int getLength() {
-                return set.size();
-            }
+    @Override
+    public GrfIrf getGrfIrf() {
+        return grfIrf;
+    }
 
-            @Override
-            public BigDecimal getWParamter() {
-                return wParamter;
-            }
+    @Override
+    public int getLength() {
+        return set.size();
+    }
 
-            @Override
-            public boolean isAxiom() {
-                return axiom;
-            }
+    @Override
+    public BigDecimal getWParamter() {
+        return wParamter;
+    }
 
-            @Override
-            public boolean isConjunction() {
-                return conjunction;
-            }
+    @Override
+    public boolean isAxiom() {
+        return axiom;
+    }
 
-            @Override
-            public boolean isNegated() {
-                return this.negate;
-            }
+    @Override
+    public boolean isConjunction() {
+        return conjunction;
+    }
+
+    @Override
+    public boolean isNegated() {
+        return this.negate;
+    }
 
     @Override
     public String toString() {
-        return MoreObjects.toStringHelper(this)
-                .add("head", head)
-                .add("set", set)
-                .add("grfIrf", grfIrf)
-                .add("axiom", axiom)
-                .add("conjunction", conjunction)
-                .add("wParamter", wParamter)
-                .toString();
+        return "DefaultSetFact{" +
+                "head='" + head + '\'' +
+                ", set=" + set +
+                ", grfIrf=" + grfIrf +
+                ", wParamter=" + wParamter +
+                ", axiom=" + axiom +
+                ", conjunction=" + conjunction +
+                ", negate=" + negate +
+                '}';
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         DefaultSetFact that = (DefaultSetFact) o;
-
-        if (conjunction != that.conjunction) return false;
-        if (head != null ? !head.equals(that.head) : that.head != null) return false;
-        if (set != null ? !set.equals(that.set) : that.set != null) return false;
-
-        return true;
+        return axiom == that.axiom &&
+                conjunction == that.conjunction &&
+                negate == that.negate &&
+                Objects.equals(head, that.head) &&
+                Objects.equals(set, that.set) &&
+                Objects.equals(grfIrf, that.grfIrf) &&
+                Objects.equals(wParamter, that.wParamter);
     }
 
     @Override
     public int hashCode() {
-        int result = head != null ? head.hashCode() : 0;
-        result = 31 * result + (set != null ? set.hashCode() : 0);
-        result = 31 * result + (conjunction ? 1 : 0);
-        return result;
+        return Objects.hash(head, set, grfIrf, wParamter, axiom, conjunction, negate);
     }
 }

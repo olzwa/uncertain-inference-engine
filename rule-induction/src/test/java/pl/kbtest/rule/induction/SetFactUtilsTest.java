@@ -11,8 +11,8 @@ public class SetFactUtilsTest {
     @Test
     public void should_match_equals_disjunction_SetFacts() {
         //given
-        SetFact fact1 = SetFactFactory.getInstance("sporty => caloroczne|zimowe", null);
-        SetFact fact2 = SetFactFactory.getInstance("sporty => caloroczne|zimowe", null);
+        SetFact fact1 = SetFactFactory.getInstance("sporty = caloroczne OR zimowe", null);
+        SetFact fact2 = SetFactFactory.getInstance("sporty = caloroczne OR zimowe", null);
         //when
         boolean actual = SetFactUtils.isSetFactSubset(fact1, fact2);
 
@@ -23,8 +23,8 @@ public class SetFactUtilsTest {
     @Test
     public void should_match_equals_conjunction_SetFacts() {
         //given
-        SetFact fact1 = SetFactFactory.getInstance("sporty => caloroczne,zimowe", null);
-        SetFact fact2 = SetFactFactory.getInstance("sporty => caloroczne,zimowe", null);
+        SetFact fact1 = SetFactFactory.getInstance("sporty = caloroczne AND zimowe", null);
+        SetFact fact2 = SetFactFactory.getInstance("sporty = caloroczne OR zimowe", null);
         //when
         boolean actual = SetFactUtils.isSetFactSubset(fact1, fact2);
         //then
@@ -34,8 +34,8 @@ public class SetFactUtilsTest {
     @Test
     public void should_match_equals_conjunction_and_disjunction_SetFacts() {
         //given
-        SetFact fact1 = SetFactFactory.getInstance("sporty => caloroczne|zimowe", null);
-        SetFact fact2 = SetFactFactory.getInstance("sporty => caloroczne,zimowe", null);
+        SetFact fact1 = SetFactFactory.getInstance("sporty = caloroczne OR zimowe", null);
+        SetFact fact2 = SetFactFactory.getInstance("sporty = caloroczne AND zimowe", null);
         //when
         boolean actual = SetFactUtils.isSetFactSubset(fact1, fact2);
         //then
@@ -45,8 +45,8 @@ public class SetFactUtilsTest {
     @Test
     public void should_match_subset_when_disjunction() {
         //given
-        SetFact fact1 = SetFactFactory.getInstance("sporty => caloroczne|zimowe", null);
-        SetFact fact2 = SetFactFactory.getInstance("sporty => caloroczne", null);
+        SetFact fact1 = SetFactFactory.getInstance("sporty = caloroczne OR zimowe", null);
+        SetFact fact2 = SetFactFactory.getInstance("sporty = caloroczne", null);
         //when
         boolean actual = SetFactUtils.isSetFactSubset(fact1, fact2);
         //then
@@ -56,8 +56,8 @@ public class SetFactUtilsTest {
     @Test
     public void should_match_subset_when_disjunction2() {
         //given
-        SetFact fact1 = SetFactFactory.getInstance("sporty => caloroczne|zimowe", null);
-        SetFact fact2 = SetFactFactory.getInstance("sporty => zimowe", null);
+        SetFact fact1 = SetFactFactory.getInstance("sporty = caloroczne OR zimowe", null);
+        SetFact fact2 = SetFactFactory.getInstance("sporty = zimowe", null);
         //when
         boolean actual = SetFactUtils.isSetFactSubset(fact1, fact2);
         //then
@@ -67,8 +67,8 @@ public class SetFactUtilsTest {
     @Test
     public void should_not_match_when_not_subset() {
         //given
-        SetFact fact1 = SetFactFactory.getInstance("sporty => caloroczne|zimowe", null);
-        SetFact fact2 = SetFactFactory.getInstance("sporty => zimowe|inne", null);
+        SetFact fact1 = SetFactFactory.getInstance("sporty = caloroczne OR zimowe", null);
+        SetFact fact2 = SetFactFactory.getInstance("sporty = zimowe OR inne", null);
         //when
         boolean actual = SetFactUtils.isSetFactSubset(fact1, fact2);
         //then
@@ -78,8 +78,8 @@ public class SetFactUtilsTest {
     @Test
     public void should_match_when_single_and_double_conjunction(){
         //given
-        SetFact fact1 = SetFactFactory.getInstance("sporty => indywidualnie", null);
-        SetFact fact2 = SetFactFactory.getInstance("sporty => indywidualnie,zespolowe", null);
+        SetFact fact1 = SetFactFactory.getInstance("sporty = indywidualnie", null);
+        SetFact fact2 = SetFactFactory.getInstance("sporty = indywidualnie AND zespolowe", null);
         //when
         boolean actual = SetFactUtils.isSetFactSubset(fact1, fact2);
         //then
@@ -89,8 +89,8 @@ public class SetFactUtilsTest {
     @Test
     public void should_not_match_when_double_conjunction_and_single(){
         //given
-        SetFact fact2 = SetFactFactory.getInstance("sporty => indywidualnie,zespolowe", null);
-        SetFact fact1 = SetFactFactory.getInstance("sporty => indywidualnie", null);
+        SetFact fact2 = SetFactFactory.getInstance("sporty = indywidualnie AND zespolowe", null);
+        SetFact fact1 = SetFactFactory.getInstance("sporty = indywidualnie", null);
         //when
         boolean actual = SetFactUtils.isSetFactSubset(fact2, fact1);
         //then
@@ -100,8 +100,8 @@ public class SetFactUtilsTest {
     @Test
     public void should_not_match_when_different_disjunctive_and_conjunctive(){
         //given
-        SetFact fact2 = SetFactFactory.getInstance("sporty => indywidualnie|zespolowe|inne", null);
-        SetFact fact1 = SetFactFactory.getInstance("sporty => indywidualnie,inne", null);
+        SetFact fact2 = SetFactFactory.getInstance("sporty = indywidualnie OR zespolowe or inne", null);
+        SetFact fact1 = SetFactFactory.getInstance("sporty = indywidualnie ADD inne", null);
         //when
         boolean actual = SetFactUtils.isSetFactSubset(fact2, fact1);
         //then

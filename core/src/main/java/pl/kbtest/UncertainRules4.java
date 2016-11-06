@@ -22,6 +22,7 @@ import pl.kbtest.contract.SetFact;
 import pl.kbtest.contract.SetFactFactory;
 import pl.kbtest.contract.SetPremise;
 import pl.kbtest.contract.SetRule;
+import pl.kbtest.rule.induction.SetFactReader;
 import pl.kbtest.rule.induction.SetRuleReader;
 
 public class UncertainRules4 {
@@ -30,20 +31,42 @@ public class UncertainRules4 {
     static final String SHOW_RULES = "show rules";
 
     static final String ADD_FACT = "add fact";
+    static final String LOAD_FACTS = "load facts";
     static final String SHOW_FACTS = "show facts";
 
     static final String FIRE = "fire rules";
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Deque<SetRule> rules = new ConcurrentLinkedDeque<>();
         Deque<SetFact> facts = new ConcurrentLinkedDeque<>();
 
         Context context = new Context(facts, rules);
-        UncertainRuleEngine engine2 = new UncertainRuleEngine(context);
+        UncertainRuleEngine engine = new UncertainRuleEngine(context);
 
         Set delimiters = new HashSet<>(Arrays.asList("="));
         String conjunctionToken = "AND";
         String disjunctionToken = "OR";
+
+        Options options = new Options();
+        CommandLineParser parser = new BasicParser();
+
+        Option loadRulesOption = OptionBuilder.hasArg().create(getAsProgramArg(LOAD_RULES));
+        Option loadFactsOption = OptionBuilder.hasArg().create(getAsProgramArg(LOAD_FACTS));
+
+        options.addOption(loadRulesOption);
+        options.addOption(loadFactsOption);
+
+        CommandLine line = parser.parse(options, args);
+        if (line.hasOption(getAsProgramArg(LOAD_RULES))) {
+            String fileName = line.getOptionValue(getAsProgramArg(LOAD_RULES));
+            File ruleFile = new File(fileName);
+            loadRulesAction(rules, delimiters, conjunctionToken, disjunctionToken, ruleFile);
+        }
+        if (line.hasOption(getAsProgramArg(LOAD_FACTS))) {
+            String fileName = line.getOptionValue(getAsProgramArg(LOAD_FACTS));
+            File factFile = new File(fileName);
+            loadFactsAction(facts, delimiters, conjunctionToken, disjunctionToken, factFile);
+        }
 
         Scanner scanner = new Scanner(System.in);
         String command;
@@ -52,16 +75,18 @@ public class UncertainRules4 {
             if (command.startsWith(LOAD_RULES)) {
                 String[] split = command.split(LOAD_RULES);
                 File ruleFile = new File(split[1].trim());
-                SetRuleReader srr = new SetRuleReader(ruleFile, delimiters, conjunctionToken, disjunctionToken, ",");
-                List<SetRule> setRules = srr.readRules();
-                rules.addAll(setRules);
-                System.out.println("Added " + rules.size() + " rules");
+                loadRulesAction(rules, delimiters, conjunctionToken, disjunctionToken, ruleFile);
             }
             if (command.equals(SHOW_RULES)) {
                 rules.forEach(System.out::println);
             }
             if (command.equals(SHOW_FACTS)) {
                 facts.forEach(System.out::println);
+            }
+            if (command.startsWith(LOAD_FACTS)) {
+                String[] split = command.split(LOAD_FACTS);
+                File factsFile = new File(split[1].trim());
+                loadFactsAction(facts, delimiters, conjunctionToken, disjunctionToken, factsFile);
             }
             if (command.startsWith(ADD_FACT)) {
                 String[] splitCommand = command.split(ADD_FACT);
@@ -71,16 +96,16 @@ public class UncertainRules4 {
                 Matcher m = grfIrfPattern.matcher(splitFactBody[1]);
                 BigDecimal grf = null;
                 BigDecimal irf = null;
-                if(m.find()){
+                if (m.find()) {
                     grf = BigDecimal.valueOf(Integer.parseInt(m.group(1)));
                     irf = BigDecimal.valueOf(Integer.parseInt(m.group(2)));
                 }
-                SetFact fact = SetFactFactory.getInstance(splitFactBody[0],  new GrfIrf(grf,irf));
+                SetFact fact = SetFactFactory.getInstance(splitFactBody[0], new GrfIrf(grf, irf));
                 facts.add(fact);
                 System.out.println("Added: " + fact);
             }
             if (command.equals(FIRE)) {
-                engine2.fireRules();
+                engine.fireRules();
             }
         } while (!command.equals("exit"));
 
@@ -106,6 +131,24 @@ public class UncertainRules4 {
 
 
         //engine2.fireRules();
+    }
+
+    private static void loadFactsAction(Deque<SetFact> facts, Set delimiters, String conjunctionToken, String disjunctionToken, File factsFile) {
+        SetFactReader srr = new SetFactReader(factsFile, delimiters, conjunctionToken, disjunctionToken);
+        List<SetFact> setFacts = srr.readFacts();
+        facts.addAll(setFacts);
+        System.out.println("Added " + setFacts.size() + " facts");
+    }
+
+    private static void loadRulesAction(Deque<SetRule> rules, Set delimiters, String conjunctionToken, String disjunctionToken, File ruleFile) {
+        SetRuleReader srr = new SetRuleReader(ruleFile, delimiters, conjunctionToken, disjunctionToken, ",");
+        List<SetRule> setRules = srr.readRules();
+        rules.addAll(setRules);
+        System.out.println("Added " + rules.size() + " rules");
+    }
+
+    private static String getAsProgramArg(String command) {
+        return command.replaceAll("\\s+", "");
     }
 
 }

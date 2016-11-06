@@ -5,16 +5,24 @@ import pl.kbtest.contract.SetFact;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Created by Kamil on 2016-01-28.
- */
 public class SetFactUtils {
+
+    public static boolean compareFactBody(SetFact f1, SetFact f2) {
+        if (f1.getHead().equals(f2.getHead())) {
+            if (f1.getSet().size() == f2.getSet().size()) {
+                if (f1.getSet().containsAll(f2.getSet())) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 
     public static boolean isSetFactSubset(SetFact subset, SetFact of) {
         if (subset.equals(of)) {
             return true;
         }
-        if(subset.getSet().equals(of.getSet())){
+        if (subset.getSet().equals(of.getSet())) {
             return true;
         }
         if (of.getHead().equals(subset.getHead())) {

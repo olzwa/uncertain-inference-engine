@@ -7,6 +7,7 @@
 package pl.kbtest.contract;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 /**
  *
@@ -34,6 +35,19 @@ public final class GrfIrf {
     public String toString(){
         return "irf: "+irf.toString()+" grf: "+grf.toString();
     }
-            
-    
+
+    @Override
+    public boolean equals(Object o) {
+
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        GrfIrf grfIrf = (GrfIrf) o;
+        return Objects.equals(grf, grfIrf.grf) &&
+                Objects.equals(irf, grfIrf.irf);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(grf, irf);
+    }
 }

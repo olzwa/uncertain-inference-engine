@@ -1,3 +1,0 @@
-[1,1] head=samplehead1 => body
-[1,1] head=samplehead2 => b1 OR b2
-[1,1] head=samplehead3 => b1 AND b2
