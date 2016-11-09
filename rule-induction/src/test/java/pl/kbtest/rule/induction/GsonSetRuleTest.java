@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 import org.javers.core.Javers;
 import org.javers.core.JaversBuilder;
 import org.junit.Assert;
+import org.junit.Test;
 import pl.kbtest.action.SetActionAdapter;
 import pl.kbtest.action.DefaultSetAction;
 import pl.kbtest.action.SetAction;
@@ -22,9 +23,10 @@ import java.util.List;
 /**
  * Created by tomasz on 27.10.16.
  */
-public class GSONSetRuleTest {
+public class GsonSetRuleTest {
 
-    public static void main(String[] args) {
+    @Test
+    public void convertBothWays() {
 
         SetPremise first = new SetPremise("wydzial_rodzimy", new HashSet<>(Arrays.asList("informatyka", "elektryk")), false, true);
         SetAction action = new DefaultSetAction("kierunek=informatyka", null, true);
