@@ -8,7 +8,7 @@ import java.lang.reflect.Type;
 /**
  * Created by tomasz on 30.10.16.
  */
-public class SetActionAdapter implements JsonSerializer<SetAction>, JsonDeserializer<SetAction> {
+public class SetActionJsonAdapter implements JsonSerializer<SetAction>, JsonDeserializer<SetAction> {
 
     @Override
     public JsonElement serialize(SetAction src, Type sa, JsonSerializationContext context) {

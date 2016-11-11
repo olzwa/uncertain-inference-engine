@@ -3,7 +3,7 @@ package pl.kbtest.rule.induction;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import pl.kbtest.action.SetAction;
-import pl.kbtest.action.SetActionAdapter;
+import pl.kbtest.action.SetActionJsonAdapter;
 import pl.kbtest.contract.SetRule;
 
 import java.io.*;
@@ -23,7 +23,7 @@ public class GsonSetRuleReader {
 
     public List<SetRule> readRules(){
         Gson gs = new GsonBuilder().serializeNulls().disableHtmlEscaping()/*.setPrettyPrinting().*/
-                .registerTypeAdapter(SetAction.class, new SetActionAdapter())
+                .registerTypeAdapter(SetAction.class, new SetActionJsonAdapter())
                 .create();
 
         List<SetRule> rulesFromFile = new ArrayList<>();

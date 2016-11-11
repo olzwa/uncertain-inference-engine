@@ -6,7 +6,7 @@ import org.javers.core.Javers;
 import org.javers.core.JaversBuilder;
 import org.junit.Assert;
 import org.junit.Test;
-import pl.kbtest.action.SetActionAdapter;
+import pl.kbtest.action.SetActionJsonAdapter;
 import pl.kbtest.action.DefaultSetAction;
 import pl.kbtest.action.SetAction;
 import pl.kbtest.contract.GrfIrf;
@@ -27,7 +27,7 @@ public class GsonSetRuleTest {
 
     @Test
     public void convertBothWays() {
-
+        // given
         SetPremise first = new SetPremise("wydzial_rodzimy", new HashSet<>(Arrays.asList("informatyka", "elektryk")), false, true);
         SetAction action = new DefaultSetAction("kierunek=informatyka", null, true);
         List<SetPremise> premises = new ArrayList();
@@ -38,15 +38,15 @@ public class GsonSetRuleTest {
         System.out.println(rule);
 
         Gson gs = new GsonBuilder().serializeNulls().disableHtmlEscaping()/*.setPrettyPrinting().*/
-                .registerTypeAdapter(SetAction.class, new SetActionAdapter())
+                .registerTypeAdapter(SetAction.class, new SetActionJsonAdapter())
                 .create();
-
+        // when
         String json = gs.toJson(rule);
 
         System.out.println(json);
 
         SetRule fromJSON = gs.fromJson(json, SetRule.class);
-
+        // then
         Javers javers = JaversBuilder.javers().build();
         org.javers.core.diff.Diff diff = javers.compare(rule, fromJSON);
         System.out.println(diff);
@@ -60,8 +60,9 @@ public class GsonSetRuleTest {
 
     @Test
     public void readFromFile() {
+        // given
         Gson gs = new GsonBuilder().serializeNulls().disableHtmlEscaping()/*.setPrettyPrinting().*/
-                .registerTypeAdapter(SetAction.class, new SetActionAdapter())
+                .registerTypeAdapter(SetAction.class, new SetActionJsonAdapter())
                 .create();
         List<SetRule> rules = new ArrayList<>();
 
@@ -74,7 +75,7 @@ public class GsonSetRuleTest {
         rules.add(rule);
 
         List<SetRule> rulesFromFile = new ArrayList<>();
-
+        // when
         try {
 
             File file = new File(SetFactReader.class.getClassLoader().getResource("GsonSetRuleTestFile.txt").getFile());
@@ -91,7 +92,7 @@ public class GsonSetRuleTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+        // then
         Javers javers = JaversBuilder.javers().build();
         org.javers.core.diff.Diff diff = javers.compareCollections(rules, rulesFromFile, SetRule.class);
         System.out.println(diff);

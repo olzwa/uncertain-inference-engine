@@ -25,6 +25,7 @@ import static org.testng.Assert.*;
 public class GsonSetRuleReaderTest {
     @Test
     public void testReadRules() throws Exception {
+        // given
         List<SetRule> rules = new ArrayList<>();
 
         SetPremise first = new SetPremise("wydzial_rodzimy", new HashSet<>(Arrays.asList("informatyka", "elektryk")), false, true);
@@ -35,10 +36,10 @@ public class GsonSetRuleReaderTest {
 
         SetRule rule = new SetRule(premises, conclusions, new GrfIrf(BigDecimal.valueOf(0.55), BigDecimal.valueOf(0.75)));
         rules.add(rule);
-
+        // when
         File f = new File(SetRuleReader.class.getClassLoader().getResource("GsonSetRuleTestFile.txt").getFile());
         List<SetRule> rulesFromFile = new GsonSetRuleReader(f).readRules();
-
+        // then
         Javers javers = JaversBuilder.javers().build();
         org.javers.core.diff.Diff diff = javers.compareCollections(rules, rulesFromFile, SetRule.class);
         System.out.println(diff);
