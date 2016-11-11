@@ -22,6 +22,7 @@ import pl.kbtest.contract.SetFact;
 import pl.kbtest.contract.SetFactFactory;
 import pl.kbtest.contract.SetPremise;
 import pl.kbtest.contract.SetRule;
+import pl.kbtest.rule.induction.GsonSetRuleReader;
 import pl.kbtest.rule.induction.SetFactReader;
 import pl.kbtest.rule.induction.SetRuleReader;
 
@@ -60,7 +61,7 @@ public class UncertainRules4 {
         if (line.hasOption(getAsProgramArg(LOAD_RULES))) {
             String fileName = line.getOptionValue(getAsProgramArg(LOAD_RULES));
             File ruleFile = new File(fileName);
-            loadRulesAction(rules, delimiters, conjunctionToken, disjunctionToken, ruleFile);
+            loadJsonRulesAction(rules,ruleFile);
         }
         if (line.hasOption(getAsProgramArg(LOAD_FACTS))) {
             String fileName = line.getOptionValue(getAsProgramArg(LOAD_FACTS));
@@ -75,7 +76,7 @@ public class UncertainRules4 {
             if (command.startsWith(LOAD_RULES)) {
                 String[] split = command.split(LOAD_RULES);
                 File ruleFile = new File(split[1].trim());
-                loadRulesAction(rules, delimiters, conjunctionToken, disjunctionToken, ruleFile);
+                loadJsonRulesAction(rules,ruleFile);
             }
             if (command.equals(SHOW_RULES)) {
                 rules.forEach(System.out::println);
@@ -143,6 +144,13 @@ public class UncertainRules4 {
     private static void loadRulesAction(Deque<SetRule> rules, Set delimiters, String conjunctionToken, String disjunctionToken, File ruleFile) {
         SetRuleReader srr = new SetRuleReader(ruleFile, delimiters, conjunctionToken, disjunctionToken, ",");
         List<SetRule> setRules = srr.readRules();
+        rules.addAll(setRules);
+        System.out.println("Added " + rules.size() + " rules");
+    }
+
+    private static void loadJsonRulesAction(Deque<SetRule> rules, File ruleFile){
+        GsonSetRuleReader grr = new GsonSetRuleReader(ruleFile);
+        List<SetRule> setRules = grr.readRules();
         rules.addAll(setRules);
         System.out.println("Added " + rules.size() + " rules");
     }
