@@ -9,3 +9,6 @@
 .csv
 .idea
 .iml
+*.iml
+.txt
+*.txt
