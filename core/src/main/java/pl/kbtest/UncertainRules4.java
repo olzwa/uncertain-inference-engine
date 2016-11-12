@@ -19,6 +19,7 @@ import pl.kbtest.contract.GrfIrf;
 import pl.kbtest.contract.SetFact;
 import pl.kbtest.contract.SetFactFactory;
 import pl.kbtest.contract.SetRule;
+import pl.kbtest.rule.induction.input.GsonSetFactReader;
 import pl.kbtest.rule.induction.input.GsonSetRuleReader;
 import pl.kbtest.rule.induction.SetFactReader;
 import pl.kbtest.rule.induction.SetRuleReader;
@@ -63,7 +64,7 @@ public class UncertainRules4 {
         if (line.hasOption(getAsProgramArg(LOAD_FACTS))) {
             String fileName = line.getOptionValue(getAsProgramArg(LOAD_FACTS));
             File factFile = new File(fileName);
-            loadFactsAction(facts, delimiters, conjunctionToken, disjunctionToken, factFile);
+            loadJsonFactsAction(facts, factFile);
         }
 
         Scanner scanner = new Scanner(System.in);
@@ -84,7 +85,7 @@ public class UncertainRules4 {
             if (command.startsWith(LOAD_FACTS)) {
                 String[] split = command.split(LOAD_FACTS);
                 File factsFile = new File(split[1].trim());
-                loadFactsAction(facts, delimiters, conjunctionToken, disjunctionToken, factsFile);
+                loadJsonFactsAction(facts, factsFile);
             }
             if (command.startsWith(ADD_FACT)) {
                 String[] splitCommand = command.split(ADD_FACT);
@@ -134,6 +135,13 @@ public class UncertainRules4 {
     private static void loadFactsAction(Deque<SetFact> facts, Set delimiters, String conjunctionToken, String disjunctionToken, File factsFile) {
         SetFactReader srr = new SetFactReader(factsFile, delimiters, conjunctionToken, disjunctionToken);
         List<SetFact> setFacts = srr.readFacts();
+        facts.addAll(setFacts);
+        System.out.println("Added " + setFacts.size() + " facts");
+    }
+
+    private static void loadJsonFactsAction(Deque<SetFact> facts, File factsFile){
+        GsonSetFactReader gsfr = new GsonSetFactReader(factsFile);
+        List<SetFact> setFacts = gsfr.readFacts();
         facts.addAll(setFacts);
         System.out.println("Added " + setFacts.size() + " facts");
     }
