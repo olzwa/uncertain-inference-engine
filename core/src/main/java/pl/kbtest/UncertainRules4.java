@@ -9,20 +9,17 @@ import org.apache.commons.cli.*;
 import pl.kbtest.contract.Context;
 
 import java.io.File;
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.*;
 import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import pl.kbtest.action.DefaultSetAction;
 import pl.kbtest.contract.GrfIrf;
 import pl.kbtest.contract.SetFact;
 import pl.kbtest.contract.SetFactFactory;
-import pl.kbtest.contract.SetPremise;
 import pl.kbtest.contract.SetRule;
-import pl.kbtest.rule.induction.GsonSetRuleReader;
+import pl.kbtest.rule.induction.input.GsonSetRuleReader;
 import pl.kbtest.rule.induction.SetFactReader;
 import pl.kbtest.rule.induction.SetRuleReader;
 

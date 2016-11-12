@@ -1,10 +1,11 @@
-package pl.kbtest.rule.induction;
+package pl.kbtest.rule.induction.input;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import pl.kbtest.action.SetAction;
 import pl.kbtest.action.SetActionJsonAdapter;
 import pl.kbtest.contract.SetRule;
+import pl.kbtest.rule.induction.SetFactReader;
 
 import java.io.*;
 import java.util.ArrayList;
