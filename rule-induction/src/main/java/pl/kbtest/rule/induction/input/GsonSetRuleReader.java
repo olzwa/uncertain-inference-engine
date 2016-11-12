@@ -30,8 +30,6 @@ public class GsonSetRuleReader {
         List<SetRule> rulesFromFile = new ArrayList<>();
 
         try {
-
-            File file = new File(SetFactReader.class.getClassLoader().getResource("GsonSetRuleTestFile.txt").getFile());
             BufferedReader bf = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
             String currentLine = bf.readLine();
 
