@@ -16,12 +16,11 @@ import java.util.List;
  */
 public class GsonWriter {
 
-    Class c;
+
     File f;
     boolean append;
 
-    public GsonWriter(Class c, File f, boolean append) {
-        this.c = c;
+    public GsonWriter(File f, boolean append) {
         this.f = f;
         this.append = append;
     }

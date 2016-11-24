@@ -43,9 +43,9 @@ public class GsonWriterTest {
         List rules = Arrays.asList(rule);
 
         //when
-        GsonWriter gw = new GsonWriter(SetFact.class,setFactFile, false);
+        GsonWriter gw = new GsonWriter(setFactFile, false);
         gw.write(factList);
-        gw = new GsonWriter(SetRule.class, setRuleFile, false);
+        gw = new GsonWriter(setRuleFile, false);
         gw.write(rules);
 
 
