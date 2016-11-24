@@ -5,7 +5,6 @@ import com.google.gson.GsonBuilder;
 import pl.kbtest.action.SetAction;
 import pl.kbtest.action.SetActionJsonAdapter;
 import pl.kbtest.contract.SetRule;
-import pl.kbtest.rule.induction.SetFactReader;
 
 import java.io.*;
 import java.util.ArrayList;

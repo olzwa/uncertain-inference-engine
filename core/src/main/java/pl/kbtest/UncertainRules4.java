@@ -21,8 +21,6 @@ import pl.kbtest.contract.SetFactFactory;
 import pl.kbtest.contract.SetRule;
 import pl.kbtest.rule.induction.input.GsonSetFactReader;
 import pl.kbtest.rule.induction.input.GsonSetRuleReader;
-import pl.kbtest.rule.induction.SetFactReader;
-import pl.kbtest.rule.induction.SetRuleReader;
 
 public class UncertainRules4 {
 
@@ -132,25 +130,11 @@ public class UncertainRules4 {
         //engine2.fireRules();
     }
 
-    private static void loadFactsAction(Deque<SetFact> facts, Set delimiters, String conjunctionToken, String disjunctionToken, File factsFile) {
-        SetFactReader srr = new SetFactReader(factsFile, delimiters, conjunctionToken, disjunctionToken);
-        List<SetFact> setFacts = srr.readFacts();
-        facts.addAll(setFacts);
-        System.out.println("Added " + setFacts.size() + " facts");
-    }
-
     private static void loadJsonFactsAction(Deque<SetFact> facts, File factsFile){
         GsonSetFactReader gsfr = new GsonSetFactReader(factsFile);
         List<SetFact> setFacts = gsfr.readFacts();
         facts.addAll(setFacts);
         System.out.println("Added " + setFacts.size() + " facts");
-    }
-
-    private static void loadRulesAction(Deque<SetRule> rules, Set delimiters, String conjunctionToken, String disjunctionToken, File ruleFile) {
-        SetRuleReader srr = new SetRuleReader(ruleFile, delimiters, conjunctionToken, disjunctionToken, ",");
-        List<SetRule> setRules = srr.readRules();
-        rules.addAll(setRules);
-        System.out.println("Added " + rules.size() + " rules");
     }
 
     private static void loadJsonRulesAction(Deque<SetRule> rules, File ruleFile){

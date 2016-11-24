@@ -9,8 +9,6 @@ import pl.kbtest.action.SetAction;
 import pl.kbtest.contract.GrfIrf;
 import pl.kbtest.contract.SetPremise;
 import pl.kbtest.contract.SetRule;
-import pl.kbtest.rule.induction.SetRuleReader;
-import pl.kbtest.rule.induction.input.GsonSetRuleReader;
 
 import java.io.File;
 import java.math.BigDecimal;
@@ -37,7 +35,7 @@ public class GsonSetRuleReaderTest {
         SetRule rule = new SetRule(premises, conclusions, new GrfIrf(BigDecimal.valueOf(0.55), BigDecimal.valueOf(0.75)));
         rules.add(rule);
         // when
-        File f = new File(SetRuleReader.class.getClassLoader().getResource("GsonSetRuleTestFile.txt").getFile());
+        File f = new File(GsonSetRuleReaderTest.class.getClassLoader().getResource("GsonSetRuleTestFile.txt").getFile());
         List<SetRule> rulesFromFile = new GsonSetRuleReader(f).readRules();
         // then
         Javers javers = JaversBuilder.javers().build();
