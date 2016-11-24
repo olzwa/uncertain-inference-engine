@@ -1,2 +1,1 @@
-[0.9,0.8] kierunek=informatyka,rok=!1 AND 2  => sprzet=komputer_stacjonarny,laptop
-[0.75,0.55] wydzial_rodzimy=informatyka AND elektryk  => kierunek=informatyka
+{"premises":[{"head":"wydzial_rodzimy","set":["informatyka","elektryk"],"negate":false,"conjunction":true,"grfIrf":null}],"conclusions":[{"fact":"kierunek=informatyka","output":null,"conjunction":true}],"grfIrf":{"grf":0.55,"irf":0.75}}

@@ -1,2 +1,1 @@
-[0.95,0] rok = 1 AND 2
-[0.9,0.8] kierunek = informatyka
+{"head":"rok ","set":["1","2"],"grfIrf":{"grf":0.95,"irf":0.0},"wParamter":1,"axiom":false,"conjunction":true,"negate":false}
