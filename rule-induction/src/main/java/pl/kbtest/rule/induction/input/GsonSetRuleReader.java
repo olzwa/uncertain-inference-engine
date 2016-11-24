@@ -30,13 +30,13 @@ public class GsonSetRuleReader {
         List<SetRule> rulesFromFile = new ArrayList<>();
 
         try {
-            BufferedReader bf = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
-            String currentLine = bf.readLine();
+            BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
+            String currentLine = br.readLine();
 
             while (currentLine != null) {
                 SetRule ruleFromFile = gs.fromJson(currentLine,SetRule.class);
                 rulesFromFile.add(ruleFromFile);
-                currentLine = bf.readLine();
+                currentLine = br.readLine();
             }
 
 

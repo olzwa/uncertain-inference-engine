@@ -1,4 +1,4 @@
-package pl.kbtest.rule.induction;
+package pl.kbtest.rule.induction.input;
 
 import org.javers.core.Javers;
 import org.javers.core.JaversBuilder;
@@ -9,6 +9,7 @@ import pl.kbtest.action.SetAction;
 import pl.kbtest.contract.GrfIrf;
 import pl.kbtest.contract.SetPremise;
 import pl.kbtest.contract.SetRule;
+import pl.kbtest.rule.induction.SetRuleReader;
 import pl.kbtest.rule.induction.input.GsonSetRuleReader;
 
 import java.io.File;

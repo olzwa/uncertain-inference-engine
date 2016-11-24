@@ -2,6 +2,7 @@ package pl.kbtest.rule.induction;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 import org.javers.core.Javers;
 import org.javers.core.JaversBuilder;
 import org.junit.Assert;
@@ -88,6 +89,44 @@ public class GsonTest {
 
         Assert.assertEquals(fact, fromJSON);
         //Assert.assertEquals(0, diff.getChanges().size());
+
+
+    }
+
+
+    @Test
+    public void adapterFactoryTest() {
+        RuntimeTypeAdapterFactory<SetFact> setFactRuntimeTypeAdapterFactory =
+                RuntimeTypeAdapterFactory
+                        .of(SetFact.class)
+                        .registerSubtype(DefaultSetFact.class);
+
+        Gson gs = new GsonBuilder().serializeNulls().disableHtmlEscaping()/*.setPrettyPrinting().*/
+                .registerTypeAdapterFactory(setFactRuntimeTypeAdapterFactory)
+                .create();
+
+        SetFact fact = SetFactFactory.getInstance("rok = 1 AND 2",new GrfIrf(BigDecimal.valueOf(0.95), BigDecimal.valueOf(0.0)));
+
+        System.out.println(fact);
+
+       
+        String json = gs.toJson(fact,SetFact.class);
+
+        System.out.println(json);
+
+
+
+        //SetFact fromJSON = gs.fromJson(json, DefaultSetFact.class);
+        SetFact fromJSON = gs.fromJson(json, SetFact.class);
+
+
+        // then
+        Javers javers = JaversBuilder.javers().build();
+        org.javers.core.diff.Diff diff = javers.compare(fact, fromJSON);
+        System.out.println(diff);
+
+
+        Assert.assertEquals(fact, fromJSON);
 
 
     }

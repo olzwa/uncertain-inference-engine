@@ -32,13 +32,13 @@ public class GsonSetFactReader {
         List<SetFact> factsFromFile = new ArrayList<>();
 
         try {
-            BufferedReader bf = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
-            String currentLine = bf.readLine();
+            BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
+            String currentLine = br.readLine();
 
             while (currentLine != null) {
                 SetFact factFromFile = gs.fromJson(currentLine,SetFact.class);
                 factsFromFile.add(factFromFile);
-                currentLine = bf.readLine();
+                currentLine = br.readLine();
             }
 
 
