@@ -1,4 +1,4 @@
-package pl.kbtest.rule.induction;
+package pl.kbtest;
 
 import pl.kbtest.contract.SetFact;
 

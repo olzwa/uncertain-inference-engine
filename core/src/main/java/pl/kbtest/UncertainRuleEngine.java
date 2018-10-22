@@ -20,7 +20,6 @@ import pl.kbtest.contract.SetFactFactory;
 import pl.kbtest.contract.SetPremise;
 import pl.kbtest.contract.SetRule;
 import pl.kbtest.premiseEvaluator.SetPremiseComparator;
-import pl.kbtest.rule.induction.SetFactUtils;
 
 /**
  * @author Kamil

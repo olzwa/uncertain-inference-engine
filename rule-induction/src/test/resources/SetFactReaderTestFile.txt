@@ -1,3 +1,0 @@
-[1,1] samplehead1 = body
-[1,1] samplehead2 = ! b1 or b2
-[1,1] samplehead3 = b1 and b2

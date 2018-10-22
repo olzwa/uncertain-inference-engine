@@ -19,8 +19,6 @@ import pl.kbtest.contract.GrfIrf;
 import pl.kbtest.contract.SetFact;
 import pl.kbtest.contract.SetFactFactory;
 import pl.kbtest.contract.SetRule;
-import pl.kbtest.rule.induction.input.GsonSetFactReader;
-import pl.kbtest.rule.induction.input.GsonSetRuleReader;
 
 public class UncertainRules4 {
 
@@ -57,12 +55,12 @@ public class UncertainRules4 {
         if (line.hasOption(getAsProgramArg(LOAD_RULES))) {
             String fileName = line.getOptionValue(getAsProgramArg(LOAD_RULES));
             File ruleFile = new File(fileName);
-            loadJsonRulesAction(rules,ruleFile);
+            //loadJsonRulesAction(rules,ruleFile);
         }
         if (line.hasOption(getAsProgramArg(LOAD_FACTS))) {
             String fileName = line.getOptionValue(getAsProgramArg(LOAD_FACTS));
             File factFile = new File(fileName);
-            loadJsonFactsAction(facts, factFile);
+            //loadJsonFactsAction(facts, factFile);
         }
 
         Scanner scanner = new Scanner(System.in);
@@ -72,7 +70,7 @@ public class UncertainRules4 {
             if (command.startsWith(LOAD_RULES)) {
                 String[] split = command.split(LOAD_RULES);
                 File ruleFile = new File(split[1].trim());
-                loadJsonRulesAction(rules,ruleFile);
+                //loadJsonRulesAction(rules,ruleFile);
             }
             if (command.equals(SHOW_RULES)) {
                 rules.forEach(System.out::println);
@@ -83,7 +81,7 @@ public class UncertainRules4 {
             if (command.startsWith(LOAD_FACTS)) {
                 String[] split = command.split(LOAD_FACTS);
                 File factsFile = new File(split[1].trim());
-                loadJsonFactsAction(facts, factsFile);
+                //loadJsonFactsAction(facts, factsFile);
             }
             if (command.startsWith(ADD_FACT)) {
                 String[] splitCommand = command.split(ADD_FACT);
@@ -131,17 +129,17 @@ public class UncertainRules4 {
     }
 
     private static void loadJsonFactsAction(Deque<SetFact> facts, File factsFile){
-        GsonSetFactReader gsfr = new GsonSetFactReader(factsFile);
+/*        GsonSetFactReader gsfr = new GsonSetFactReader(factsFile);
         List<SetFact> setFacts = gsfr.readFacts();
         facts.addAll(setFacts);
-        System.out.println("Added " + setFacts.size() + " facts");
+        System.out.println("Added " + setFacts.size() + " facts");*/
     }
 
     private static void loadJsonRulesAction(Deque<SetRule> rules, File ruleFile){
-        GsonSetRuleReader grr = new GsonSetRuleReader(ruleFile);
+/*        GsonSetRuleReader grr = new GsonSetRuleReader(ruleFile);
         List<SetRule> setRules = grr.readRules();
         rules.addAll(setRules);
-        System.out.println("Added " + rules.size() + " rules");
+        System.out.println("Added " + rules.size() + " rules");*/
     }
 
     private static String getAsProgramArg(String command) {
