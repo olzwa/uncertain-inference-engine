@@ -1,1 +1,3 @@
-{"head":"rok ","set":["1","2"],"grfIrf":{"grf":0.95,"irf":0.0},"wParamter":1,"axiom":false,"conjunction":true,"negate":false}
+[
+{"head":"rok ","set":["1","2"],"GrfIrf":{"grf":0.95,"irf":0.0},"conjunction":true,}
+]

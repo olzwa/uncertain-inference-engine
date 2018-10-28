@@ -142,7 +142,7 @@ public class UncertainRuleEngine {
                             premise.setGrfIrf(fact.getGrfIrf());
                         }
                         factEquals.add(fact);
-                        System.out.println("\tPREMISE FACT CORRECT");
+                        System.out.println("\tFOUND FACT TO MATCH PREMISE");
                         System.out.println();
                         break;
                     } else {
@@ -151,7 +151,7 @@ public class UncertainRuleEngine {
                     }
                 }
                 if (result == false) {
-                    System.out.println("\tPREMISE NOT CORRECT");
+                    System.out.println("\tNO FACTS TO MATCH PREMISE");
                     break;
                 }
             }
