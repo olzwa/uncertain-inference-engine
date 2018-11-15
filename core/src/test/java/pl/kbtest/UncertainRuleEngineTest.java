@@ -25,7 +25,7 @@ public class UncertainRuleEngineTest {
         SetRule r1 = new SetRule(new GrfIrf(BigDecimal.valueOf(0.9), BigDecimal.valueOf(0.8)));
         r1.addPremises(SetPremise.Factory.getInstance("kierunek informatyka", false));
         r1.addPremises(SetPremise.Factory.getInstance("rok ! 1 2", false));
-        r1.addConclusion(new DefaultSetAction("sprzet=komputer_stacjonarny,laptop", "", true));
+        r1.addConclusion(new DefaultSetAction("sprzet", "komputer_stacjonarny,laptop", true));
 
         facts.add(f1);
         facts.add(f2);
@@ -52,7 +52,7 @@ public class UncertainRuleEngineTest {
 
         SetRule r1 = new SetRule(new GrfIrf(BigDecimal.valueOf(0.75), BigDecimal.valueOf(0.55)));
         r1.addPremises(SetPremise.Factory.getInstance("wydzial_rodzimy informatyka elektryk", false));
-        r1.addConclusion(new DefaultSetAction("kierunek=informatyka", "", true));
+        r1.addConclusion(new DefaultSetAction("kierunek", "informatyka", true));
 
         facts.add(f1);
         facts.add(f2);

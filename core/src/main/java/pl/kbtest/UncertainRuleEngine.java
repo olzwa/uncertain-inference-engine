@@ -27,197 +27,198 @@ import pl.kbtest.premiseEvaluator.SetPremiseComparator;
 public class UncertainRuleEngine {
 
 
+	final private Context context;
 
-    final private Context context;
+	public UncertainRuleEngine(Context context) {
+		this.context = context;
+	}
 
-    public UncertainRuleEngine(Context context) {
-        this.context = context;
-    }
-
-    private SetFact contextFactsContains(SetFact f) {
-        SetFact result = null;
-        for (SetFact fact : context.getFacts()) {
-            if (SetFactUtils.compareFactBody(f,fact)) {
-                result = fact;
-            }
-        }
-        return result;
-    }
-
-
-    private int addFacts(List<SetFact> facts, SetRule rule) {
-        int count = 0;
-        for (SetFact f : facts) {
-            SetFact search = contextFactsContains(f);
-            if (search != null) {
-                if (search.isAxiom()) {
-                    System.out.println("\tALREADY EXISTS IN DB AS AXIOM");
-                } else {
-                    System.out.println("\tALREADY EXISTS IN DB");
-                    SetFact propagated = UncertainRuleEngine.PropagationFunctions.propagationF3(rule, search, f);
-                    count++;
-                    System.out.println("\tPROPAGATED USING F3 FUNCTION: " + propagated);
-                    context.getFacts().add(propagated);
-                    context.getFacts().remove(f);
-                }
-            } else {
-                System.out.print("\tFACT ADDED: ");
-                System.out.println(f);
-
-                context.getFacts().add(f);
-                count++;
-            }
-        }
-        return count;
-    }
-
-    public void fireRules() {
-
-        SetConclusionExecutor1 dce = new SetConclusionExecutor1();
-        UncertainRuleEngine.SetPremiseEvaluator dpe = new UncertainRuleEngine.SetPremiseEvaluator(context.getFacts());
-
-        GrfIrf premisesGrfIrf;
-
-        for (SetRule rule : context.getRules()) {
-            System.out.println("Analyzing rule: " + rule);
-            boolean correctFacts = dpe.evaluate(rule);
-            if (correctFacts) {
-                if (rule.getPremises().size() == 1) {
-                    premisesGrfIrf = rule.getPremises().get(0).getGrfIrf();
-                } else {
-                    premisesGrfIrf = UncertainRuleEngine.PropagationFunctions.propagationF1(rule);
-                }
-                List<SetFact> facts = dce.executeConclusions(rule.getConclusions(), rule.getGrfIrf(), premisesGrfIrf);
-                if (facts.size() > 0) {
-                    addFacts(facts, rule);
-                }
-            }
-
-            System.out.println("==================================================================================");
-        }
-
-    }
-
-    private static class SetPremiseEvaluator {
-
-        private Deque<SetFact> facts;
-        private List<SetPremise> premises;
-
-        public List<SetFact> correctFacts = new LinkedList<>();
-        public List<SetFact> results;
+	private SetFact contextFactsContains(SetFact f) {
+		SetFact result = null;
+		for (SetFact fact : context.getFacts()) {
+			if (SetFactUtils.compareFactBody(f, fact)) {
+				result = fact;
+			}
+		}
+		return result;
+	}
 
 
-        public SetPremiseEvaluator(Deque<SetFact> facts) {
-            this.facts = facts;
-        }
+	private int addFacts(List<SetFact> facts, SetRule rule) {
+		int count = 0;
+		for (SetFact f : facts) {
+			SetFact search = contextFactsContains(f);
+			if (search != null) {
+				if (search.isAxiom()) {
+					System.out.println("\tALREADY EXISTS IN DB AS AXIOM");
+				} else {
+					System.out.println("\tALREADY EXISTS IN DB");
+					SetFact propagated = UncertainRuleEngine.PropagationFunctions.propagationF3(rule, search, f);
+					count++;
+					System.out.println("\tPROPAGATED USING F3 FUNCTION: " + propagated);
+					context.getFacts().add(propagated);
+					context.getFacts().remove(f);
+				}
+			} else {
+				System.out.print("\tFACT ADDED: ");
+				System.out.println(f);
 
-        public void setPremises(List<SetPremise> premises) {
-            this.premises = premises;
-        }
+				context.getFacts().add(f);
+				count++;
+			}
+		}
+		return count;
+	}
 
-        public boolean evaluate(SetRule rule) {//TODO remove Rule
+	public void fireRules() {
 
-            boolean result = false;
-            SetPremiseComparator comparator = new SetPremiseComparator();
+		SetConclusionExecutor1 dce = new SetConclusionExecutor1();
+		UncertainRuleEngine.SetPremiseEvaluator dpe = new UncertainRuleEngine.SetPremiseEvaluator(context.getFacts());
 
-            List<SetPremise> premises = rule.getPremises();
+		GrfIrf premisesGrfIrf;
 
+		for (SetRule rule : context.getRules()) {
+			System.out.println("Analyzing rule: " + rule);
+			boolean correctFacts = dpe.evaluate(rule);
+			if (correctFacts) {
+				System.out.println("Matched rule:");
+				if (rule.getPremises().size() == 1) {
+					premisesGrfIrf = rule.getPremises().get(0).getGrfIrf();
+				} else {
+					premisesGrfIrf = UncertainRuleEngine.PropagationFunctions.propagationF1(rule);
+				}
+				List<SetFact> facts = dce.executeConclusions(rule.getConclusions(), rule.getGrfIrf(), premisesGrfIrf);
+				if (facts.size() > 0) {
+					System.out.println("Added conclusion: " + facts);
+					addFacts(facts, rule);
+				}
+			}
 
-            for (int i = 0; i < premises.size(); i++) {
-                SetPremise premise = premises.get(i);
+			//System.out.println("==================================================================================");
+		}
 
-                List<SetFact> factEquals = new LinkedList<>();
+	}
 
+	private static class SetPremiseEvaluator {
 
-                System.out.println("\tAnalyzing premise fact: " + premise);
+		private Deque<SetFact> facts;
+		private List<SetPremise> premises;
 
-                for (SetFact fact : facts) {
-                    System.out.println("\tchecking fact from db: " + fact);
-
-                    if (comparator.isEquals(premise, fact)) {
-                        result = true;
-                        if (premise.isNegated()) {
-                            premise.setGrfIrf(PropagationFunctions.propagationF4(fact));
-                        } else {
-                            premise.setGrfIrf(fact.getGrfIrf());
-                        }
-                        factEquals.add(fact);
-                        System.out.println("\tFOUND FACT TO MATCH PREMISE");
-                        System.out.println();
-                        break;
-                    } else {
-                        result = false;
-
-                    }
-                }
-                if (result == false) {
-                    System.out.println("\tNO FACTS TO MATCH PREMISE");
-                    break;
-                }
-            }
-
-            return result;
-        }
-    }
+		public List<SetFact> correctFacts = new LinkedList<>();
+		public List<SetFact> results;
 
 
-    public static class PropagationFunctions {
+		public SetPremiseEvaluator(Deque<SetFact> facts) {
+			this.facts = facts;
+		}
 
-        public static GrfIrf propagationF1(SetRule r) {
-            List<SetPremise> premises = r.getPremises();
+		public void setPremises(List<SetPremise> premises) {
+			this.premises = premises;
+		}
 
-            BigDecimal minGrf = premises.get(0).getGrfIrf().getGrf();
-            BigDecimal minIrf = premises.get(0).getGrfIrf().getIrf();
+		public boolean evaluate(SetRule rule) {//TODO remove Rule
 
-            for (SetPremise s : premises) {
-                BigDecimal grf = s.getGrfIrf().getGrf();
-                BigDecimal irf = s.getGrfIrf().getIrf();
+			boolean result = false;
+			SetPremiseComparator comparator = new SetPremiseComparator();
 
-                if (grf.compareTo(minGrf) < 0) {
-                    minGrf = grf;
-                }
-                if (irf.compareTo(irf) < 0) {
-                    minIrf = irf;
-                }
-            }
+			List<SetPremise> premises = rule.getPremises();
 
-            return new GrfIrf(minGrf, minIrf);
-        }
 
-        public static GrfIrf propagationF2(GrfIrf premiseGrfIrf, GrfIrf ruleGrfIrf) {
-            BigDecimal irf = premiseGrfIrf.getIrf().multiply(ruleGrfIrf.getIrf());
-            BigDecimal grf = Utils.getMin(premiseGrfIrf.getGrf(), ruleGrfIrf.getGrf());
-            return new GrfIrf(grf, irf);
-        }
+			for (int i = 0; i < premises.size(); i++) {
+				SetPremise premise = premises.get(i);
 
-        public static GrfIrf propagationF4(SetFact f) {
-            GrfIrf grfIrf = f.getGrfIrf();
-            grfIrf.getGrf().toString();
-            return new GrfIrf(grfIrf.getGrf(), BigDecimal.ONE.subtract(grfIrf.getIrf()));
-        }
+				List<SetFact> factEquals = new LinkedList<>();
 
-        public static SetFact propagationF3(SetRule r, SetFact foundFact, SetFact toAdd) {
-            BigDecimal tParamter = new BigDecimal(1.8);//FIXME should be configurable
 
-            BigDecimal pCi = foundFact.getGrfIrf().getIrf();
-            BigDecimal pCj = toAdd.getGrfIrf().getIrf();
+				//System.out.println("\tAnalyzing premise fact: " + premise);
 
-            BigDecimal denominator = tParamter.add(foundFact.getWParamter());
-            BigDecimal w = foundFact.getWParamter().divide(denominator, 2, BigDecimal.ROUND_HALF_UP);//TODO
+				for (SetFact fact : facts) {
+					//System.out.println("\tchecking fact from db: " + fact);
 
-            BigDecimal part1 = (BigDecimal.ONE.subtract(w));
-            part1 = part1.multiply(pCi);
+					if (comparator.isEquals(premise, fact)) {
+						result = true;
+						if (premise.isNegated()) {
+							premise.setGrfIrf(PropagationFunctions.propagationF4(fact));
+						} else {
+							premise.setGrfIrf(fact.getGrfIrf());
+						}
+						factEquals.add(fact);
+						//System.out.println("\tFOUND FACT TO MATCH PREMISE");
+						System.out.println();
+						break;
+					} else {
+						result = false;
 
-            BigDecimal part2 = w.multiply(pCj);
+					}
+				}
+				if (result == false) {
+					//System.out.println("\tNO FACTS TO MATCH PREMISE");
+					break;
+				}
+			}
 
-            BigDecimal irf = part1.add(part2);
-            BigDecimal grf = Utils.getMax(foundFact.getGrfIrf().getGrf(), toAdd.getGrfIrf().getGrf());
+			return result;
+		}
+	}
 
-            return SetFactFactory.getInstance(toAdd.getHead(), toAdd.getSet(), new GrfIrf(grf, irf), w, false, toAdd.isConjunction());
-        }
-    }
 
-    public Context getContext() {
-        return context;
-    }
+	public static class PropagationFunctions {
+
+		public static GrfIrf propagationF1(SetRule r) {
+			List<SetPremise> premises = r.getPremises();
+
+			BigDecimal minGrf = premises.get(0).getGrfIrf().getGrf();
+			BigDecimal minIrf = premises.get(0).getGrfIrf().getIrf();
+
+			for (SetPremise s : premises) {
+				BigDecimal grf = s.getGrfIrf().getGrf();
+				BigDecimal irf = s.getGrfIrf().getIrf();
+
+				if (grf.compareTo(minGrf) < 0) {
+					minGrf = grf;
+				}
+				if (irf.compareTo(irf) < 0) {
+					minIrf = irf;
+				}
+			}
+
+			return new GrfIrf(minGrf, minIrf);
+		}
+
+		public static GrfIrf propagationF2(GrfIrf premiseGrfIrf, GrfIrf ruleGrfIrf) {
+			BigDecimal irf = premiseGrfIrf.getIrf().multiply(ruleGrfIrf.getIrf());
+			BigDecimal grf = Utils.getMin(premiseGrfIrf.getGrf(), ruleGrfIrf.getGrf());
+			return new GrfIrf(grf, irf);
+		}
+
+		public static GrfIrf propagationF4(SetFact f) {
+			GrfIrf grfIrf = f.getGrfIrf();
+			grfIrf.getGrf().toString();
+			return new GrfIrf(grfIrf.getGrf(), BigDecimal.ONE.subtract(grfIrf.getIrf()));
+		}
+
+		public static SetFact propagationF3(SetRule r, SetFact foundFact, SetFact toAdd) {
+			BigDecimal tParamter = new BigDecimal(1.8);//FIXME should be configurable
+
+			BigDecimal pCi = foundFact.getGrfIrf().getIrf();
+			BigDecimal pCj = toAdd.getGrfIrf().getIrf();
+
+			BigDecimal denominator = tParamter.add(foundFact.getWParamter());
+			BigDecimal w = foundFact.getWParamter().divide(denominator, 2, BigDecimal.ROUND_HALF_UP);//TODO
+
+			BigDecimal part1 = (BigDecimal.ONE.subtract(w));
+			part1 = part1.multiply(pCi);
+
+			BigDecimal part2 = w.multiply(pCj);
+
+			BigDecimal irf = part1.add(part2);
+			BigDecimal grf = Utils.getMax(foundFact.getGrfIrf().getGrf(), toAdd.getGrfIrf().getGrf());
+
+			return SetFactFactory.getInstance(toAdd.getHead(), toAdd.getSet(), new GrfIrf(grf, irf), w, false, toAdd.isConjunction());
+		}
+	}
+
+	public Context getContext() {
+		return context;
+	}
 }

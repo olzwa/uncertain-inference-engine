@@ -21,13 +21,13 @@ public class DefaultSetAction implements SetAction {
     final private String fact;
     final private String output;
     final boolean conjunction;
-    
+
     public DefaultSetAction(String fact, String output, final boolean conj){
         this.fact = fact;
         this.output = output;
         this.conjunction = conj;
     }
-    
+
     @Override
     public String getOutput(Map<String, String> wildcardFillers) {
         return output;
@@ -35,7 +35,7 @@ public class DefaultSetAction implements SetAction {
 
     @Override
     public SetFact execute(Map<String, String> wildcardFillers, GrfIrf grfIrf, boolean conj) {
-        return SetFactFactory.getInstance(fact, grfIrf, conj);
+        return SetFactFactory.getInstance(fact, output, grfIrf, conj);
     }
 
     @Override
