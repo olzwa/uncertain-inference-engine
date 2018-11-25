@@ -1,3 +1,0 @@
-[
-{"head":"rok ","set":["1","2"],"GrfIrf":{"grf":0.95,"irf":0.0},"conjunction":true,}
-]

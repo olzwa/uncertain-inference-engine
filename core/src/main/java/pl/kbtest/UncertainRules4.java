@@ -5,7 +5,6 @@
  */
 package pl.kbtest;
 
-import com.google.gson.JsonObject;
 import org.apache.commons.cli.*;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -34,7 +33,7 @@ public class UncertainRules4 {
 	static final String LOAD_FACTS = "load facts";
 	static final String SHOW_FACTS = "show facts";
 
-	static final String FIRE = "fire rules";
+	static final String FIRE_RULES = "fire rules";
 
 	public static void main(String[] args) throws Exception {
 		Deque<SetRule> rules = new ConcurrentLinkedDeque<>();
@@ -52,9 +51,11 @@ public class UncertainRules4 {
 
 		Option loadRulesOption = OptionBuilder.hasArg().create(getAsProgramArg(LOAD_RULES));
 		Option loadFactsOption = OptionBuilder.hasArg().create(getAsProgramArg(LOAD_FACTS));
+		Option fireRulesOption = new Option(getAsProgramArg(FIRE_RULES), "fire rules");
 
 		options.addOption(loadRulesOption);
 		options.addOption(loadFactsOption);
+		options.addOption(fireRulesOption);
 
 		CommandLine line = parser.parse(options, args);
 		if (line.hasOption(getAsProgramArg(LOAD_RULES))) {
@@ -70,6 +71,13 @@ public class UncertainRules4 {
 			facts.addAll(loadedFacts);
 		}
 
+		if (line.hasOption(getAsProgramArg(FIRE_RULES))) {
+			engine.fireRules();
+		}
+
+		printRulesReport(context);
+		printFactsReport(context);
+
 		Scanner scanner = new Scanner(System.in);
 		String command;
 		do {
@@ -82,12 +90,10 @@ public class UncertainRules4 {
 				rules.addAll(loadedRules);
 			}
 			if (command.equals(SHOW_RULES)) {
-				System.out.println(rules.size());
-				rules.forEach(System.out::println);
+				printRules(context);
 			}
 			if (command.equals(SHOW_FACTS)) {
-				System.out.println(facts.size());
-				facts.forEach(System.out::println);
+				printFacts(context);
 			}
 			if (command.startsWith(LOAD_FACTS)) {
 				String[] split = command.split(LOAD_FACTS);
@@ -112,7 +118,7 @@ public class UncertainRules4 {
 				facts.add(fact);
 				System.out.println("Added: " + fact);
 			}
-			if (command.equals(FIRE)) {
+			if (command.equals(FIRE_RULES)) {
 				engine.fireRules();
 			}
 		} while (!command.equals("exit"));
@@ -139,6 +145,26 @@ public class UncertainRules4 {
 
 
 		//engine2.fireRules();
+	}
+
+	private static void printFacts(Context context) {
+		Deque<SetFact> facts = context.getFacts();
+		printFactsReport(context);
+		facts.forEach(System.out::println);
+	}
+
+	private static void printFactsReport(Context context) {
+		System.out.println("Facts: " + context.getFacts().size());
+	}
+
+	private static void printRules(Context context) {
+		Deque<SetRule> rules = context.getRules();
+		printRulesReport(context);
+		rules.forEach(System.out::println);
+	}
+
+	private static void printRulesReport(Context context) {
+		System.out.println("Rules: " + context.getRules().size());
 	}
 
 	private static Deque<SetFact> loadJsonFactsAction(File factsFile) throws IOException {
