@@ -34,6 +34,7 @@ public class UncertainRules4 {
 	static final String SHOW_FACTS = "show facts";
 
 	static final String FIRE_RULES = "fire rules";
+	public static final String HELP = "help";
 
 	public static void main(String[] args) throws Exception {
 		Deque<SetRule> rules = new ConcurrentLinkedDeque<>();
@@ -49,13 +50,25 @@ public class UncertainRules4 {
 		Options options = new Options();
 		CommandLineParser parser = new BasicParser();
 
-		Option loadRulesOption = OptionBuilder.hasArg().create(getAsProgramArg(LOAD_RULES));
-		Option loadFactsOption = OptionBuilder.hasArg().create(getAsProgramArg(LOAD_FACTS));
-		Option fireRulesOption = new Option(getAsProgramArg(FIRE_RULES), "fire rules");
+		Option loadRulesOption = OptionBuilder
+				.hasArg()
+				.withDescription("load rules from file")
+				.withArgName("filename")
+				.create(getAsProgramArg(LOAD_RULES));
+
+		Option loadFactsOption = OptionBuilder
+				.hasArg()
+				.withDescription("load facts from file")
+				.withArgName("filename")
+				.create(getAsProgramArg(LOAD_FACTS));
+
+		Option fireRulesOption = new Option(getAsProgramArg(FIRE_RULES), "run inference process");
+		Option helpOption = new Option(HELP, "print this message");
 
 		options.addOption(loadRulesOption);
 		options.addOption(loadFactsOption);
 		options.addOption(fireRulesOption);
+		options.addOption(helpOption);
 
 		CommandLine line = parser.parse(options, args);
 		if (line.hasOption(getAsProgramArg(LOAD_RULES))) {
@@ -73,6 +86,12 @@ public class UncertainRules4 {
 
 		if (line.hasOption(getAsProgramArg(FIRE_RULES))) {
 			engine.fireRules();
+		}
+
+		if (line.hasOption(HELP)) {
+			HelpFormatter formatter = new HelpFormatter();
+			formatter.printHelp("java -jar uncertain-inference.jar", options);
+			System.exit(0);
 		}
 
 		printRulesReport(context);
