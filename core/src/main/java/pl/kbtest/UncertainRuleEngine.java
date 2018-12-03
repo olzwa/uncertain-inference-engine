@@ -57,7 +57,7 @@ public class UncertainRuleEngine {
 					count++;
 					System.out.println("\tPROPAGATED USING F3 FUNCTION: " + propagated);
 					context.getFacts().add(propagated);
-					context.getFacts().remove(f);
+					context.getFacts().remove(search);
 				}
 			} else {
 				System.out.print("\tFACT ADDED: ");

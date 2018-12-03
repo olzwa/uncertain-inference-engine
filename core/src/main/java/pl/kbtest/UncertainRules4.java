@@ -243,7 +243,8 @@ public class UncertainRules4 {
 					.stream()
 					.map(Object::toString)
 					.collect(Collectors.joining(","));
-			SetAction setAction = new DefaultSetAction(conclusionHead, conclusion, false);
+			boolean isConjunction = jsonConclusion.getBoolean("conjunction");
+			SetAction setAction = new DefaultSetAction(conclusionHead, conclusion, isConjunction);
 			result.add(new SetRule(premisesList, Collections.singletonList(setAction), grfIrf));
 		}
 		return result;
