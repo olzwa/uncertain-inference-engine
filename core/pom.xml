@@ -6,7 +6,7 @@
     <parent>
         <groupId>pl.kbtest</groupId>
         <artifactId>uncertain_inference</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
     </parent>
     <artifactId>core</artifactId>
     <packaging>jar</packaging>
@@ -59,7 +59,7 @@
         <dependency>
             <groupId>pl.kbtest</groupId>
             <artifactId>contract</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
         </dependency>
 
         <dependency>
