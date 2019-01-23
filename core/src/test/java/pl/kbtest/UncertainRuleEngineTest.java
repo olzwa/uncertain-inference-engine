@@ -2,14 +2,18 @@ package pl.kbtest;
 
 import org.junit.Test;
 import pl.kbtest.action.DefaultSetAction;
-import pl.kbtest.contract.*;
+import pl.kbtest.contract.Context;
+import pl.kbtest.contract.GrfIrf;
+import pl.kbtest.contract.SetFact;
+import pl.kbtest.contract.SetFactFactory;
+import pl.kbtest.contract.SetPremise;
+import pl.kbtest.contract.SetRule;
 
 import java.math.BigDecimal;
 import java.util.Deque;
 import java.util.concurrent.ConcurrentLinkedDeque;
 
-import static org.assertj.core.api.Assertions.*;
-import static org.testng.Assert.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class UncertainRuleEngineTest {
 
