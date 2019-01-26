@@ -25,6 +25,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.ConcurrentLinkedDeque;
 
+import static pl.kbtest.app.Commands.DB_SERVICE_ADDRESS;
 import static pl.kbtest.app.Commands.FIRE_RULES;
 import static pl.kbtest.app.Commands.HELP;
 import static pl.kbtest.app.Commands.LOAD_FACTS;
@@ -48,9 +49,14 @@ public class UncertainRules4 {
 		CommandLineParser parser = new BasicParser();
 
 		Option runAsServiceOption = OptionBuilder
-				.hasArg()
-				.withDescription("run application as service")
+				.withDescription("run application as service [default=localhost:8080")
 				.create(getAsProgramArg(SERVICE_MODE));
+
+		Option setDbServiceAddress = OptionBuilder
+				.hasArg()
+				.withDescription("set address of db-service")
+				.withArgName("address")
+				.create(getAsProgramArg(DB_SERVICE_ADDRESS));
 
 		Option loadRulesOption = OptionBuilder
 				.hasArg()
@@ -67,6 +73,8 @@ public class UncertainRules4 {
 		Option fireRulesOption = new Option(getAsProgramArg(FIRE_RULES), "run inference process");
 		Option helpOption = new Option(HELP, "print this message");
 
+		options.addOption(runAsServiceOption);
+		options.addOption(setDbServiceAddress);
 		options.addOption(loadRulesOption);
 		options.addOption(loadFactsOption);
 		options.addOption(fireRulesOption);
@@ -98,7 +106,11 @@ public class UncertainRules4 {
 
 		UncertainRulesApp app = new UncertainRulesApp(rules, facts);
 
-		if (line.hasOption(SERVICE_MODE)) app.serviceMode("TBA");
+		if (line.hasOption(SERVICE_MODE)) {
+			String address = "http://" + line.getOptionValue(getAsProgramArg(DB_SERVICE_ADDRESS), "localhost:8080");
+			Utils.log("using db-service address: " + address);
+			app.serviceMode(address);
+		}
 		else app.cliMode();
 	}
 

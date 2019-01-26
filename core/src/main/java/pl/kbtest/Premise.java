@@ -5,8 +5,9 @@
  */
 package pl.kbtest;
 
+import pl.poznan.put.cie.oculus.dbentries.GrfIrf;
+
 import java.util.Arrays;
-import pl.kbtest.contract.GrfIrf;
 
 /**
  *

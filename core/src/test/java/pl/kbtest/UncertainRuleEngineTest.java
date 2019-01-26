@@ -3,11 +3,11 @@ package pl.kbtest;
 import org.junit.Test;
 import pl.kbtest.action.DefaultSetAction;
 import pl.kbtest.contract.Context;
-import pl.kbtest.contract.GrfIrf;
 import pl.kbtest.contract.SetFact;
 import pl.kbtest.contract.SetFactFactory;
 import pl.kbtest.contract.SetPremise;
 import pl.kbtest.contract.SetRule;
+import pl.poznan.put.cie.oculus.dbentries.GrfIrf;
 
 import java.math.BigDecimal;
 import java.util.Deque;

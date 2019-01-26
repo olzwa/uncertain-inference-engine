@@ -8,18 +8,19 @@ package pl.kbtest;
 
 import pl.kbtest.conclusionExecutor.SetConclusionExecutor1;
 import pl.kbtest.contract.Context;
-import pl.kbtest.contract.GrfIrf;
 import pl.kbtest.contract.SetFact;
 import pl.kbtest.contract.SetFactFactory;
 import pl.kbtest.contract.SetPremise;
 import pl.kbtest.contract.SetRule;
 import pl.kbtest.premiseEvaluator.SetPremiseComparator;
 import pl.kbtest.utils.Utils;
+import pl.poznan.put.cie.oculus.dbentries.GrfIrf;
 
 import java.math.BigDecimal;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.ConcurrentLinkedDeque;
 
 /**
  * @author Kamil
@@ -70,7 +71,9 @@ public class UncertainRuleEngine {
 		return count;
 	}
 
-	public void fireRules() {
+	public Deque<SetFact> fireRules() {
+
+		Deque<SetFact> added = new ConcurrentLinkedDeque<>();
 
 		SetConclusionExecutor1 dce = new SetConclusionExecutor1();
 		UncertainRuleEngine.SetPremiseEvaluator dpe = new UncertainRuleEngine.SetPremiseEvaluator(context.getFacts());
@@ -91,12 +94,14 @@ public class UncertainRuleEngine {
 				if (facts.size() > 0) {
 					System.out.println("Added conclusion: " + facts);
 					addFacts(facts, rule);
+					added.addAll(facts);
 				}
 			}
 
 			//System.out.println("==================================================================================");
 		}
 
+		return added;
 	}
 
 	private static class SetPremiseEvaluator {
@@ -144,7 +149,7 @@ public class UncertainRuleEngine {
 						}
 						factEquals.add(fact);
 						//System.out.println("\tFOUND FACT TO MATCH PREMISE");
-						System.out.println();
+//						System.out.println();
 						break;
 					} else {
 						result = false;

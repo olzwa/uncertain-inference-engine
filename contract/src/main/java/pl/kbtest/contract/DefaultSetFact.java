@@ -6,7 +6,7 @@
 
 package pl.kbtest.contract;
 
-import com.google.common.base.MoreObjects;
+import pl.poznan.put.cie.oculus.dbentries.GrfIrf;
 
 import java.math.BigDecimal;
 import java.util.Objects;

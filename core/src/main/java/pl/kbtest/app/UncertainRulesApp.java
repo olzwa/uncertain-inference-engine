@@ -1,21 +1,31 @@
 package pl.kbtest.app;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
 import pl.kbtest.UncertainRuleEngine;
 import pl.kbtest.contract.Context;
-import pl.kbtest.contract.GrfIrf;
 import pl.kbtest.contract.SetFact;
 import pl.kbtest.contract.SetFactFactory;
 import pl.kbtest.contract.SetRule;
 import pl.kbtest.utils.Utils;
+import pl.poznan.put.cie.oculus.dbentries.GrfIrf;
+import pl.poznan.put.cie.oculus.dbentries.jobs.Job;
+import pl.poznan.put.cie.oculus.dbentries.jobs.JobStatus;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.math.BigDecimal;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.Deque;
 import java.util.Scanner;
 import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 import static pl.kbtest.app.Commands.ADD_FACT;
 import static pl.kbtest.app.Commands.FIRE_RULES;
@@ -25,11 +35,13 @@ import static pl.kbtest.app.Commands.SHOW_FACTS;
 import static pl.kbtest.app.Commands.SHOW_RULES;
 
 public class UncertainRulesApp {
-    private Deque<SetRule> rules = new ConcurrentLinkedDeque<>();
+    private final Deque<SetRule> rules = new ConcurrentLinkedDeque<>();
     private Deque<SetFact> facts = new ConcurrentLinkedDeque<>();
 
-    private Context context = new Context(facts, rules);
-    private UncertainRuleEngine engine = new UncertainRuleEngine(context);
+    private final Context context = new Context(facts, rules);
+    private final UncertainRuleEngine engine = new UncertainRuleEngine(context);
+
+    private String apiUrl;
 
     public UncertainRulesApp(Deque<SetRule> initialRules, Deque<SetFact> initialFacts) {
         rules.addAll(initialRules);
@@ -37,8 +49,8 @@ public class UncertainRulesApp {
     }
 
     public void cliMode() throws IOException {
-        printRulesReport(context);
-        printFactsReport(context);
+        printRulesReport();
+        printFactsReport();
 
         Scanner scanner = new Scanner(System.in);
         String command;
@@ -52,10 +64,10 @@ public class UncertainRulesApp {
                 rules.addAll(loadedRules);
             }
             if (command.equals(SHOW_RULES)) {
-                printRules(context);
+                printRules();
             }
             if (command.equals(SHOW_FACTS)) {
-                printFacts(context);
+                printFacts();
             }
             if (command.startsWith(LOAD_FACTS)) {
                 String[] split = command.split(LOAD_FACTS);
@@ -86,29 +98,147 @@ public class UncertainRulesApp {
         } while (!command.equals("exit"));
     }
 
-    public void serviceMode(String apiUrl) {
+    private static final int JOB_DISCOVERY_DELAY = 10000;
 
+    public void serviceMode(String apiUrl) throws InterruptedException, IOException {
+        this.apiUrl = apiUrl;
+        getRules();
+        discoverJobs();
     }
 
-    private static void printFacts(Context context) {
+    private void discoverJobs() throws IOException, InterruptedException {
+        Utils.log("looking for jobs...");
+        //noinspection InfiniteLoopStatement
+        while (true) {
+            final Job job = getNewJob();
+            if (job != null) processJob(job);
+            Thread.sleep(JOB_DISCOVERY_DELAY);
+        }
+    }
+
+    private void processJob(Job job) throws IOException {
+        Utils.log("got job " + job.getId());
+
+        setJobStatus(job.getId(), JobStatus.WORKING);
+
+        facts.addAll(job.getFacts().stream()
+                .map(f -> SetFactFactory.getInstance(
+                        f.getHead(),
+                        f.getSet().stream().map(Object::toString).collect(Collectors.joining(",")),
+                        f.getGrfIrf(),
+                        f.getConjunction())
+                ).collect(Collectors.toCollection(ConcurrentLinkedDeque::new)));
+
+        Deque<SetFact> conclusions = engine.fireRules();
+        Utils.log("job done, sending conclusions...");
+
+        final int code = addConclusionsToJob(job.getId(), conclusions);
+        if (code != HttpURLConnection.HTTP_OK)  Utils.log("server didn't accept conclusions, job id: " + job.getId(), true);
+        else setJobStatus(job.getId(), JobStatus.DONE);
+
+        facts.clear();
+    }
+
+    private void printFacts() {
         Deque<SetFact> facts = context.getFacts();
-        printFactsReport(context);
+        printFactsReport();
         facts.forEach(System.out::println);
     }
 
-    private static void printFactsReport(Context context) {
+    private void printFactsReport() {
         System.out.println("Facts: " + context.getFacts().size());
     }
 
-    private static void printRules(Context context) {
+    private void printRules() {
         Deque<SetRule> rules = context.getRules();
-        printRulesReport(context);
+        printRulesReport();
         rules.forEach(System.out::println);
     }
 
-    private static void printRulesReport(Context context) {
+    private void printRulesReport() {
         System.out.println("Rules: " + context.getRules().size());
     }
+
+    private void getRules() throws IOException {
+        Utils.log("getting rules...");
+        HttpURLConnection connection = makeHttpConnection("/db/rules/all", "GET");
+        final int status = connection.getResponseCode();
+        if (status == HttpURLConnection.HTTP_OK) {
+            final String result = getRequestContent(connection);
+            connection.disconnect();
+            Deque<SetRule> newRules = Utils.loadJsonRulesAction(result);
+            rules.addAll(newRules);
+            Utils.log("received " + rules.size() + " rules");
+        }
+        else connection.disconnect();
+    }
+
+    private Job getNewJob() throws IOException {
+        Job job = null;
+        HttpURLConnection connection = makeHttpConnection("/db/jobs/new/first", "GET");
+        final int status = connection.getResponseCode();
+        if (status == HttpURLConnection.HTTP_OK) {
+            final String result = getRequestContent(connection);
+            job = Utils.loadJsonJobAction(result);
+        }
+        connection.disconnect();
+        return job;
+    }
+
+    private int setJobStatus(String id, JobStatus status) throws IOException {
+        JSONObject body = new JSONObject();
+        body.put("id", id);
+        body.put("status", status);
+        Utils.log("setting job " +  id + " to " + status);
+
+        return sendPut("/db/jobs/update/status", body.toString());
+    }
+
+    private int addConclusionsToJob(String id, /*List<Premise>*/Deque<SetFact> conclusions) throws IOException {
+        JSONObject body = new JSONObject();
+        body.put("id", id);
+        JSONArray conclusionsJson = new JSONArray();
+        for (final SetFact c : conclusions) {
+            JSONObject conclusion = new JSONObject();
+            conclusion.put("head", c.getHead());
+            JSONArray set = new JSONArray(c.getSet());
+            conclusion.put("set", set);
+            conclusion.put("conjunction", c.isConjunction());
+            conclusionsJson.put(conclusion);
+        }
+        body.put("conclusions", conclusionsJson);
+
+        return sendPut("/db/jobs/update/conclusions", body.toString());
+    }
+
+    private HttpURLConnection makeHttpConnection(String path, String method) throws IOException {
+        URL url = new URL(apiUrl + path);
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        connection.setRequestMethod(method);
+        return connection;
+    }
+
+    private static String getRequestContent(HttpURLConnection connection) throws IOException {
+        BufferedReader in = new BufferedReader(
+                new InputStreamReader(connection.getInputStream()));
+        String inputLine;
+        StringBuilder content = new StringBuilder();
+        while ((inputLine = in.readLine()) != null) {
+            content.append(inputLine);
+        }
+        in.close();
+        return content.toString();
+    }
+
+    private int sendPut(String path, String body) throws IOException {
+        HttpURLConnection connection = makeHttpConnection(path, "PUT");
+        connection.setRequestProperty("Content-Type", "application/json");
+        connection.setDoOutput(true);
+        connection.getOutputStream().write(body.getBytes(StandardCharsets.UTF_8));
+        connection.disconnect();
+        return connection.getResponseCode();
+    }
+
 }
 
 /*        SetFact sf1 = SetFactFactory.getInstance("wydzial_rodzimy", "informatyka", new GrfIrf(new BigDecimal(1.0), new BigDecimal(1.0)),false);

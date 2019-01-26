@@ -8,11 +8,11 @@ package pl.kbtest.conclusionExecutor;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import pl.kbtest.contract.GrfIrf;
 import pl.kbtest.contract.SetFact;
 import pl.kbtest.contract.SetRule;
 import pl.kbtest.UncertainRuleEngine;
 import pl.kbtest.action.SetAction;
+import pl.poznan.put.cie.oculus.dbentries.GrfIrf;
 
 
 /**
