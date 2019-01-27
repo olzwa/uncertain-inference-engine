@@ -14,7 +14,7 @@ import pl.kbtest.contract.SetPremise;
 import pl.kbtest.contract.SetRule;
 import pl.kbtest.premiseEvaluator.SetPremiseComparator;
 import pl.kbtest.utils.Utils;
-import pl.poznan.put.cie.oculus.dbentries.GrfIrf;
+import pl.poznan.put.cie.oculus.dbentries.internal.GrfIrf;
 
 import java.math.BigDecimal;
 import java.util.Deque;

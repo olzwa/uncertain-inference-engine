@@ -6,7 +6,7 @@
 
 package pl.kbtest.contract;
 
-import pl.poznan.put.cie.oculus.dbentries.GrfIrf;
+import pl.poznan.put.cie.oculus.dbentries.internal.GrfIrf;
 
 import java.math.BigDecimal;
 import java.util.Objects;

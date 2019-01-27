@@ -14,9 +14,9 @@ import pl.kbtest.contract.SetFact;
 import pl.kbtest.contract.SetFactFactory;
 import pl.kbtest.contract.SetPremise;
 import pl.kbtest.contract.SetRule;
-import pl.poznan.put.cie.oculus.dbentries.Fact;
-import pl.poznan.put.cie.oculus.dbentries.GrfIrf;
-import pl.poznan.put.cie.oculus.dbentries.Premise;
+import pl.poznan.put.cie.oculus.dbentries.internal.Fact;
+import pl.poznan.put.cie.oculus.dbentries.internal.GrfIrf;
+import pl.poznan.put.cie.oculus.dbentries.internal.Premise;
 import pl.poznan.put.cie.oculus.dbentries.jobs.Job;
 import pl.poznan.put.cie.oculus.dbentries.jobs.JobStatus;
 
@@ -25,7 +25,9 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.time.Instant;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -127,9 +129,13 @@ public class Utils {
         JSONObject jsonJob = new JSONObject(jobString);
         String id = jsonJob.getString("id");
         JobStatus status = JobStatus.valueOf(jsonJob.getString("status"));
+        String owner = jsonJob.getString("owner");
+        String patient = jsonJob.getString("patient");
+        Instant created = Instant.parse(jsonJob.getString("created"));
+        Instant updated = Instant.parse(jsonJob.getString("updated"));
         List<Fact> facts = loadJsonFactsEntriesAction(jsonJob.getJSONArray("facts"));
         List<Premise> conclusions = new ArrayList<>();
-        return new Job(id, status, facts, conclusions);
+        return new Job(id, status, owner, patient, created, updated, facts, conclusions);
     }
 
     private static List<Fact> loadJsonFactsEntriesAction(JSONArray factsJson) {
@@ -155,14 +161,14 @@ public class Utils {
         return new Fact(premiseHead, Arrays.asList(factBody.split(" ")), conjunction, grfIrf);
     }
 
-    private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss.SS");
+    private static final DateTimeFormatter logTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss.SS");
 
     public static void log(String msg) {
         log(msg, false);
     }
 
     public static void log(String msg, boolean error) {
-        String time = formatter.format(LocalDateTime.now());
+        String time = logTimeFormatter.format(LocalDateTime.now());
         System.out.println(time + " " + (error ? "ERROR: " : "") + msg);
     }
 }

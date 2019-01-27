@@ -8,7 +8,7 @@ import pl.kbtest.contract.SetFact;
 import pl.kbtest.contract.SetFactFactory;
 import pl.kbtest.contract.SetRule;
 import pl.kbtest.utils.Utils;
-import pl.poznan.put.cie.oculus.dbentries.GrfIrf;
+import pl.poznan.put.cie.oculus.dbentries.internal.GrfIrf;
 import pl.poznan.put.cie.oculus.dbentries.jobs.Job;
 import pl.poznan.put.cie.oculus.dbentries.jobs.JobStatus;
 

@@ -12,7 +12,7 @@ import java.util.List;
 import com.google.common.base.MoreObjects;
 import pl.kbtest.action.SetAction;
 import pl.kbtest.contract.SetPremise;
-import pl.poznan.put.cie.oculus.dbentries.GrfIrf;
+import pl.poznan.put.cie.oculus.dbentries.internal.GrfIrf;
 
 /**
  * @author Kamil

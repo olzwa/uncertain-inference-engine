@@ -10,7 +10,7 @@ import java.util.Map;
 import com.google.common.base.MoreObjects;
 import pl.kbtest.contract.SetFact;
 import pl.kbtest.contract.SetFactFactory;
-import pl.poznan.put.cie.oculus.dbentries.GrfIrf;
+import pl.poznan.put.cie.oculus.dbentries.internal.GrfIrf;
 
 /**
  *

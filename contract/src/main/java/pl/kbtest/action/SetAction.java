@@ -8,7 +8,7 @@ package pl.kbtest.action;
 
 import java.util.Map;
 import pl.kbtest.contract.SetFact;
-import pl.poznan.put.cie.oculus.dbentries.GrfIrf;
+import pl.poznan.put.cie.oculus.dbentries.internal.GrfIrf;
 
 /**
  *

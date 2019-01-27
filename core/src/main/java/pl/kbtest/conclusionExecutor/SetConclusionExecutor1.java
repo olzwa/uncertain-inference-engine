@@ -12,7 +12,7 @@ import pl.kbtest.contract.SetFact;
 import pl.kbtest.contract.SetRule;
 import pl.kbtest.UncertainRuleEngine;
 import pl.kbtest.action.SetAction;
-import pl.poznan.put.cie.oculus.dbentries.GrfIrf;
+import pl.poznan.put.cie.oculus.dbentries.internal.GrfIrf;
 
 
 /**

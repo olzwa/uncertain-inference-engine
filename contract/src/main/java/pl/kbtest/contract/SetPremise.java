@@ -6,7 +6,7 @@
 
 package pl.kbtest.contract;
 
-import pl.poznan.put.cie.oculus.dbentries.GrfIrf;
+import pl.poznan.put.cie.oculus.dbentries.internal.GrfIrf;
 
 import java.util.Arrays;
 import java.util.HashSet;
