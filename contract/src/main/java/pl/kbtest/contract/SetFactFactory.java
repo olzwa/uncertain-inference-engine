@@ -47,6 +47,18 @@ public class SetFactFactory {
         return new DefaultSetFact(head, set, grfIrf, BigDecimal.ONE, false, negate, conj);
     }
 
+    public static SetFact getAxiomInstance(final String head, final String body, final GrfIrf grfIrf, boolean conj) {
+        boolean negate = false;
+        String[] b = body.split(GLOBAL_SPLIT_REGEX);
+        if (b.length > 1) {
+            if (b[1].trim().equals("!")) {
+                negate = true;
+            }
+        }
+        Set<String> set = new HashSet(Arrays.asList(body.split(GLOBAL_SPLIT_REGEX)));
+        return new DefaultSetFact(head, set, grfIrf, BigDecimal.ONE, true, negate, conj);
+    }
+
     public static SetFact getInstance(final String head, final Set<String> bodySet, final GrfIrf grfIrf, final BigDecimal w, boolean negate, boolean conj) {
 
         return new DefaultSetFact(head, bodySet, grfIrf, w, false, negate, conj);
