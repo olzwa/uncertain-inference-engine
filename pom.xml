@@ -98,7 +98,7 @@
         <dependency>
             <groupId>com.github.OCULUS-project</groupId>
             <artifactId>db-entries</artifactId>
-            <version>1.9.1</version>
+            <version>2.0</version>
             <scope>compile</scope>
         </dependency>
         <dependency>

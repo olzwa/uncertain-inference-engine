@@ -5,4 +5,4 @@ COPY . /uncertain_inference
 WORKDIR /uncertain_inference
 RUN mvn clean install -U
 
-CMD ["java", "-jar", "core/target/uncertain-inference-jar-with-dependencies.jar", "-service", "-address", "db-service:8080"]
+CMD java -jar core/target/uncertain-inference-jar-with-dependencies.jar -service -address db-service:8080
