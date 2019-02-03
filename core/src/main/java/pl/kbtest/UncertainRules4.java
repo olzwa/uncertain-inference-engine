@@ -31,6 +31,7 @@ public class UncertainRules4 {
 
 	static final String ADD_FACT = "add fact";
 	static final String LOAD_FACTS = "load facts";
+	static final String LOAD_AXIOM_FACTS = "load axiom facts";
 	static final String SHOW_FACTS = "show facts";
 
 	static final String FIRE_RULES = "fire rules";
@@ -62,11 +63,18 @@ public class UncertainRules4 {
 				.withArgName("filename")
 				.create(getAsProgramArg(LOAD_FACTS));
 
+		Option loadAxiomFactsOption = OptionBuilder
+				.hasArg()
+				.withDescription("load facts from file as axioms")
+				.withArgName("filename")
+				.create(getAsProgramArg(LOAD_AXIOM_FACTS));
+
 		Option fireRulesOption = new Option(getAsProgramArg(FIRE_RULES), "run inference process");
 		Option helpOption = new Option(HELP, "print this message");
 
 		options.addOption(loadRulesOption);
 		options.addOption(loadFactsOption);
+		options.addOption(loadAxiomFactsOption);
 		options.addOption(fireRulesOption);
 		options.addOption(helpOption);
 
@@ -80,7 +88,13 @@ public class UncertainRules4 {
 		if (line.hasOption(getAsProgramArg(LOAD_FACTS))) {
 			String fileName = line.getOptionValue(getAsProgramArg(LOAD_FACTS));
 			File factFile = new File(fileName);
-			Deque<SetFact> loadedFacts = loadJsonFactsAction(factFile);
+			Deque<SetFact> loadedFacts = loadJsonFactsAction(factFile, false);
+			facts.addAll(loadedFacts);
+		}
+		if (line.hasOption(getAsProgramArg(LOAD_AXIOM_FACTS))) {
+			String fileName = line.getOptionValue(getAsProgramArg(LOAD_AXIOM_FACTS));
+			File factFile = new File(fileName);
+			Deque<SetFact> loadedFacts = loadJsonFactsAction(factFile, true);
 			facts.addAll(loadedFacts);
 		}
 
@@ -117,8 +131,15 @@ public class UncertainRules4 {
 			if (command.startsWith(LOAD_FACTS)) {
 				String[] split = command.split(LOAD_FACTS);
 				File factsFile = new File(split[1].trim());
-				Deque<SetFact> loadedFacts = loadJsonFactsAction(factsFile);
+				Deque<SetFact> loadedFacts = loadJsonFactsAction(factsFile, false);
 				System.out.println("Loaded " + loadedFacts.size() + " facts");
+				facts.addAll(loadedFacts);
+			}
+			if (command.startsWith(LOAD_AXIOM_FACTS)) {
+				String[] split = command.split(LOAD_AXIOM_FACTS);
+				File factsFile = new File(split[1].trim());
+				Deque<SetFact> loadedFacts = loadJsonFactsAction(factsFile, true);
+				System.out.println("Loaded " + loadedFacts.size() + " facts as axioms");
 				facts.addAll(loadedFacts);
 			}
 			if (command.startsWith(ADD_FACT)) {
@@ -186,7 +207,7 @@ public class UncertainRules4 {
 		System.out.println("Rules: " + context.getRules().size());
 	}
 
-	private static Deque<SetFact> loadJsonFactsAction(File factsFile) throws IOException {
+	private static Deque<SetFact> loadJsonFactsAction(File factsFile, boolean asAxiom) throws IOException {
 		Deque<SetFact> result = new ArrayDeque<>();
 		String content = new String(Files.readAllBytes(Paths.get(factsFile.getAbsolutePath())));
 		JSONArray factsArray = new JSONArray(content);
@@ -203,7 +224,11 @@ public class UncertainRules4 {
 			BigDecimal grf = jsonGrfIrf.getBigDecimal("grf");
 			GrfIrf grfIrf = new GrfIrf(grf, irf);
 			boolean conjunction = jsonFact.getBoolean("conjunction");
-			result.add(SetFactFactory.getInstance(premiseHead, factBody, grfIrf, conjunction));
+			if (asAxiom) {
+				result.add(SetFactFactory.getAxiomInstance(premiseHead, factBody, grfIrf, conjunction));
+			} else {
+				result.add(SetFactFactory.getInstance(premiseHead, factBody, grfIrf, conjunction));
+			}
 		}
 		return result;
 	}
@@ -249,7 +274,6 @@ public class UncertainRules4 {
 		}
 		return result;
 	}
-
 
 	private static String getAsProgramArg(String command) {
 		return command.replaceAll("\\s+", "");
