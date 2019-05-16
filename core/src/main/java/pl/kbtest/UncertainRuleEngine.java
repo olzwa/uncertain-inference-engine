@@ -9,9 +9,7 @@ package pl.kbtest;
 import pl.kbtest.contract.Context;
 
 import java.math.BigDecimal;
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 import pl.kbtest.conclusionExecutor.SetConclusionExecutor1;
 import pl.kbtest.contract.GrfIrf;
@@ -77,6 +75,9 @@ public class UncertainRuleEngine {
 
 		GrfIrf premisesGrfIrf;
 
+		Comparator<SetRule> comparing = Comparator.comparing(rule -> rule.getGrfIrf().getGrf());
+		context.getRules().sort(comparing.reversed());
+
 		for (SetRule rule : context.getRules()) {
 			System.out.println("Analyzing rule: " + rule);
 			boolean correctFacts = dpe.evaluate(rule);
@@ -101,14 +102,14 @@ public class UncertainRuleEngine {
 
 	private static class SetPremiseEvaluator {
 
-		private Deque<SetFact> facts;
+		private List<SetFact> facts;
 		private List<SetPremise> premises;
 
 		public List<SetFact> correctFacts = new LinkedList<>();
 		public List<SetFact> results;
 
 
-		public SetPremiseEvaluator(Deque<SetFact> facts) {
+		public SetPremiseEvaluator(List<SetFact> facts) {
 			this.facts = facts;
 		}
 

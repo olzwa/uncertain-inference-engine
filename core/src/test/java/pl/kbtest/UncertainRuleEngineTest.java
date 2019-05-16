@@ -5,7 +5,9 @@ import pl.kbtest.action.DefaultSetAction;
 import pl.kbtest.contract.*;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Deque;
+import java.util.List;
 import java.util.concurrent.ConcurrentLinkedDeque;
 
 import static org.assertj.core.api.Assertions.*;
@@ -16,8 +18,8 @@ public class UncertainRuleEngineTest {
 	@Test
 	public void should_execute_f4_f1_f2() {
 		//given
-		Deque<SetRule> rules = new ConcurrentLinkedDeque<>();
-		Deque<SetFact> facts = new ConcurrentLinkedDeque<>();
+		List<SetRule> rules = new ArrayList<>();
+		List<SetFact> facts = new ArrayList<>();
 
 		SetFact f1 = SetFactFactory.getInstance("rok", "1,2", new GrfIrf(BigDecimal.valueOf(0.95), BigDecimal.ZERO), true);
 		SetFact f2 = SetFactFactory.getInstance("kierunek", "informatyka", new GrfIrf(BigDecimal.valueOf(0.90), BigDecimal.valueOf(0.8)), true);
@@ -36,7 +38,7 @@ public class UncertainRuleEngineTest {
 		//when
 		subject.fireRules();
 		//then
-		Deque<SetFact> actual = subject.getContext().getFacts();
+		List<SetFact> actual = subject.getContext().getFacts();
 
 		assertThat(actual).contains(SetFactFactory.getInstance("sprzet", "komputer_stacjonarny,laptop", new GrfIrf(BigDecimal.valueOf(0.9), BigDecimal.valueOf(0.64)), true));
 	}
@@ -44,8 +46,8 @@ public class UncertainRuleEngineTest {
 	@Test
 	public void should_execute_f3() {
 		//given
-		Deque<SetRule> rules = new ConcurrentLinkedDeque<>();
-		Deque<SetFact> facts = new ConcurrentLinkedDeque<>();
+		List<SetRule> rules = new ArrayList<>();
+		List<SetFact> facts = new ArrayList<>();
 
 		SetFact f1 = SetFactFactory.getInstance("wydzial_rodzimy", "informatyka", new GrfIrf(BigDecimal.ONE, BigDecimal.ONE), false);
 		SetFact f2 = SetFactFactory.getInstance("kierunek", "informatyka", new GrfIrf(BigDecimal.valueOf(0.90), BigDecimal.valueOf(0.8)), true);
@@ -63,7 +65,7 @@ public class UncertainRuleEngineTest {
 		//when
 		subject.fireRules();
 		//then
-		Deque<SetFact> actual = subject.getContext().getFacts();
+		List<SetFact> actual = subject.getContext().getFacts();
 
 		SetFact expected = SetFactFactory.getInstance("kierunek", "informatyka", new GrfIrf(BigDecimal.valueOf(0.9), BigDecimal.valueOf(0.71).setScale(4)), BigDecimal.valueOf(0.36), false, true);
 		assertThat(actual).containsOnly(expected, f1);
