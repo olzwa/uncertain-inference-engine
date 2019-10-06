@@ -18,8 +18,7 @@ public class UncertainRuleEngineTest {
 	@Test
 	public void should_execute_f4_f1_f2() {
 		//given
-		List<SetRule> rules = new ArrayList<>();
-		List<SetFact> facts = new ArrayList<>();
+		Context context = new Context();
 
 		SetFact f1 = SetFactFactory.getInstance("rok", "1,2", new GrfIrf(BigDecimal.valueOf(0.95), BigDecimal.ZERO), true);
 		SetFact f2 = SetFactFactory.getInstance("kierunek", "informatyka", new GrfIrf(BigDecimal.valueOf(0.90), BigDecimal.valueOf(0.8)), true);
@@ -29,11 +28,10 @@ public class UncertainRuleEngineTest {
 		r1.addPremises(SetPremise.Factory.getInstance("rok ! 1 2", false));
 		r1.addConclusion(new DefaultSetAction("sprzet", "komputer_stacjonarny,laptop", true));
 
-		facts.add(f1);
-		facts.add(f2);
-		rules.add(r1);
+		context.addFact(f1);
+		context.addFact(f2);
+		context.addRule(r1);
 
-		Context context = new Context(facts, rules);
 		UncertainRuleEngine subject = new UncertainRuleEngine(context);
 		//when
 		subject.fireRules();
@@ -46,8 +44,7 @@ public class UncertainRuleEngineTest {
 	@Test
 	public void should_execute_f3() {
 		//given
-		List<SetRule> rules = new ArrayList<>();
-		List<SetFact> facts = new ArrayList<>();
+		Context context = new Context();
 
 		SetFact f1 = SetFactFactory.getInstance("wydzial_rodzimy", "informatyka", new GrfIrf(BigDecimal.ONE, BigDecimal.ONE), false);
 		SetFact f2 = SetFactFactory.getInstance("kierunek", "informatyka", new GrfIrf(BigDecimal.valueOf(0.90), BigDecimal.valueOf(0.8)), true);
@@ -56,11 +53,10 @@ public class UncertainRuleEngineTest {
 		r1.addPremises(SetPremise.Factory.getInstance("wydzial_rodzimy informatyka elektryk", false));
 		r1.addConclusion(new DefaultSetAction("kierunek", "informatyka", true));
 
-		facts.add(f1);
-		facts.add(f2);
-		rules.add(r1);
+		context.addFact(f1);
+		context.addFact(f2);
+		context.addRule(r1);
 
-		Context context = new Context(facts, rules);
 		UncertainRuleEngine subject = new UncertainRuleEngine(context);
 		//when
 		subject.fireRules();
@@ -69,6 +65,38 @@ public class UncertainRuleEngineTest {
 
 		SetFact expected = SetFactFactory.getInstance("kierunek", "informatyka", new GrfIrf(BigDecimal.valueOf(0.9), BigDecimal.valueOf(0.71).setScale(4)), BigDecimal.valueOf(0.36), false, true);
 		assertThat(actual).containsOnly(expected, f1);
+	}
+
+	@Test
+	public void should_execute_rule_with_higher_grf() {
+		//given
+		Context context = new Context();
+
+		SetFact f1 = SetFactFactory.getInstance("wydzial_rodzimy", "informatyka", new GrfIrf(BigDecimal.ONE, BigDecimal.ONE), false);
+		SetFact f2 = SetFactFactory.getInstance("kierunek", "informatyka", new GrfIrf(BigDecimal.valueOf(0.90), BigDecimal.valueOf(0.8)), true);
+
+		SetRule r1 = new SetRule(new GrfIrf(BigDecimal.valueOf(0.75), BigDecimal.valueOf(0.55)));
+		r1.addPremises(SetPremise.Factory.getInstance("kierunek teleinformatyka", false));
+		r1.addConclusion(new DefaultSetAction("kierunek", "mechatronika", true));
+
+		SetRule r2 = new SetRule(new GrfIrf(BigDecimal.valueOf(0.90), BigDecimal.valueOf(0.55)));
+		r2.addPremises(SetPremise.Factory.getInstance("wydzial_rodzimy informatyka elektryk", false));
+		r2.addConclusion(new DefaultSetAction("kierunek", "teleinformatyka", true));
+
+		context.addFact(f1);
+		context.addFact(f2);
+		context.addRule(r1);
+		context.addRule(r2);
+
+		UncertainRuleEngine subject = new UncertainRuleEngine(context);
+		//when
+		subject.fireRules();
+		//then
+		List<SetFact> actual = subject.getContext().getFacts();
+
+		SetFact expected = SetFactFactory.getInstance("kierunek", "mechatronika", new GrfIrf(BigDecimal.valueOf(0.75), BigDecimal.valueOf(0.3025).setScale(4)), BigDecimal.valueOf(1), false, true);
+
+		assertThat(actual).contains(expected);
 	}
 
 }

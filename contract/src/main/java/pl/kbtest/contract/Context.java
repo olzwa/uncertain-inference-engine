@@ -6,30 +6,48 @@
 
 package pl.kbtest.contract;
 
-import java.util.Deque;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Comparator;
 import java.util.List;
-import java.util.concurrent.ConcurrentLinkedDeque;
-import pl.kbtest.contract.SetFact;
-import pl.kbtest.contract.SetRule;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 /**
- *
  * @author Kamil
  */
 public class Context {
-    private final List<SetRule> rules;
-    private final List<SetFact> facts;
 
-    public Context(List<SetFact> facts, List<SetRule> rules) {
-        this.rules = rules;
-        this.facts = facts;
-    }
-    
-    public List<SetRule> getRules(){
-        return this.rules;
-    }
-    
-    public List<SetFact> getFacts(){
-        return this.facts;
-    }
+  private final SortedSet<SetRule> rules;
+  private final List<SetFact> facts;
+
+  public Context() {
+    Comparator<SetRule> comparing = Comparator.comparing(rule -> rule.getGrfIrf().getGrf());
+    this.rules = new TreeSet<>(comparing.reversed());
+    this.facts = new ArrayList<>();
+  }
+
+  public SortedSet<SetRule> getRules() {
+    return this.rules;
+  }
+
+  public void addRules(Collection<SetRule> rules) {
+    this.rules.addAll(rules);
+  }
+
+  public void addRule(SetRule rule) {
+    this.rules.add(rule);
+  }
+
+  public void addFacts(Collection<SetFact> facts) {
+    this.facts.addAll(facts);
+  }
+
+  public void addFact(SetFact fact) {
+    this.facts.add(fact);
+  }
+
+  public List<SetFact> getFacts() {
+    return this.facts;
+  }
 }

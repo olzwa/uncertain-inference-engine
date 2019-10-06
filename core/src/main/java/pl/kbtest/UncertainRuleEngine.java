@@ -75,9 +75,6 @@ public class UncertainRuleEngine {
 
 		GrfIrf premisesGrfIrf;
 
-		Comparator<SetRule> comparing = Comparator.comparing(rule -> rule.getGrfIrf().getGrf());
-		context.getRules().sort(comparing.reversed());
-
 		for (SetRule rule : context.getRules()) {
 			System.out.println("Analyzing rule: " + rule);
 			boolean correctFacts = dpe.evaluate(rule);
