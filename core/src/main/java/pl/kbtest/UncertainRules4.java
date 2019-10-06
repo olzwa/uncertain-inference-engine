@@ -38,8 +38,9 @@ public class UncertainRules4 {
 	public static final String HELP = "help";
 
 	public static void main(String[] args) throws Exception {
-		Deque<SetRule> rules = new ConcurrentLinkedDeque<>();
-		Deque<SetFact> facts = new ConcurrentLinkedDeque<>();
+		List<SetRule> rules = new ArrayList<>();
+		List<SetFact> facts = new ArrayList<>();
+
 
 		Context context = new Context(facts, rules);
 		UncertainRuleEngine engine = new UncertainRuleEngine(context);
@@ -188,7 +189,7 @@ public class UncertainRules4 {
 	}
 
 	private static void printFacts(Context context) {
-		Deque<SetFact> facts = context.getFacts();
+		List<SetFact> facts = context.getFacts();
 		printFactsReport(context);
 		facts.forEach(System.out::println);
 	}
@@ -198,7 +199,7 @@ public class UncertainRules4 {
 	}
 
 	private static void printRules(Context context) {
-		Deque<SetRule> rules = context.getRules();
+		List<SetRule> rules = context.getRules();
 		printRulesReport(context);
 		rules.forEach(System.out::println);
 	}

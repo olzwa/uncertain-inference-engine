@@ -7,6 +7,7 @@
 package pl.kbtest.contract;
 
 import java.util.Deque;
+import java.util.List;
 import java.util.concurrent.ConcurrentLinkedDeque;
 import pl.kbtest.contract.SetFact;
 import pl.kbtest.contract.SetRule;
@@ -16,20 +17,19 @@ import pl.kbtest.contract.SetRule;
  * @author Kamil
  */
 public class Context {
-    
-    private final Deque<SetRule> rules;
-    private final Deque<SetFact> facts;
+    private final List<SetRule> rules;
+    private final List<SetFact> facts;
 
-    public Context(Deque<SetFact> facts, Deque<SetRule> rules) {
+    public Context(List<SetFact> facts, List<SetRule> rules) {
         this.rules = rules;
         this.facts = facts;
     }
     
-    public Deque<SetRule> getRules(){
+    public List<SetRule> getRules(){
         return this.rules;
     }
     
-    public Deque<SetFact> getFacts(){
+    public List<SetFact> getFacts(){
         return this.facts;
     }
 }
