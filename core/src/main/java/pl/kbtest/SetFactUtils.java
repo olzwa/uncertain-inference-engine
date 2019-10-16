@@ -35,13 +35,11 @@ public class SetFactUtils {
                 }
             }
             if ((!subset.isConjunction() | subset.getSet().size() == 1) && (!of.isConjunction() | of.getSet().size() == 1)) {
-                Set<String> copiedSubset = new HashSet(subset.getSet());
-                Set<String> copiedOf = new HashSet(of.getSet());
-                copiedSubset.removeAll(new HashSet(of.getSet()));
-                copiedOf.removeAll(new HashSet(subset.getSet()));
-                if (copiedSubset.isEmpty() || copiedOf.isEmpty()) {
-                    return true;
-                }
+                Set<String> copiedSubset = new HashSet<>(subset.getSet());
+                Set<String> copiedOf = new HashSet<>(of.getSet());
+                copiedSubset.removeAll(new HashSet<>(of.getSet()));
+                copiedOf.removeAll(new HashSet<>(subset.getSet()));
+                return copiedSubset.isEmpty() || copiedOf.isEmpty();
             }
         }
         return false;
