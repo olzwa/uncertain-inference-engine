@@ -71,14 +71,14 @@ public class UncertainRuleEngine {
 	public void fireRules() {
 
 		SetConclusionExecutor1 dce = new SetConclusionExecutor1();
-		UncertainRuleEngine.SetPremiseEvaluator dpe = new UncertainRuleEngine.SetPremiseEvaluator(context.getFacts());
+		UncertainRuleEngine.SetPremiseEvaluator premiseEvaluator = new UncertainRuleEngine.SetPremiseEvaluator(context.getFacts());
 
 		GrfIrf premisesGrfIrf;
 
 		for (SetRule rule : context.getRules()) {
 			System.out.println("Analyzing rule: " + rule);
-			boolean correctFacts = dpe.evaluate(rule);
-			if (correctFacts) {
+			boolean premiseMatched = premiseEvaluator.evaluate(rule);
+			if (premiseMatched) {
 				System.out.println("Matched rule:");
 				if (rule.getPremises().size() == 1) {
 					premisesGrfIrf = rule.getPremises().get(0).getGrfIrf();
@@ -121,38 +121,34 @@ public class UncertainRuleEngine {
 
 			List<SetPremise> premises = rule.getPremises();
 
-
-			for (int i = 0; i < premises.size(); i++) {
-				SetPremise premise = premises.get(i);
+			for (SetPremise premise : premises) {
 
 				List<SetFact> factEquals = new LinkedList<>();
-
-
-				//System.out.println("\tAnalyzing premise fact: " + premise);
+				System.out.println("\tAnalyzing premise fact: " + premise);
 
 				for (SetFact fact : facts) {
-					//System.out.println("\tchecking fact from db: " + fact);
-
-					if (comparator.isEquals(premise, fact)) {
+					System.out.println("\tchecking fact from db: " + fact);
+					if (comparator.isMatch(premise, fact)) {
 						result = true;
-						if (premise.isNegated()) {
+						if (premise.isNegated()) { // should we perform this propagation before we'r sure that rule was matched?
 							premise.setGrfIrf(PropagationFunctions.propagationF4(fact));
 						} else {
 							premise.setGrfIrf(fact.getGrfIrf());
 						}
 						factEquals.add(fact);
-						//System.out.println("\tFOUND FACT TO MATCH PREMISE");
+						System.out.println("\tFOUND FACT TO MATCH PREMISE");
 						System.out.println();
 						break;
 					} else {
 						result = false;
-
 					}
 				}
+
 				if (result == false) {
-					//System.out.println("\tNO FACTS TO MATCH PREMISE");
+					System.out.println("\tNO FACTS TO MATCH PREMISE");
 					break;
 				}
+
 			}
 
 			return result;
@@ -191,7 +187,6 @@ public class UncertainRuleEngine {
 
 		public static GrfIrf propagationF4(SetFact f) {
 			GrfIrf grfIrf = f.getGrfIrf();
-			grfIrf.getGrf().toString();
 			return new GrfIrf(grfIrf.getGrf(), BigDecimal.ONE.subtract(grfIrf.getIrf()));
 		}
 

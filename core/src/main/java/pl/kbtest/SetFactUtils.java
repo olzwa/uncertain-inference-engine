@@ -1,7 +1,9 @@
 package pl.kbtest;
 
 import pl.kbtest.contract.SetFact;
+import pl.kbtest.contract.SetPremise;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -18,7 +20,7 @@ public class SetFactUtils {
         return false;
     }
 
-    public static boolean isSetFactSubset(SetFact subset, SetFact of) {
+    public static boolean isSetFactSubset(SetPremise subset, SetFact of) {
         if (subset.equals(of)) {
             return true;
         }
@@ -41,6 +43,37 @@ public class SetFactUtils {
                 copiedOf.removeAll(new HashSet<>(subset.getSet()));
                 return copiedSubset.isEmpty() || copiedOf.isEmpty();
             }
+        }
+        return false;
+    }
+
+
+    public static boolean isMatch(SetPremise presmie, SetFact fact) {
+        //no match when non equals heads
+        if (!presmie.getHead().equals(fact.getHead())) {
+            return false;
+        }
+        //if both same type and sets are equal
+        if (presmie.isConjunction() == fact.isConjunction() && presmie.getSet().equals(fact.getSet())) {
+            return true;
+        }
+        //both conjunction and one is subset of another
+        if (fact.isConjunction() && presmie.isConjunction()) {
+            if (fact.getSet().containsAll(presmie.getSet())) {
+                return true;
+            }
+        }
+        //if disjunction with conjunction and sets are equal and there is at least one element in common
+        if (!presmie.isConjunction() && fact.isConjunction()) {
+            if (presmie.getSet().equals(fact.getSet())) {
+                return true;
+            }
+            if (!Collections.disjoint(presmie.getSet(), fact.getSet())) {
+                return true;
+            }
+        }
+        if (!presmie.isConjunction() && !fact.isConjunction()) {
+            return presmie.getSet().containsAll(fact.getSet());
         }
         return false;
     }

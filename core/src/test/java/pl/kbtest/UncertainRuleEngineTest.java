@@ -99,4 +99,29 @@ public class UncertainRuleEngineTest {
 		assertThat(actual).contains(expected);
 	}
 
+	@Test
+	public void should_not_match_premise_only_on_values() {
+		//given
+		Context context = new Context();
+
+		SetFact f1 = SetFactFactory.getInstance("rok", "2019,2020,2021", new GrfIrf(BigDecimal.valueOf(0.95), BigDecimal.ZERO), false);
+		SetFact f2 = SetFactFactory.getInstance("kierunek", "informatyka", new GrfIrf(BigDecimal.valueOf(0.90), BigDecimal.valueOf(0.8)), true);
+
+		SetRule r1 = new SetRule(new GrfIrf(BigDecimal.valueOf(0.9), BigDecimal.valueOf(0.8)));
+		r1.addPremises(SetPremise.Factory.getInstance("rok 2019 2020", true));
+		r1.addConclusion(new DefaultSetAction("sprzet", "komputer_stacjonarny,laptop", true));
+
+		context.addFact(f1);
+		context.addFact(f2);
+		context.addRule(r1);
+
+		UncertainRuleEngine subject = new UncertainRuleEngine(context);
+		//when
+		subject.fireRules();
+		//then
+		List<SetFact> actual = subject.getContext().getFacts();
+
+		assertThat(actual).doesNotContain(SetFactFactory.getInstance("sprzet", "komputer_stacjonarny,laptop", new GrfIrf(BigDecimal.valueOf(0.9), BigDecimal.valueOf(0.0)), true));
+	}
+
 }

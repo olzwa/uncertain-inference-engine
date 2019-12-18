@@ -31,7 +31,7 @@ public class SetFactFactory {
                 negate = true;
             }
         }
-        Set<String> set = new HashSet(Arrays.asList(b));
+        Set<String> set = new HashSet<>(Arrays.asList(b));
         return new DefaultSetFact(head, set, grfIrf, wParamter, axiom, negate, conj);
     }
 
@@ -43,7 +43,7 @@ public class SetFactFactory {
                 negate = true;
             }
         }
-        Set<String> set = new HashSet(Arrays.asList(body.split(GLOBAL_SPLIT_REGEX)));
+        Set<String> set = new HashSet<>(Arrays.asList(body.split(GLOBAL_SPLIT_REGEX)));
         return new DefaultSetFact(head, set, grfIrf, BigDecimal.ONE, false, negate, conj);
     }
 
