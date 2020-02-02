@@ -8,6 +8,7 @@ package pl.kbtest.contract;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 
 import com.google.common.base.MoreObjects;
 import pl.kbtest.action.SetAction;
@@ -51,46 +52,27 @@ public class SetRule {
         return this.premises;
     }
 
-    @Override
-    public int hashCode() {
-        int result = premises != null ? premises.hashCode() : 0;
-        result = 31 * result + (conclusions != null ? conclusions.hashCode() : 0);
-        result = 31 * result + (grfIrf != null ? grfIrf.hashCode() : 0);
-        return result;
-    }
-
     public GrfIrf getGrfIrf() {
         return this.grfIrf;
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (obj == null) return false;
-        if (obj == this) return true;
-        if (!(obj instanceof SetRule)) {
-            return false;
-        } else {
-
-
-            for (int j = 0; j < this.getPremises().size(); j++) {
-                SetPremise thisPremise = this.getPremises().get(j);
-                SetPremise objPremise = ((SetRule) obj).getPremises().get(j);
-                if (!thisPremise.toString().equals( objPremise.toString()) ||
-                        thisPremise.getGrfIrf() != objPremise.getGrfIrf() ||
-                        thisPremise.isNegated() != objPremise.isNegated() ||
-                        thisPremise.isConjunction() != objPremise.isConjunction()) {
-                    return false;
-                }
-            }
-            for (int j = 0; j < this.getConclusions().size(); j++) {
-                SetAction thisAction = this.getConclusions().get(j);
-                SetAction objAction = ((SetRule) obj).getConclusions().get(j);
-                if (!thisAction.toString().equals(objAction.toString()) || thisAction.isConjunction() != objAction.isConjunction()) {
-                    return false;
-                }
-            }
+    public boolean equals(Object o) {
+        if (this == o) {
             return true;
         }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        SetRule setRule = (SetRule) o;
+        return Objects.equals(premises, setRule.premises) &&
+            Objects.equals(conclusions, setRule.conclusions) &&
+            Objects.equals(grfIrf, setRule.grfIrf);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(premises, conclusions, grfIrf);
     }
 
     @Override

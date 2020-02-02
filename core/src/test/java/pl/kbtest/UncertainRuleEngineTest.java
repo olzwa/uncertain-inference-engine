@@ -6,6 +6,7 @@ import pl.kbtest.contract.*;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Deque;
 import java.util.List;
 import java.util.concurrent.ConcurrentLinkedDeque;
@@ -30,7 +31,7 @@ public class UncertainRuleEngineTest {
 
 		context.addFact(f1);
 		context.addFact(f2);
-		context.addRule(r1);
+		context.addRules(Arrays.asList(r1));
 
 		UncertainRuleEngine subject = new UncertainRuleEngine(context);
 		//when
@@ -55,7 +56,7 @@ public class UncertainRuleEngineTest {
 
 		context.addFact(f1);
 		context.addFact(f2);
-		context.addRule(r1);
+		context.addRules(Arrays.asList(r1));
 
 		UncertainRuleEngine subject = new UncertainRuleEngine(context);
 		//when
@@ -85,8 +86,7 @@ public class UncertainRuleEngineTest {
 
 		context.addFact(f1);
 		context.addFact(f2);
-		context.addRule(r1);
-		context.addRule(r2);
+		context.addRules(Arrays.asList(r1, r2));
 
 		UncertainRuleEngine subject = new UncertainRuleEngine(context);
 		//when
@@ -113,7 +113,7 @@ public class UncertainRuleEngineTest {
 
 		context.addFact(f1);
 		context.addFact(f2);
-		context.addRule(r1);
+		context.addRules(Arrays.asList(r1));
 
 		UncertainRuleEngine subject = new UncertainRuleEngine(context);
 		//when

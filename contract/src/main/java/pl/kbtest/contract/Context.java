@@ -8,6 +8,7 @@ package pl.kbtest.contract;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.SortedSet;
@@ -18,25 +19,23 @@ import java.util.TreeSet;
  */
 public class Context {
 
-  private final SortedSet<SetRule> rules;
+  private static final Comparator<SetRule> comparing = Comparator.comparing(rule -> rule.getGrfIrf().getGrf());
+
+  private final List<SetRule> rules;
   private final List<SetFact> facts;
 
   public Context() {
-    Comparator<SetRule> comparing = Comparator.comparing(rule -> rule.getGrfIrf().getGrf());
-    this.rules = new TreeSet<>(comparing.reversed());
+    this.rules = new ArrayList<>();
     this.facts = new ArrayList<>();
   }
 
-  public SortedSet<SetRule> getRules() {
+  public List<SetRule> getRules() {
     return this.rules;
   }
 
   public void addRules(Collection<SetRule> rules) {
     this.rules.addAll(rules);
-  }
-
-  public void addRule(SetRule rule) {
-    this.rules.add(rule);
+    this.rules.sort(comparing.reversed());
   }
 
   public void addFacts(Collection<SetFact> facts) {
