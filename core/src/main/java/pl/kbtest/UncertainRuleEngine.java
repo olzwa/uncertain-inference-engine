@@ -76,6 +76,8 @@ public class UncertainRuleEngine {
 		GrfIrf premisesGrfIrf;
 
 		for (SetRule rule : context.getRules()) {
+			System.out.println("");
+			System.out.println("==============================================================================================================================================================================");
 			System.out.println("Analyzing rule: " + rule);
 			boolean premiseMatched = premiseEvaluator.evaluate(rule);
 			if (premiseMatched) {
