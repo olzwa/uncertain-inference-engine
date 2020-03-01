@@ -34,7 +34,7 @@ public class UncertainRuleEngine {
 	private SetFact contextFactsContains(SetFact f) {
 		SetFact result = null;
 		for (SetFact fact : context.getFacts()) {
-			if (SetFactUtils.compareFactBody(f, fact)) {
+			if (SetFactUtils.compareFactValue(f, fact)) {
 				result = fact;
 			}
 		}

@@ -9,11 +9,11 @@ import java.util.Set;
 
 public class SetFactUtils {
 
-    public static boolean compareFactBody(SetFact f1, SetFact f2) {
+    public static boolean compareFactValue(SetFact f1, SetFact f2) {
         if (f1.getHead().equals(f2.getHead())) {
             if (f1.getSet().size() == f2.getSet().size()) {
                 if (f1.getSet().containsAll(f2.getSet())) {
-                    return true;
+                    return f1.isConjunction() == f2.isConjunction();
                 }
             }
         }
